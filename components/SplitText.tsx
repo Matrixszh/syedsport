@@ -198,7 +198,7 @@ const SplitText: React.FC<SplitTextProps> = ({
   };
 
   const classes = `split-parent overflow-hidden inline-block whitespace-normal ${className}`;
-  const Tag = (tag || "p") as React.ElementType;
+  const resolvedTag = (tag || "p") as keyof React.JSX.IntrinsicElements;
 
   const renderToken = (token: Token) => {
     if (token.type === "space") {
@@ -247,10 +247,14 @@ const SplitText: React.FC<SplitTextProps> = ({
     );
   };
 
-  return (
-    <Tag ref={ref} style={style} className={classes}>
-      {tokens.map(renderToken)}
-    </Tag>
+  return React.createElement(
+    resolvedTag,
+    {
+      ref: ref as React.Ref<HTMLElement>,
+      style,
+      className: classes,
+    },
+    tokens.map(renderToken),
   );
 };
 
