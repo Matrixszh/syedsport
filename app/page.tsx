@@ -118,7 +118,7 @@ export default function ServicesPage() {
     { label: "LinkedIn", link: "https://linkedin.com" },
   ];
 
-  const spotlightSections = [
+  const spotlightSections: SpotlightSectionProps[] = [
     {
       eyebrow: "// IMMERSIVE STORYTELLING",
       title: "Campaign visuals built to hold attention at first glance.",
