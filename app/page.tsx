@@ -1,9 +1,84 @@
 "use client";
 
+import { useRef } from "react";
 import Link from "next/link";
+import { motion, useScroll, useTransform } from "motion/react";
 import Beams from "@/components/Beams";
+import DotGrid from "@/components/DotGrid";
 import SplitText from "@/components/SplitText";
 import StaggeredMenu from "@/components/StaggeredMenu";
+
+type SpotlightSectionProps = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  imagePosition: "left" | "right";
+  imageSrc: string;
+};
+
+function SpotlightSection({
+  eyebrow,
+  title,
+  description,
+  imagePosition,
+  imageSrc,
+}: SpotlightSectionProps) {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  const imageY = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["4%", "-4%"]);
+
+  return (
+    <section
+      ref={sectionRef}
+      className="border-t border-white/10 bg-black/70"
+    >
+      <div className="grid min-h-[640px] md:grid-cols-2">
+        <motion.div
+          style={{ y: textY }}
+          className={[
+            "flex items-center px-6 py-14 sm:px-10 md:px-14",
+            imagePosition === "right" ? "md:order-1" : "md:order-2",
+          ].join(" ")}
+        >
+          <div className="max-w-[520px]">
+            <p className="text-[10px] font-semibold tracking-[0.28em] text-white/55">
+              {eyebrow}
+            </p>
+            <h3 className="mt-6 text-[34px] font-black uppercase leading-[0.95] tracking-[-0.05em] text-white sm:text-[48px] md:text-[58px]">
+              {title}
+            </h3>
+            <p className="mt-6 max-w-[440px] text-[14px] leading-8 text-white/68 sm:text-[15px]">
+              {description}
+            </p>
+          </div>
+        </motion.div>
+
+        <div
+          className={[
+            "relative min-h-[360px] overflow-hidden",
+            imagePosition === "right" ? "md:order-2" : "md:order-1",
+          ].join(" ")}
+        >
+          <motion.div
+            style={{ y: imageY }}
+            className="absolute inset-x-0 -top-[12%] -bottom-[12%] bg-cover bg-center"
+          >
+            <div
+              className="h-full w-full bg-cover bg-center"
+              style={{ backgroundImage: `url('${imageSrc}')` }}
+            />
+          </motion.div>
+          <div className="absolute inset-0 bg-gradient-to-br from-black/25 via-black/45 to-black/75" />
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function ServicesPage() {
   const menuItems = [
@@ -17,6 +92,41 @@ export default function ServicesPage() {
     { label: "Twitter", link: "https://twitter.com" },
     { label: "GitHub", link: "https://github.com" },
     { label: "LinkedIn", link: "https://linkedin.com" },
+  ];
+
+  const spotlightSections = [
+    {
+      eyebrow: "// IMMERSIVE STORYTELLING",
+      title: "Campaign visuals built to hold attention at first glance.",
+      description:
+        "We create art direction, motion, and launch assets that turn a brand moment into a visual event with lasting recall.",
+      imagePosition: "right",
+      imageSrc: "/img4.jpg",
+    },
+    {
+      eyebrow: "// BRAND PRESENCE",
+      title: "Digital experiences shaped with clarity, tension, and impact.",
+      description:
+        "From landing pages to identity systems, every touchpoint is composed to feel premium, direct, and unmistakably intentional.",
+      imagePosition: "left",
+      imageSrc: "/img2.jpg",
+    },
+    {
+      eyebrow: "// IMMERSIVE STORYTELLING",
+      title: "Campaign visuals to hold attention at first glance.",
+      description:
+        "We create art direction, motion, and launch assets that turn a brand moment into a visual event with lasting recall.",
+      imagePosition: "right",
+      imageSrc: "/img3.jpg",
+    },
+    {
+      eyebrow: "// BRAND PRESENCE",
+      title: "Digital experiences shaped with clarity and impact.",
+      description:
+        "From landing pages to identity systems, every touchpoint is composed to feel premium, direct, and unmistakably intentional.",
+      imagePosition: "left",
+      imageSrc: "/img4.jpg",
+    },
   ];
 
   return (
@@ -44,7 +154,7 @@ export default function ServicesPage() {
         isFixed={true}
       />
 
-      <main className="relative z-10 mx-auto w-full flex-1 pb-24 ">
+      <main className="relative z-10 mx-auto w-full flex-1">
         <section >
           <div className="relative overflow-hidden h-[100vh]  bg-black px-4 py-12 sm:px-8 sm:py-16 md:px-10 md:py-20">
             <div className="pointer-events-none absolute inset-0">
@@ -52,7 +162,7 @@ export default function ServicesPage() {
                 beamWidth={3}
                 beamHeight={30}
                 beamNumber={20}
-                lightColor="#ffffff"
+                lightColor="#FFD700"
                 speed={2}
                 noiseIntensity={1.75}
                 scale={0.2}
@@ -62,7 +172,7 @@ export default function ServicesPage() {
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_12%,rgba(255,255,255,0.035),transparent_18%)]" />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/5 via-black/25 to-black/55" />
 
-            <div className="relative pt-30">
+            <div className="relative pt-40 md:pt-10">
               <h1 className="mx-auto max-w-full text-center text-[56px] font-black uppercase leading-[0.82] tracking-[-0.06em] text-[#ededed] sm:text-[86px] md:text-[100px] lg:text-[116px]">
                 WE BUILD
                 <br  />
@@ -97,7 +207,7 @@ export default function ServicesPage() {
           <div className="bg-white/[0.05] px-6 py-14 sm:px-10 sm:py-20 md:px-14 md:py-24">
             <div className="grid gap-10 md:grid-cols-12 md:gap-6">
               <div className="md:col-span-3">
-                <p className="pt-2 text-[10px] font-semibold tracking-[0.28em] text-white/70">
+                <p className="pt-2 text-[10px] font-semibold tracking-[0.28em] text-[white/70]">
                   {"// THE AGENCY"}
                 </p>
               </div>
@@ -120,7 +230,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section className=" bg-white/[0.03]">
+        <section className="pb-20 bg-white/[0.03]">
           <h2 className="py-10 text-center text-[34px] font-black uppercase tracking-[-0.04em] text-white sm:text-[52px]">
             Expertise
           </h2>
@@ -220,16 +330,27 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section className="mt-16 sm:mt-20">
-          <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-14 sm:px-12 sm:py-16">
-            <div
-              className="pointer-events-none absolute inset-0"
-              style={{
-                backgroundImage:
-                  "radial-gradient(600px 260px at 60% 80%, rgba(255,255,255,0.08), rgba(0,0,0,0) 70%), radial-gradient(900px 360px at 30% 20%, rgba(255,255,255,0.04), rgba(0,0,0,0) 65%), linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0) 55%)",
-              }}
-            />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/30 via-black/70 to-black/90" />
+        {spotlightSections.map((section) => (
+          <SpotlightSection key={section.title} {...section} />
+        ))}
+
+        <section >
+          <div className="relative overflow-hidden px-6 py-14 sm:px-12 sm:py-16">
+            <div className="pointer-events-none absolute inset-0">
+              <DotGrid
+                dotSize={5}
+                gap={15}
+                baseColor="#2F293A"
+                activeColor="#FFD700"
+                proximity={120}
+                shockRadius={250}
+                shockStrength={10}
+                resistance={750}
+                returnDuration={1.5}
+                className="h-full w-full p-0"
+              />
+            </div>
+            <div className="pointer-events-none absolute inset-0 bg-black/55" />
 
             <div className="relative">
               <h2 className="text-center text-[24px] font-black uppercase leading-[1.05] tracking-[-0.03em] sm:text-[30px]">
