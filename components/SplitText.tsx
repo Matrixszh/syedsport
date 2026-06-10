@@ -197,7 +197,8 @@ const SplitText: React.FC<SplitTextProps> = ({
     willChange: "transform, opacity",
   };
 
-  const classes = `split-parent overflow-hidden inline-block whitespace-normal ${className}`;
+  const displayClass = tag === "span" ? "inline-block" : "block";
+  const classes = `split-parent overflow-hidden whitespace-normal ${displayClass} ${className}`;
   const resolvedTag = (tag || "p") as keyof React.JSX.IntrinsicElements;
 
   const renderToken = (token: Token) => {

@@ -46,15 +46,39 @@ function SpotlightSection({
           ].join(" ")}
         >
           <div className="max-w-[520px]">
-            <p className="text-[10px] font-semibold tracking-[0.28em] text-white/55">
-              {eyebrow}
-            </p>
-            <h3 className="mt-6 text-[34px] font-black uppercase leading-[0.95] tracking-[-0.05em] text-white sm:text-[48px] md:text-[58px]">
-              {title}
-            </h3>
-            <p className="mt-6 max-w-[440px] text-[14px] leading-8 text-white/68 sm:text-[15px]">
-              {description}
-            </p>
+            <SplitText
+              tag="p"
+              text={eyebrow}
+              className="text-[10px] font-semibold tracking-[0.28em] text-white/55"
+              textAlign="left"
+              splitType="chars"
+              delay={10}
+              duration={0.45}
+              from={{ opacity: 0, y: 12 }}
+              to={{ opacity: 1, y: 0 }}
+            />
+            <SplitText
+              tag="h3"
+              text={title}
+              className="mt-6 text-[34px] font-black uppercase leading-[0.95] tracking-[-0.05em] text-white sm:text-[48px] md:text-[58px]"
+              textAlign="left"
+              splitType="words, chars"
+              delay={12}
+              duration={0.65}
+              from={{ opacity: 0, y: 20 }}
+              to={{ opacity: 1, y: 0 }}
+            />
+            <SplitText
+              tag="p"
+              text={description}
+              className="mt-6 max-w-[440px] text-[14px] leading-8 text-white/68 sm:text-[15px]"
+              textAlign="left"
+              splitType="words"
+              delay={10}
+              duration={0.55}
+              from={{ opacity: 0, y: 12 }}
+              to={{ opacity: 1, y: 0 }}
+            />
           </div>
         </motion.div>
 
@@ -173,30 +197,50 @@ export default function ServicesPage() {
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/5 via-black/25 to-black/55" />
 
             <div className="relative pt-40 md:pt-10">
-              <h1 className="mx-auto max-w-full text-center text-[56px] font-black uppercase leading-[0.82] tracking-[-0.06em] text-[#ededed] sm:text-[86px] md:text-[100px] lg:text-[116px]">
-                WE BUILD
-                <br  />
-                BRANDS
-                <br />
-                THAT
-                <br />
-                DOMINATE
-                <br />
-                ATTENTION
-              </h1>
+              <SplitText
+                tag="h1"
+                text={"WE BUILD\nBRANDS\nTHAT\nDOMINATE\nATTENTION"}
+                className="mx-auto block max-w-full text-center text-[56px] font-black uppercase leading-[0.82] tracking-[-0.06em] text-white sm:text-[86px] md:text-[100px] lg:text-[116px]"
+                textAlign="center"
+                splitType="lines"
+                delay={16}
+                duration={0.8}
+                from={{ opacity: 0, y: 36 }}
+                to={{ opacity: 1, y: 0 }}
+              />
 
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-4">
                 <Link
                   href="/#work"
                   className="inline-flex h-[42px] min-w-[142px] items-center justify-center border border-white bg-transparent px-5 text-sm font-semibold tracking-[0.35em] text-white transition-colors hover:bg-white/30"
                 >
-                  VIEW OUR WORK
+                  <SplitText
+                    tag="span"
+                    text="VIEW OUR WORK"
+                    className="block"
+                    textAlign="center"
+                    splitType="chars"
+                    delay={8}
+                    duration={0.45}
+                    from={{ opacity: 0, y: 8 }}
+                    to={{ opacity: 1, y: 0 }}
+                  />
                 </Link>
                 <Link
                   href="/services"
                   className="inline-flex h-[42px] min-w-[142px] items-center justify-center border border-white bg-transparent px-5 text-sm font-semibold tracking-[0.35em] text-white transition-colors hover:bg-white/30"
                 >
-                  DISCOVER AURA
+                  <SplitText
+                    tag="span"
+                    text="DISCOVER AURA"
+                    className="block"
+                    textAlign="center"
+                    splitType="chars"
+                    delay={8}
+                    duration={0.45}
+                    from={{ opacity: 0, y: 8 }}
+                    to={{ opacity: 1, y: 0 }}
+                  />
                 </Link>
               </div>
             </div>
@@ -207,40 +251,75 @@ export default function ServicesPage() {
           <div className="bg-white/[0.05] px-6 py-14 sm:px-10 sm:py-20 md:px-14 md:py-24">
             <div className="grid gap-10 md:grid-cols-12 md:gap-6">
               <div className="md:col-span-3">
-                <p className="pt-2 text-[10px] font-semibold tracking-[0.28em] text-[white/70]">
-                  {"// THE AGENCY"}
-                </p>
+                <SplitText
+                  tag="p"
+                  text="// THE AGENCY"
+                  className="pt-2 text-[10px] font-semibold tracking-[0.28em] text-[white/70]"
+                  textAlign="left"
+                  splitType="chars"
+                  delay={10}
+                  duration={0.45}
+                  from={{ opacity: 0, y: 10 }}
+                  to={{ opacity: 1, y: 0 }}
+                />
               </div>
 
               <div className="md:col-span-8 md:col-start-5">
-                <p className="max-w-[720px] text-[30px] font-semibold leading-[1.05] tracking-[-0.05em] text-white sm:text-[44px] md:text-[58px] lg:text-[66px]">
-                  We are an avant-garde digital collective fusing cinematic
-                  aesthetics with hyper-focused marketing strategies.
-                </p>
+                <SplitText
+                  tag="p"
+                  text="We are an avant-garde digital collective fusing cinematic aesthetics with hyper-focused marketing strategies."
+                  className="max-w-[720px] text-[30px] font-semibold leading-[1.05] tracking-[-0.05em] text-white sm:text-[44px] md:text-[58px] lg:text-[66px]"
+                  textAlign="left"
+                  splitType="words, chars"
+                  delay={12}
+                  duration={0.65}
+                  from={{ opacity: 0, y: 20 }}
+                  to={{ opacity: 1, y: 0 }}
+                />
 
-                <p className="mt-8 max-w-[720px] text-[14px] leading-[1.85] tracking-[-0.01em] text-white/70 md:text-[15px]">
-                  At Aura Media, we believe that in a saturated digital
-                  landscape, subtle does not survive. We engineer visual
-                  dominance through brutalist minimalism, glassmorphism, and
-                  editorial precision. Every pixel is calculated; every campaign
-                  is designed to be an event.
-                </p>
+                <SplitText
+                  tag="p"
+                  text="At Aura Media, we believe that in a saturated digital landscape, subtle does not survive. We engineer visual dominance through brutalist minimalism, glassmorphism, and editorial precision. Every pixel is calculated; every campaign is designed to be an event."
+                  className="mt-8 max-w-[720px] text-[14px] leading-[1.85] tracking-[-0.01em] text-white/70 md:text-[15px]"
+                  textAlign="left"
+                  splitType="words"
+                  delay={10}
+                  duration={0.55}
+                  from={{ opacity: 0, y: 12 }}
+                  to={{ opacity: 1, y: 0 }}
+                />
               </div>
             </div>
           </div>
         </section>
 
         <section className="pb-20 bg-white/[0.03]">
-          <h2 className="py-10 text-center text-[34px] font-black uppercase tracking-[-0.04em] text-white sm:text-[52px]">
-            Expertise
-          </h2>
+          <SplitText
+            tag="h2"
+            text="Expertise"
+            className="py-10 text-center text-[34px] font-black uppercase tracking-[-0.04em] text-white sm:text-[52px]"
+            textAlign="center"
+            splitType="chars"
+            delay={12}
+            duration={0.6}
+            from={{ opacity: 0, y: 14 }}
+            to={{ opacity: 1, y: 0 }}
+          />
 
           <div className="mt-10 px-5 grid gap-6 md:grid-cols-3 md:gap-6">
               <article className="min-h-[275px] border border-white/8 bg-white/[0.05] p-7 sm:p-8">
                 <div className="flex items-start justify-between">
-                  <p className="text-[18px] font-semibold tracking-[-0.04em] text-white/90">
-                    01
-                  </p>
+                  <SplitText
+                    tag="p"
+                    text="01"
+                    className="text-[18px] font-semibold tracking-[-0.04em] text-white/90"
+                    textAlign="left"
+                    splitType="chars"
+                    delay={10}
+                    duration={0.45}
+                    from={{ opacity: 0, y: 8 }}
+                    to={{ opacity: 1, y: 0 }}
+                  />
                   <svg
                     width="19"
                     height="19"
@@ -258,20 +337,43 @@ export default function ServicesPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="mt-14 text-[28px] font-semibold leading-[1.02] tracking-[-0.04em] text-white">
-                  Cinematic Production
-                </h3>
-                <p className="mt-5 max-w-[250px] text-[13px] leading-7 text-white/62">
-                  High-end video and motion design that commands screen
-                  presence.
-                </p>
+                <SplitText
+                  tag="h3"
+                  text="Cinematic Production"
+                  className="mt-14 text-[28px] font-semibold leading-[1.02] tracking-[-0.04em] text-white"
+                  textAlign="left"
+                  splitType="words, chars"
+                  delay={10}
+                  duration={0.6}
+                  from={{ opacity: 0, y: 16 }}
+                  to={{ opacity: 1, y: 0 }}
+                />
+                <SplitText
+                  tag="p"
+                  text="High-end video and motion design that commands screen presence."
+                  className="mt-5 max-w-[250px] text-[13px] leading-7 text-white/62"
+                  textAlign="left"
+                  splitType="words"
+                  delay={8}
+                  duration={0.5}
+                  from={{ opacity: 0, y: 10 }}
+                  to={{ opacity: 1, y: 0 }}
+                />
               </article>
 
               <article className="min-h-[275px] border border-white/8 bg-white/[0.05] p-7 sm:p-8">
                 <div className="flex items-start justify-between">
-                  <p className="text-[18px] font-semibold tracking-[-0.04em] text-white/90">
-                    02
-                  </p>
+                  <SplitText
+                    tag="p"
+                    text="02"
+                    className="text-[18px] font-semibold tracking-[-0.04em] text-white/90"
+                    textAlign="left"
+                    splitType="chars"
+                    delay={10}
+                    duration={0.45}
+                    from={{ opacity: 0, y: 8 }}
+                    to={{ opacity: 1, y: 0 }}
+                  />
                   <svg
                     width="19"
                     height="19"
@@ -289,19 +391,43 @@ export default function ServicesPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="mt-14 text-[28px] font-semibold leading-[1.02] tracking-[-0.04em] text-white">
-                  Digital Identity
-                </h3>
-                <p className="mt-5 max-w-[250px] text-[13px] leading-7 text-white/62">
-                  Brutalist minimalist web experiences and editorial UI/UX.
-                </p>
+                <SplitText
+                  tag="h3"
+                  text="Digital Identity"
+                  className="mt-14 text-[28px] font-semibold leading-[1.02] tracking-[-0.04em] text-white"
+                  textAlign="left"
+                  splitType="words, chars"
+                  delay={10}
+                  duration={0.6}
+                  from={{ opacity: 0, y: 16 }}
+                  to={{ opacity: 1, y: 0 }}
+                />
+                <SplitText
+                  tag="p"
+                  text="Brutalist minimalist web experiences and editorial UI/UX."
+                  className="mt-5 max-w-[250px] text-[13px] leading-7 text-white/62"
+                  textAlign="left"
+                  splitType="words"
+                  delay={8}
+                  duration={0.5}
+                  from={{ opacity: 0, y: 10 }}
+                  to={{ opacity: 1, y: 0 }}
+                />
               </article>
 
               <article className="min-h-[275px] border border-white/8 bg-white/[0.05] p-7 sm:p-8">
                 <div className="flex items-start justify-between">
-                  <p className="text-[18px] font-semibold tracking-[-0.04em] text-white/90">
-                    03
-                  </p>
+                  <SplitText
+                    tag="p"
+                    text="03"
+                    className="text-[18px] font-semibold tracking-[-0.04em] text-white/90"
+                    textAlign="left"
+                    splitType="chars"
+                    delay={10}
+                    duration={0.45}
+                    from={{ opacity: 0, y: 8 }}
+                    to={{ opacity: 1, y: 0 }}
+                  />
                   <svg
                     width="19"
                     height="19"
@@ -319,13 +445,28 @@ export default function ServicesPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="mt-14 text-[28px] font-semibold leading-[1.02] tracking-[-0.04em] text-white">
-                  Strategic Domination
-                </h3>
-                <p className="mt-5 max-w-[250px] text-[13px] leading-7 text-white/62">
-                  Aggressive, data-driven marketing campaigns designed for
-                  scale.
-                </p>
+                <SplitText
+                  tag="h3"
+                  text="Strategic Domination"
+                  className="mt-14 text-[28px] font-semibold leading-[1.02] tracking-[-0.04em] text-white"
+                  textAlign="left"
+                  splitType="words, chars"
+                  delay={10}
+                  duration={0.6}
+                  from={{ opacity: 0, y: 16 }}
+                  to={{ opacity: 1, y: 0 }}
+                />
+                <SplitText
+                  tag="p"
+                  text="Aggressive, data-driven marketing campaigns designed for scale."
+                  className="mt-5 max-w-[250px] text-[13px] leading-7 text-white/62"
+                  textAlign="left"
+                  splitType="words"
+                  delay={8}
+                  duration={0.5}
+                  from={{ opacity: 0, y: 10 }}
+                  to={{ opacity: 1, y: 0 }}
+                />
               </article>
           </div>
         </section>
@@ -353,17 +494,33 @@ export default function ServicesPage() {
             <div className="pointer-events-none absolute inset-0 bg-black/55" />
 
             <div className="relative">
-              <h2 className="text-center text-[24px] font-black uppercase leading-[1.05] tracking-[-0.03em] sm:text-[30px]">
-                READY TO SHIFT THE
-                <br />
-                CULTURE?
-              </h2>
+              <SplitText
+                tag="h2"
+                text={"READY TO SHIFT THE\nCULTURE?"}
+                className="block text-center text-[24px] font-black uppercase leading-[1.05] tracking-[-0.03em] sm:text-[30px]"
+                textAlign="center"
+                splitType="lines"
+                delay={14}
+                duration={0.7}
+                from={{ opacity: 0, y: 18 }}
+                to={{ opacity: 1, y: 0 }}
+              />
               <div className="mt-6 flex justify-center">
                 <Link
                   href="/contact"
                   className="inline-flex h-10 items-center justify-center rounded-md border border-white/25 bg-white/5 px-5 text-[12px] font-semibold tracking-[0.22em] text-white backdrop-blur-sm transition-colors hover:bg-white/10"
                 >
-                  INITIATE CONTACT
+                  <SplitText
+                    tag="span"
+                    text="INITIATE CONTACT"
+                    className="block"
+                    textAlign="center"
+                    splitType="chars"
+                    delay={8}
+                    duration={0.45}
+                    from={{ opacity: 0, y: 8 }}
+                    to={{ opacity: 1, y: 0 }}
+                  />
                 </Link>
               </div>
             </div>
@@ -372,13 +529,13 @@ export default function ServicesPage() {
       </main>
 
       <footer className="relative z-10 border-t border-white/10 bg-black/30">
-        <div className="mx-auto w-full max-w-[1120px] px-5 py-14 sm:px-8 sm:py-16">
+        <div className="mx-auto w-full max-w-full px-5 py-14 sm:px-8 sm:py-16">
           <div className="grid gap-10 md:grid-cols-12 md:gap-8">
             <div className="md:col-span-6">
               <SplitText
                 tag="p"
                 text="AURA MEDIA"
-                className="block text-[12px] font-semibold tracking-[0.35em] text-white/80"
+                className="block text-[12px] font-semibold tracking-[0.35em] text-[#FFD700]/80"
                 textAlign="left"
                 splitType="chars"
                 delay={18}
@@ -389,7 +546,7 @@ export default function ServicesPage() {
               <SplitText
                 tag="p"
                 text="Designing the future of visual experiences. Where technology and emotion collide — art becomes industry."
-                className="block mt-4 max-w-[420px] text-[12px] leading-5 text-white/55"
+                className="block mt-4 max-w-[420px] text-[12px] leading-5 text-[white]/55"
                 textAlign="left"
                 splitType="words"
                 delay={14}
