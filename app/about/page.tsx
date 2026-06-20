@@ -1,83 +1,134 @@
-import SplitText from "@/components/SplitText";
-import StaggeredMenu from "@/components/StaggeredMenu";
+import type { Metadata } from "next";
+import Link from "next/link";
+import SiteFooter from "@/components/SiteFooter";
+import SiteNavbar from "@/components/SiteNavbar";
 
-export default function Home() {
-  const menuItems = [
-    { label: "Home", ariaLabel: "Go to home page", link: "/" },
-    { label: "About", ariaLabel: "Learn about us", link: "/about" },
-    { label: "Services", ariaLabel: "View our services", link: "/services" },
-    { label: "Contact", ariaLabel: "Get in touch", link: "/contact" },
-  ];
+export const metadata: Metadata = {
+  title: "About Us | Aura Media",
+  description:
+    "About Aura Media, a digital agency shaping the future of media through advanced AI integration and immersive design.",
+};
 
-  const socialItems = [
-    { label: "Twitter", link: "https://twitter.com" },
-    { label: "GitHub", link: "https://github.com" },
-    { label: "LinkedIn", link: "https://linkedin.com" },
-  ];
+const solutionCards = [
+  {
+    number: "01",
+    title: "Predictive\nAnalytics",
+    description:
+      "Harness machine learning algorithms to anticipate market trends and consumer behavior with unprecedented accuracy.",
+    icon: (
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="text-[#10d7d1]"
+        aria-hidden="true"
+      >
+        <path
+          d="M12 3a7 7 0 1 0 7 7"
+          stroke="currentColor"
+          strokeWidth="1.4"
+          strokeLinecap="round"
+        />
+        <path
+          d="M12 7v5l3 2"
+          stroke="currentColor"
+          strokeWidth="1.4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <circle cx="19" cy="5" r="2" stroke="currentColor" strokeWidth="1.4" />
+      </svg>
+    ),
+  },
+  {
+    number: "02",
+    title: "Generative\nCampaigns",
+    description:
+      "Automated, hyper-personalized creative generation scaling across all platforms simultaneously.",
+    icon: (
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="text-[#10d7d1]"
+        aria-hidden="true"
+      >
+        <path
+          d="M12 3l1.25 4.75L18 9l-4.75 1.25L12 15l-1.25-4.75L6 9l4.75-1.25L12 3Z"
+          stroke="currentColor"
+          strokeWidth="1.4"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M19 15l.75 2.25L22 18l-2.25.75L19 21l-.75-2.25L16 18l2.25-.75L19 15Z"
+          stroke="currentColor"
+          strokeWidth="1.2"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    number: "03",
+    title: "Neural Networks",
+    description:
+      "Deep learning models optimizing ad spend and audience targeting in real-time environments.",
+    icon: (
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="text-[#10d7d1]"
+        aria-hidden="true"
+      >
+        <circle cx="7" cy="7" r="2.1" stroke="currentColor" strokeWidth="1.4" />
+        <circle cx="17" cy="7" r="2.1" stroke="currentColor" strokeWidth="1.4" />
+        <circle cx="12" cy="17" r="2.1" stroke="currentColor" strokeWidth="1.4" />
+        <path
+          d="M8.8 8.2 10.7 15M15.2 8.2 13.3 15M9.1 7h5.8"
+          stroke="currentColor"
+          strokeWidth="1.4"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
+  },
+];
 
+export default function AboutPage() {
   return (
     <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden bg-none text-white">
       <div
         className="pointer-events-none fixed inset-0 -z-10"
         style={{
           backgroundImage:
-            "radial-gradient(900px 520px at 22% 6%, rgba(168,85,247,0.22), rgba(0,0,0,0) 60%), radial-gradient(820px 480px at 76% -8%, rgba(99,102,241,0.14), rgba(0,0,0,0) 62%), radial-gradient(620px 460px at 30% 70%, rgba(244,63,94,0.08), rgba(0,0,0,0) 55%), linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0) 40%), linear-gradient(180deg, #05050A, #05050A)",
+            "linear-gradient(rgba(255,255,255,0.028) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.028) 1px, transparent 1px), radial-gradient(circle at 50% 16%, rgba(255,255,255,0.06), transparent 28%), linear-gradient(180deg, rgba(255,255,255,0.015), rgba(0,0,0,0) 25%), linear-gradient(180deg, #030303, #020202)",
+          backgroundSize: "72px 72px, 72px 72px, 100% 100%, 100% 100%, 100% 100%",
         }}
       />
 
-      <StaggeredMenu
-        position="right"
-        items={menuItems}
-        socialItems={socialItems}
-        displaySocials
-        displayItemNumbering={true}
-        menuButtonColor="#ffffff"
-        openMenuButtonColor="#ffffff"
-        changeMenuColorOnOpen={true}
-        colors={["#dd00ff", "#1e1e1f"]}
-        logoUrl="/tulip.png"
-        accentColor="#dd00ff"
-        isFixed={true}
-      />
+      <SiteNavbar />
 
-      <main className="relative z-10 mx-auto w-full pt-24 sm:pt-28">
-        <section className="pt-10 sm:pt-16">
-          <SplitText
-            tag="p"
-            text="EPISODE // 01"
-            className="block text-[10px] font-medium tracking-[0.35em] text-white/55"
-            textAlign="left"
-            splitType="chars"
-            delay={30}
-            duration={1.9}
-            from={{ opacity: 0, y: 10 }}
-            to={{ opacity: 1, y: 0 }}
-          />
+      <main className="relative z-10">
+        <section className="px-5 pb-32 pt-24 sm:px-8 sm:pb-44 sm:pt-32">
+          <div className="mx-auto flex min-h-[720px] max-w-[1600px] flex-col items-center justify-center text-center">
+            <p className="text-[11px] font-medium uppercase tracking-[0.38em] text-[#10d7d1]">
+              Digital Experience
+            </p>
 
-          <h1 className="mt-6 text-[52px] font-black uppercase leading-[0.82] tracking-[-0.04em] sm:text-[76px] md:text-[96px]">
-            <SplitText
-              tag="span"
-              text="Creative"
-              className="block pr-5 text-white"
-              textAlign="left"
-              splitType="chars"
-              delay={40}
-              duration={1.4}
-              from={{ opacity: 0, y: 26 }}
-              to={{ opacity: 1, y: 0 }}
-            />
-            <SplitText
-              tag="span"
-              text="Rebellion"
-              className="block rb-gradient-text"
-              textAlign="left"
-              splitType="chars"
-              delay={40}
-              duration={1.4}
-              from={{ opacity: 0 , y: 26 }}
-              to={{ opacity: 1, y: 0 }}
-            />
-          </h1>
+            <h1 className="mt-10 max-w-[1280px] text-[70px] font-black uppercase leading-[0.84] tracking-[-0.07em] text-[#ededed] sm:text-[108px] md:text-[152px] lg:text-[186px]">
+              THE
+              <br />
+              FUTURE
+              <br />
+              OF MEDIA
+            </h1>
 
           <SplitText
             tag="p"
@@ -369,194 +420,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="relative z-10 border-t border-white/10 bg-black/30">
-        <div className="mx-auto w-full max-w-full px-5 py-14 sm:px-8 sm:py-16">
-          <div className="grid gap-10 md:grid-cols-12 md:gap-8">
-            <div className="md:col-span-6">
-              <SplitText
-                tag="p"
-                text="AURA MEDIA"
-                className="block text-[12px] font-semibold tracking-[0.35em] text-white/80"
-                textAlign="left"
-                splitType="chars"
-                delay={18}
-                duration={0.7}
-                from={{ opacity: 0, y: 8 }}
-                to={{ opacity: 1, y: 0 }}
-              />
-              <SplitText
-                tag="p"
-                text="Designing the future of visual experiences. Where technology and emotion collide — art becomes industry."
-                className="block mt-4 max-w-[420px] text-[12px] leading-5 text-white/55"
-                textAlign="left"
-                splitType="words"
-                delay={14}
-                duration={0.6}
-                from={{ opacity: 0, y: 8 }}
-                to={{ opacity: 1, y: 0 }}
-              />
-            </div>
-
-            <div className="grid gap-8 text-[12px] text-white/60 sm:grid-cols-3 md:col-span-6">
-              <div>
-                <SplitText
-                  tag="p"
-                  text="Sitemap"
-                  className="block text-[10px] font-medium tracking-[0.32em] text-white/55"
-                  textAlign="left"
-                  splitType="chars"
-                  delay={14}
-                  duration={0.6}
-                  from={{ opacity: 0, y: 8 }}
-                  to={{ opacity: 1, y: 0 }}
-                />
-                <div className="mt-4 space-y-3">
-                  <a href="#" className="block hover:text-white">
-                    <SplitText
-                      tag="span"
-                      text="Work"
-                      className="block"
-                      textAlign="left"
-                      splitType="chars"
-                      delay={12}
-                      duration={0.55}
-                      from={{ opacity: 0, y: 8 }}
-                      to={{ opacity: 1, y: 0 }}
-                    />
-                  </a>
-                  <a href="#" className="block hover:text-white">
-                    <SplitText
-                      tag="span"
-                      text="Services"
-                      className="block"
-                      textAlign="left"
-                      splitType="chars"
-                      delay={12}
-                      duration={0.55}
-                      from={{ opacity: 0, y: 8 }}
-                      to={{ opacity: 1, y: 0 }}
-                    />
-                  </a>
-                  <a href="#" className="block hover:text-white">
-                    <SplitText
-                      tag="span"
-                      text="About"
-                      className="block"
-                      textAlign="left"
-                      splitType="chars"
-                      delay={12}
-                      duration={0.55}
-                      from={{ opacity: 0, y: 8 }}
-                      to={{ opacity: 1, y: 0 }}
-                    />
-                  </a>
-                </div>
-              </div>
-              <div>
-                <SplitText
-                  tag="p"
-                  text="Social"
-                  className="block text-[10px] font-medium tracking-[0.32em] text-white/55"
-                  textAlign="left"
-                  splitType="chars"
-                  delay={14}
-                  duration={0.6}
-                  from={{ opacity: 0, y: 8 }}
-                  to={{ opacity: 1, y: 0 }}
-                />
-                <div className="mt-4 space-y-3">
-                  <a href="#" className="block hover:text-white">
-                    <SplitText
-                      tag="span"
-                      text="Instagram"
-                      className="block"
-                      textAlign="left"
-                      splitType="chars"
-                      delay={12}
-                      duration={0.55}
-                      from={{ opacity: 0, y: 8 }}
-                      to={{ opacity: 1, y: 0 }}
-                    />
-                  </a>
-                  <a href="#" className="block hover:text-white">
-                    <SplitText
-                      tag="span"
-                      text="X"
-                      className="block"
-                      textAlign="left"
-                      splitType="chars"
-                      delay={12}
-                      duration={0.55}
-                      from={{ opacity: 0, y: 8 }}
-                      to={{ opacity: 1, y: 0 }}
-                    />
-                  </a>
-                  <a href="#" className="block hover:text-white">
-                    <SplitText
-                      tag="span"
-                      text="Behance"
-                      className="block"
-                      textAlign="left"
-                      splitType="chars"
-                      delay={12}
-                      duration={0.55}
-                      from={{ opacity: 0, y: 8 }}
-                      to={{ opacity: 1, y: 0 }}
-                    />
-                  </a>
-                </div>
-              </div>
-              <div>
-                <SplitText
-                  tag="p"
-                  text="Contact"
-                  className="block text-[10px] font-medium tracking-[0.32em] text-white/55"
-                  textAlign="left"
-                  splitType="chars"
-                  delay={14}
-                  duration={0.6}
-                  from={{ opacity: 0, y: 8 }}
-                  to={{ opacity: 1, y: 0 }}
-                />
-                <div className="mt-4 space-y-3">
-                  <a href="#" className="block hover:text-white">
-                    <SplitText
-                      tag="span"
-                      text="Email"
-                      className="block"
-                      textAlign="left"
-                      splitType="chars"
-                      delay={12}
-                      duration={0.55}
-                      from={{ opacity: 0, y: 8 }}
-                      to={{ opacity: 1, y: 0 }}
-                    />
-                  </a>
-                  <a href="#" className="block hover:text-white">
-                    <SplitText
-                      tag="span"
-                      text="Start a Project"
-                      className="block"
-                      textAlign="left"
-                      splitType="chars"
-                      delay={12}
-                      duration={0.55}
-                      from={{ opacity: 0, y: 8 }}
-                      to={{ opacity: 1, y: 0 }}
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-[11px] text-white/45 sm:flex-row sm:items-center sm:justify-between">
-           <div className="right-justify">© 2026 Aura Media. All rights reserved.
-             </div>
-            Designed in the dark.
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
