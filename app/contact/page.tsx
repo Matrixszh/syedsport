@@ -1,19 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import SiteFooter from "@/components/SiteFooter";
+import SiteNavbar from "@/components/SiteNavbar";
 
 export const metadata: Metadata = {
   title: "Contact Us | Aura Media",
   description:
     "Contact Aura Media, a global production house engineering cinematic narratives for brands at scale.",
 };
-
-const navItems = [
-  { label: "Work", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "Agency", href: "/about" },
-  { label: "Journal", href: "#" },
-  { label: "Contact", href: "/contact", active: true },
-];
 
 const studioLocations = [
   {
@@ -74,8 +68,6 @@ const studioLocations = [
   },
 ];
 
-const socialLinks = ["Instagram", "LinkedIn", "Vimeo", "Twitter"];
-
 export default function ContactPage() {
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-[#040404] text-[#f1f1f1]">
@@ -97,38 +89,7 @@ export default function ContactPage() {
         }}
       />
 
-      <header className="relative z-10 border-b border-white/10">
-        <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-6 px-5 py-5 sm:px-8">
-          <Link
-            href="/"
-            className="text-[20px] font-semibold uppercase tracking-[-0.04em] text-white"
-          >
-            AURA MEDIA
-          </Link>
-
-          <nav className="hidden items-center gap-8 md:flex">
-            {navItems.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className={[
-                  "text-[11px] uppercase tracking-[0.22em] text-white/72 transition-colors hover:text-white",
-                  item.active ? "text-white" : "",
-                ].join(" ")}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-
-          <Link
-            href="mailto:hello@auramedia.com"
-            className="inline-flex h-11 items-center justify-center rounded-full border border-white/85 bg-[#efefef] px-7 text-[11px] font-medium uppercase tracking-[0.24em] text-black transition-colors hover:bg-white"
-          >
-            Start a Project
-          </Link>
-        </div>
-      </header>
+      <SiteNavbar />
 
       <main className="relative z-10">
         <section className="border-b border-white/10 px-5 pb-28 pt-24 sm:px-8 sm:pb-36 sm:pt-32">
@@ -197,26 +158,7 @@ export default function ContactPage() {
         </section>
       </main>
 
-      <footer className="relative z-10 px-5 py-20 sm:px-8 sm:py-24">
-        <div className="mx-auto flex max-w-[1600px] flex-col gap-12 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <p className="text-[72px] font-semibold uppercase leading-none tracking-[-0.07em] text-[#ededed] sm:text-[96px]">
-              AURA MEDIA
-            </p>
-            <p className="mt-8 text-[11px] uppercase tracking-[0.28em] text-white/54">
-              © 2024 Aura Media Agency. All rights reserved.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap gap-x-8 gap-y-3 text-[11px] uppercase tracking-[0.24em] text-white/72">
-            {socialLinks.map((item) => (
-              <Link key={item} href="#" className="transition-colors hover:text-white">
-                {item}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
