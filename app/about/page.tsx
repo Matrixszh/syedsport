@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SiteFooter from "@/components/SiteFooter";
 import SiteNavbar from "@/components/SiteNavbar";
+import SplitText from "@/components/SplitText";
 
 export const metadata: Metadata = {
   title: "About Us | Aura Media",
@@ -134,13 +135,14 @@ export default function AboutPage() {
             tag="p"
             text="Pushing the boundaries of digital creation. We do not just follow trends, we set them. This is design and code made bold, in noise and in silence."
             className="block mt-6 max-w-[540px] text-[13px] leading-6 text-white/58 sm:text-[14px]"
-            textAlign="left"
-            splitType="words"
-            delay={20}
-            duration={0.8}
-            from={{ opacity: 0, y: 18 }}
-            to={{ opacity: 1, y: 0 }}
-          />
+              textAlign="center"
+              splitType="words"
+              delay={20}
+              duration={0.8}
+              from={{ opacity: 0, y: 18 }}
+              to={{ opacity: 1, y: 0 }}
+            />
+          </div>
         </section>
 
         <section className="mt-10 sm:mt-12">
@@ -324,7 +326,7 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <div className="overflow-hiddenbg-white/[0.03]">
+          <div className="overflow-hidden bg-white/[0.03]">
             <div className="relative grid gap-10 px-7 py-10 sm:grid-cols-3 sm:gap-8  sm:py-12">
               <div
                 className="absolute inset-0"
