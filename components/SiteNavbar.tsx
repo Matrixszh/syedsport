@@ -1,6 +1,7 @@
 "use client";
 
 import StaggeredMenu from "@/components/StaggeredMenu";
+import { usePathname } from "next/navigation";
 
 type SiteNavbarProps = {
   colors?: string[];
@@ -24,12 +25,48 @@ const socialItems = [
 ];
 
 export default function SiteNavbar({
-  colors = ["#3f3f40", "#FFD700"],
-  accentColor = "#FFD700",
-  menuButtonColor = "#ffffff",
-  openMenuButtonColor = "#ffffff",
-  logoUrl = "/tulip.png",
+  colors,
+  accentColor,
+  menuButtonColor,
+  openMenuButtonColor,
+  logoUrl,
 }: SiteNavbarProps) {
+  const pathname = usePathname();
+
+  const pageTheme = {
+    "/about": {
+      colors: ["#2a0d42", "#1877ff"],
+      accentColor: "#7b2cff",
+      menuButtonColor: "#ffffff",
+      openMenuButtonColor: "#ffffff",
+      logoUrl: "/tulip.png",
+    },
+    "/services": {
+      colors: ["#3f3f40", "#FFD700"],
+      accentColor: "#FFD700",
+      menuButtonColor: "#ffffff",
+      openMenuButtonColor: "#ffffff",
+      logoUrl: "/tulip.png",
+    },
+    "/contact": {
+      colors: ["#2b0c16", "#ff1f6f"],
+      accentColor: "#ff1f6f",
+      menuButtonColor: "#ffffff",
+      openMenuButtonColor: "#ffffff",
+      logoUrl: "/tulip.png",
+    },
+    default: {
+      colors: ["#3f3f40", "#FFD700"],
+      accentColor: "#FFD700",
+      menuButtonColor: "#ffffff",
+      openMenuButtonColor: "#ffffff",
+      logoUrl: "/tulip.png",
+    },
+  } as const;
+
+  const theme =
+    pageTheme[pathname as keyof typeof pageTheme] ?? pageTheme.default;
+
   return (
     <StaggeredMenu
       position="right"
@@ -37,12 +74,12 @@ export default function SiteNavbar({
       socialItems={socialItems}
       displaySocials
       displayItemNumbering={true}
-      menuButtonColor={menuButtonColor}
-      openMenuButtonColor={openMenuButtonColor}
+      menuButtonColor={menuButtonColor ?? theme.menuButtonColor}
+      openMenuButtonColor={openMenuButtonColor ?? theme.openMenuButtonColor}
       changeMenuColorOnOpen={true}
-      colors={colors}
-      logoUrl={logoUrl}
-      accentColor={accentColor}
+      colors={colors ?? [...theme.colors]}
+      logoUrl={logoUrl ?? theme.logoUrl}
+      accentColor={accentColor ?? theme.accentColor}
       isFixed={true}
     />
   );

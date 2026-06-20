@@ -197,6 +197,18 @@ const SplitText: React.FC<SplitTextProps> = ({
     willChange: "transform, opacity",
   };
 
+  const hasGradientText =
+    className.includes("bg-clip-text") || className.includes("text-transparent");
+  const gradientTextStyle: React.CSSProperties | undefined = hasGradientText
+    ? {
+        background: "inherit",
+        backgroundClip: "text",
+        WebkitBackgroundClip: "text",
+        color: "transparent",
+        WebkitTextFillColor: "transparent",
+      }
+    : undefined;
+
   const displayClass = tag === "span" ? "inline-block" : "block";
   const classes = `split-parent overflow-hidden whitespace-normal ${displayClass} ${className}`;
   const resolvedTag = (tag || "p") as keyof React.JSX.IntrinsicElements;
@@ -214,7 +226,11 @@ const SplitText: React.FC<SplitTextProps> = ({
     if (token.type === "char") {
       const value = token.value === " " ? "\u00A0" : token.value;
       return (
-        <span key={token.key} className="split-char inline-block">
+        <span
+          key={token.key}
+          className="split-char inline-block"
+          style={gradientTextStyle}
+        >
           {value}
         </span>
       );
@@ -230,19 +246,31 @@ const SplitText: React.FC<SplitTextProps> = ({
 
     if (splitType === "words, chars" && token.type === "word") {
       const chars = Array.from(token.value).map((ch, i) => (
-        <span key={`${token.key}-${i}`} className="split-char inline-block">
+        <span
+          key={`${token.key}-${i}`}
+          className="split-char inline-block"
+          style={gradientTextStyle}
+        >
           {ch === " " ? "\u00A0" : ch}
         </span>
       ));
       return (
-        <span key={token.key} className="split-word inline-block">
+        <span
+          key={token.key}
+          className="split-word inline-block"
+          style={gradientTextStyle}
+        >
           {chars}
         </span>
       );
     }
 
     return (
-      <span key={token.key} className="split-word inline-block">
+      <span
+        key={token.key}
+        className="split-word inline-block"
+        style={gradientTextStyle}
+      >
         {token.value}
       </span>
     );

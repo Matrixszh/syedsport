@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import SideRays from "@/components/SideRays";
 import SiteFooter from "@/components/SiteFooter";
 import SiteNavbar from "@/components/SiteNavbar";
 
@@ -73,32 +74,40 @@ export default function ContactPage() {
     <div className="relative min-h-screen overflow-x-hidden bg-[#040404] text-[#f1f1f1]">
       <div
         className="pointer-events-none absolute inset-0 opacity-90"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(180deg, rgba(255,255,255,0.018), rgba(0,0,0,0) 26%), linear-gradient(180deg, #040404, #030303)",
-          backgroundSize: "74px 74px, 74px 74px, 100% 100%, 100% 100%",
-        }}
+       
       />
 
       <div
         className="pointer-events-none absolute right-0 top-0 h-[420px] w-[520px] opacity-90"
-        style={{
-          background:
-            "radial-gradient(circle at 82% 10%, rgba(255,79,120,0.26), transparent 42%), linear-gradient(135deg, transparent 28%, rgba(255,20,80,0.18) 44%, transparent 58%), linear-gradient(145deg, transparent 38%, rgba(255,90,130,0.14) 52%, transparent 64%), linear-gradient(155deg, transparent 50%, rgba(125,155,255,0.16) 63%, transparent 76%)",
-          filter: "blur(2px)",
-        }}
+
       />
 
       <SiteNavbar />
 
       <main className="relative z-10">
-        <section className="border-b border-white/10 px-5 pb-28 pt-24 sm:px-8 sm:pb-36 sm:pt-32">
+        <section className="relative border-b border-white/10 px-5 pb-28 pt-24 sm:px-8 sm:pb-36 sm:pt-32">
+          <div className="pointer-events-none absolute inset-0 opacity-80">
+            <SideRays
+              speed={4.4}
+              rayColor1="#EF4444"
+              rayColor2="#ff0000"
+              intensity={2.2}
+              spread={0.}
+              origin="top-right"
+              tilt={0}
+              saturation={1.5}
+              blend={0.75}
+              falloff={1.2}
+              opacity={1}
+              className="h-full w-full"
+            />
+          </div>
           <div className="mx-auto flex min-h-[700px] max-w-[1600px] flex-col items-center justify-center text-center">
             <p className="text-[11px] font-medium uppercase tracking-[0.42em] text-[#ff1f6f]">
               Global Production House
             </p>
 
-            <h1 className="mt-8 max-w-[1460px] text-[68px] font-black uppercase leading-[0.84] tracking-[-0.075em] text-[#ededed] sm:text-[108px] md:text-[148px] lg:text-[178px]">
+            <h1 className="mt-8 max-w-[1460px] text-[68px] font-bold uppercase leading-[0.84] tracking-[-0.075em] text-white sm:text-[108px] md:text-[148px] lg:text-[178px]">
               CINEMATIC
               <br />
               AUTHORITY
