@@ -1,7 +1,7 @@
 "use client";
 
-import StaggeredMenu from "@/components/StaggeredMenu";
 import { usePathname } from "next/navigation";
+import StaggeredMenu from "@/components/StaggeredMenu";
 
 type SiteNavbarProps = {
   colors?: string[];
@@ -24,48 +24,42 @@ const socialItems = [
   { label: "LinkedIn", link: "https://linkedin.com" },
 ];
 
+const navbarThemes = {
+  "/about": {
+    colors: ["#18181b", "#10d7d1"],
+    accentColor: "#10d7d1",
+    menuButtonColor: "#ffffff",
+    openMenuButtonColor: "#10d7d1",
+  },
+  "/services": {
+    colors: ["#1d2724", "#8db8a9"],
+    accentColor: "#8db8a9",
+    menuButtonColor: "#f5f5f5",
+    openMenuButtonColor: "#8db8a9",
+  },
+  "/contact": {
+    colors: ["#261117", "#ff1f6f"],
+    accentColor: "#ff1f6f",
+    menuButtonColor: "#ffffff",
+    openMenuButtonColor: "#ff1f6f",
+  },
+  "/": {
+    colors: ["#3f3f40", "#FFD700"],
+    accentColor: "#FFD700",
+    menuButtonColor: "#ffffff",
+    openMenuButtonColor: "#FFD700",
+  },
+} as const;
+
 export default function SiteNavbar({
   colors,
   accentColor,
   menuButtonColor,
   openMenuButtonColor,
-  logoUrl,
+  logoUrl = "/tulip.png",
 }: SiteNavbarProps) {
   const pathname = usePathname();
-
-  const pageTheme = {
-    "/about": {
-      colors: ["#2a0d42", "#1877ff"],
-      accentColor: "#7b2cff",
-      menuButtonColor: "#ffffff",
-      openMenuButtonColor: "#ffffff",
-      logoUrl: "/tulip.png",
-    },
-    "/services": {
-      colors: ["#3f3f40", "#FFD700"],
-      accentColor: "#FFD700",
-      menuButtonColor: "#ffffff",
-      openMenuButtonColor: "#ffffff",
-      logoUrl: "/tulip.png",
-    },
-    "/contact": {
-      colors: ["#2b0c16", "#ff1f6f"],
-      accentColor: "#ff1f6f",
-      menuButtonColor: "#ffffff",
-      openMenuButtonColor: "#ffffff",
-      logoUrl: "/tulip.png",
-    },
-    default: {
-      colors: ["#3f3f40", "#FFD700"],
-      accentColor: "#FFD700",
-      menuButtonColor: "#ffffff",
-      openMenuButtonColor: "#ffffff",
-      logoUrl: "/tulip.png",
-    },
-  } as const;
-
-  const theme =
-    pageTheme[pathname as keyof typeof pageTheme] ?? pageTheme.default;
+  const theme = navbarThemes[pathname as keyof typeof navbarThemes] ?? navbarThemes["/"];
 
   return (
     <StaggeredMenu
@@ -78,7 +72,7 @@ export default function SiteNavbar({
       openMenuButtonColor={openMenuButtonColor ?? theme.openMenuButtonColor}
       changeMenuColorOnOpen={true}
       colors={colors ?? [...theme.colors]}
-      logoUrl={logoUrl ?? theme.logoUrl}
+      logoUrl={logoUrl}
       accentColor={accentColor ?? theme.accentColor}
       isFixed={true}
     />

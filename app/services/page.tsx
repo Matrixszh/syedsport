@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ShapeGrid from "@/components/ShapeGrid";
 import SiteFooter from "@/components/SiteFooter";
 import SiteNavbar from "@/components/SiteNavbar";
 import SplitText from "@/components/SplitText";
@@ -109,10 +110,22 @@ export default function AboutPage() {
         className="pointer-events-none fixed inset-0 -z-10"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.028) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.028) 1px, transparent 1px), radial-gradient(circle at 50% 16%, rgba(255,255,255,0.06), transparent 28%), linear-gradient(180deg, rgba(255,255,255,0.015), rgba(0,0,0,0) 25%), linear-gradient(180deg, #030303, #020202)",
-          backgroundSize: "72px 72px, 72px 72px, 100% 100%, 100% 100%, 100% 100%",
+            "radial-gradient(circle at 50% 16%, rgba(255,255,255,0.06), transparent 28%), linear-gradient(180deg, rgba(255,255,255,0.015), rgba(0,0,0,0) 25%), linear-gradient(180deg, #030303, #020202)",
+          backgroundSize: "100% 100%, 100% 100%, 100% 100%",
         }}
       />
+      <div className="pointer-events-none fixed inset-0 -z-10 opacity-80">
+        <ShapeGrid
+          speed={0.5}
+          squareSize={80}
+          direction="diagonal"
+          borderColor="#293a36"
+          hoverFillColor="#222222"
+          shape="square"
+          hoverTrailAmount={0}
+        />
+      </div>
+      <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_50%_18%,rgba(141,184,169,0.08),transparent_26%)]" />
 
       <SiteNavbar />
 
