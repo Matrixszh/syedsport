@@ -40,7 +40,7 @@ export default function Home() {
         isFixed={true}
       />
 
-      <main className="relative z-10 mx-auto w-full flex-1 px-5 pt-24 sm:px-8 sm:pt-28">
+      <main className="relative z-10 mx-auto w-full pt-24 sm:pt-28">
         <section className="pt-10 sm:pt-16">
           <SplitText
             tag="p"
@@ -74,7 +74,7 @@ export default function Home() {
               splitType="chars"
               delay={40}
               duration={1.4}
-              from={{ opacity: 0, y: 26 }}
+              from={{ opacity: 0 , y: 26 }}
               to={{ opacity: 1, y: 0 }}
             />
           </h1>
@@ -272,9 +272,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="pb-20 sm:pb-28">
-          <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">
-            <div className="relative grid gap-10 px-7 py-10 sm:grid-cols-3 sm:gap-8 sm:px-10 sm:py-12">
+        <section>
+          <div className="overflow-hiddenbg-white/[0.03]">
+            <div className="relative grid gap-10 px-7 py-10 sm:grid-cols-3 sm:gap-8  sm:py-12">
               <div
                 className="absolute inset-0"
                 style={{
@@ -370,7 +370,7 @@ export default function Home() {
       </main>
 
       <footer className="relative z-10 border-t border-white/10 bg-black/30">
-        <div className="mx-auto w-full max-w-[1120px] px-5 py-14 sm:px-8 sm:py-16">
+        <div className="mx-auto w-full max-w-full px-5 py-14 sm:px-8 sm:py-16">
           <div className="grid gap-10 md:grid-cols-12 md:gap-8">
             <div className="md:col-span-6">
               <SplitText
@@ -381,7 +381,7 @@ export default function Home() {
                 splitType="chars"
                 delay={18}
                 duration={0.7}
-                from={{ opacity: 0, y: 10 }}
+                from={{ opacity: 0, y: 8 }}
                 to={{ opacity: 1, y: 0 }}
               />
               <SplitText
@@ -392,7 +392,7 @@ export default function Home() {
                 splitType="words"
                 delay={14}
                 duration={0.6}
-                from={{ opacity: 0, y: 10 }}
+                from={{ opacity: 0, y: 8 }}
                 to={{ opacity: 1, y: 0 }}
               />
             </div>
@@ -407,7 +407,7 @@ export default function Home() {
                   splitType="chars"
                   delay={14}
                   duration={0.6}
-                  from={{ opacity: 0, y: 10 }}
+                  from={{ opacity: 0, y: 8 }}
                   to={{ opacity: 1, y: 0 }}
                 />
                 <div className="mt-4 space-y-3">
@@ -461,7 +461,7 @@ export default function Home() {
                   splitType="chars"
                   delay={14}
                   duration={0.6}
-                  from={{ opacity: 0, y: 10 }}
+                  from={{ opacity: 0, y: 8 }}
                   to={{ opacity: 1, y: 0 }}
                 />
                 <div className="mt-4 space-y-3">
@@ -515,7 +515,7 @@ export default function Home() {
                   splitType="chars"
                   delay={14}
                   duration={0.6}
-                  from={{ opacity: 0, y: 10 }}
+                  from={{ opacity: 0, y: 8 }}
                   to={{ opacity: 1, y: 0 }}
                 />
                 <div className="mt-4 space-y-3">
@@ -551,28 +551,9 @@ export default function Home() {
           </div>
 
           <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-[11px] text-white/45 sm:flex-row sm:items-center sm:justify-between">
-            <SplitText
-              tag="p"
-              text="© 2026 Aura Media. All rights reserved."
-              className="block"
-              textAlign="left"
-              splitType="words"
-              delay={10}
-              duration={0.55}
-              from={{ opacity: 0, y: 8 }}
-              to={{ opacity: 1, y: 0 }}
-            />
-            <SplitText
-              tag="p"
-              text="Designed in the dark."
-              className="block"
-              textAlign="left"
-              splitType="words"
-              delay={10}
-              duration={0.55}
-              from={{ opacity: 0, y: 8 }}
-              to={{ opacity: 1, y: 0 }}
-            />
+           <div className="right-justify">© 2026 Aura Media. All rights reserved.
+             </div>
+            Designed in the dark.
           </div>
         </div>
       </footer>

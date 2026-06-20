@@ -214,33 +214,15 @@ export default function ServicesPage() {
                   href="/#work"
                   className="inline-flex h-[42px] min-w-[142px] items-center justify-center border border-white bg-transparent px-5 text-sm font-semibold tracking-[0.35em] text-white transition-colors hover:bg-white/30"
                 >
-                  <SplitText
-                    tag="span"
-                    text="VIEW OUR WORK"
-                    className="block"
-                    textAlign="center"
-                    splitType="chars"
-                    delay={8}
-                    duration={0.45}
-                    from={{ opacity: 0, y: 8 }}
-                    to={{ opacity: 1, y: 0 }}
-                  />
+                  VIEW OUR WORK
+                    
                 </Link>
                 <Link
                   href="/services"
                   className="inline-flex h-[42px] min-w-[142px] items-center justify-center border border-white bg-transparent px-5 text-sm font-semibold tracking-[0.35em] text-white transition-colors hover:bg-white/30"
                 >
-                  <SplitText
-                    tag="span"
-                    text="DISCOVER AURA"
-                    className="block"
-                    textAlign="center"
-                    splitType="chars"
-                    delay={8}
-                    duration={0.45}
-                    from={{ opacity: 0, y: 8 }}
-                    to={{ opacity: 1, y: 0 }}
-                  />
+                  
+                  DISCOVER AURA
                 </Link>
               </div>
             </div>
@@ -307,7 +289,7 @@ export default function ServicesPage() {
           />
 
           <div className="mt-10 px-5 grid gap-6 md:grid-cols-3 md:gap-6">
-              <article className="min-h-[275px] border border-white/8 bg-white/[0.05] p-7 sm:p-8">
+              <article className="min-h-[275px] border border-white/8 bg-white/[0.05] p-7 sm:p-8 transition-all duration-500 ease-out hover:-translate-y-1 hover:border-white hover:shadow-amber-500 hover:shadow-lg">
                 <div className="flex items-start justify-between">
                   <SplitText
                     tag="p"
@@ -361,7 +343,7 @@ export default function ServicesPage() {
                 />
               </article>
 
-              <article className="min-h-[275px] border border-white/8 bg-white/[0.05] p-7 sm:p-8">
+              <article className="min-h-[275px] border border-white/8 bg-white/[0.05] p-7 sm:p-8 transition-all duration-500 ease-out hover:-translate-y-1 hover:border-white hover:shadow-amber-500 hover:shadow-lg">
                 <div className="flex items-start justify-between">
                   <SplitText
                     tag="p"
@@ -415,7 +397,7 @@ export default function ServicesPage() {
                 />
               </article>
 
-              <article className="min-h-[275px] border border-white/8 bg-white/[0.05] p-7 sm:p-8">
+              <article className="min-h-[275px] border border-white/8 bg-white/[0.05] p-7 sm:p-8 transition-all duration-500 ease-out hover:-translate-y-1 hover:border-white hover:shadow-amber-500 hover:shadow-lg">
                 <div className="flex items-start justify-between">
                   <SplitText
                     tag="p"
@@ -497,7 +479,7 @@ export default function ServicesPage() {
               <SplitText
                 tag="h2"
                 text={"READY TO SHIFT THE\nCULTURE?"}
-                className="block text-center text-[24px] font-black uppercase leading-[1.05] tracking-[-0.03em] sm:text-[30px]"
+                className="block text-center text-[24px] font-black uppercase leading-[1.05] tracking-[-0.03em] sm:text-6xl"
                 textAlign="center"
                 splitType="lines"
                 delay={14}
@@ -710,28 +692,10 @@ export default function ServicesPage() {
           </div>
 
           <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-[11px] text-white/45 sm:flex-row sm:items-center sm:justify-between">
-            <SplitText
-              tag="p"
-              text="© 2026 Aura Media. All rights reserved."
-              className="block"
-              textAlign="left"
-              splitType="words"
-              delay={10}
-              duration={0.55}
-              from={{ opacity: 0, y: 8 }}
-              to={{ opacity: 1, y: 0 }}
-            />
-            <SplitText
-              tag="p"
-              text="Designed in the dark."
-              className="block"
-              textAlign="left"
-              splitType="words"
-              delay={10}
-              duration={0.55}
-              from={{ opacity: 0, y: 8 }}
-              to={{ opacity: 1, y: 0 }}
-            />
+            <div className="right-justify">© 2026 Aura Media. All rights reserved.
+             </div>
+            Designed in the dark.
+          
           </div>
         </div>
       </footer>
