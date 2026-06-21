@@ -3,6 +3,7 @@ import Link from "next/link";
 import SideRays from "@/components/SideRays";
 import SiteFooter from "@/components/SiteFooter";
 import SiteNavbar from "@/components/SiteNavbar";
+import SplitText from "@/components/SplitText";
 
 export const metadata: Metadata = {
   title: "Contact Us | Aura Media",
@@ -103,27 +104,57 @@ export default function ContactPage() {
             />
           </div>
           <div className="mx-auto flex min-h-[700px] max-w-[1600px] flex-col items-center justify-center text-center">
-            <p className="text-[11px] font-medium uppercase tracking-[0.42em] text-[#EF4444]">
-              Global Production House
-            </p>
+            <SplitText
+              tag="p"
+              text="Global Production House"
+              className="text-[11px] font-medium uppercase tracking-[0.42em] text-[#EF4444]"
+              textAlign="center"
+              splitType="chars"
+              delay={12}
+              duration={0.55}
+              from={{ opacity: 0, y: 10 }}
+              to={{ opacity: 1, y: 0 }}
+            />
 
-            <h1 className="mt-8 max-w-[1460px] text-[68px] font-bold uppercase leading-[0.84] tracking-[-0.075em] text-white sm:text-[108px] md:text-[148px] lg:text-[178px]">
-              CINEMATIC
-              <br />
-              AUTHORITY
-            </h1>
+            <SplitText
+              tag="h1"
+              text={"CINEMATIC\nAUTHORITY"}
+              className="mt-8 max-w-[1460px] text-[68px] font-bold uppercase leading-[0.84] tracking-[-0.075em] text-white sm:text-[108px] md:text-[148px] lg:text-[178px]"
+              textAlign="center"
+              splitType="lines"
+              delay={16}
+              duration={0.7}
+              from={{ opacity: 0, y: 18 }}
+              to={{ opacity: 1, y: 0 }}
+            />
 
-            <p className="mt-8 max-w-[840px] text-[18px] leading-[1.85] text-white/72 sm:text-[20px]">
-              We engineer high-impact visual narratives for global brands. From
-              concept to global distribution, our production network operates at
-              the intersection of art and scale.
-            </p>
+            <SplitText
+              tag="p"
+              text="We engineer high-impact visual narratives for global brands. From concept to global distribution, our production network operates at the intersection of art and scale."
+              className="mt-8 max-w-[840px] text-[18px] leading-[1.85] text-white/72 sm:text-[20px]"
+              textAlign="center"
+              splitType="words"
+              delay={12}
+              duration={0.55}
+              from={{ opacity: 0, y: 10 }}
+              to={{ opacity: 1, y: 0 }}
+            />
 
             <Link
               href="https://vimeo.com"
               className="mt-12 inline-flex items-center justify-center gap-4 rounded-full border border-white/20 bg-[#ededed] px-8 py-4 text-[11px] font-medium uppercase tracking-[0.28em] text-black transition-colors hover:bg-white"
             >
-              <span>View the Reel</span>
+              <SplitText
+                tag="span"
+                text="View the Reel"
+                className="block"
+                textAlign="center"
+                splitType="chars"
+                delay={10}
+                duration={0.5}
+                from={{ opacity: 0, y: 8 }}
+                to={{ opacity: 1, y: 0 }}
+              />
               <span className="text-base leading-none">→</span>
             </Link>
           </div>
@@ -132,19 +163,29 @@ export default function ContactPage() {
         <section className="border-b border-white/10 px-5 py-24 sm:px-8 sm:py-32">
           <div className="mx-auto grid max-w-[1600px] gap-12 lg:grid-cols-[1.1fr_1.6fr] lg:gap-16">
             <div className="max-w-[500px]">
-              <h2 className="text-[54px] font-black uppercase leading-[0.95] tracking-[-0.065em] text-[#ededed] sm:text-[74px]">
-                GLOBAL
-                <br />
-                STUDIO
-                <br />
-                NETWORK
-              </h2>
+              <SplitText
+                tag="h2"
+                text={"GLOBAL\nSTUDIO\nNETWORK"}
+                className="text-[54px] font-black uppercase leading-[0.95] tracking-[-0.065em] text-[#ededed] sm:text-[74px]"
+                textAlign="left"
+                splitType="lines"
+                delay={16}
+                duration={0.65}
+                from={{ opacity: 0, y: 18 }}
+                to={{ opacity: 1, y: 0 }}
+              />
 
-              <p className="mt-8 max-w-[420px] text-[18px] leading-[1.85] text-white/70">
-                Operating across continents, our infrastructure is designed for
-                high-end production at any scale. We maintain state-of-the-art
-                facilities in key media capitals.
-              </p>
+              <SplitText
+                tag="p"
+                text="Operating across continents, our infrastructure is designed for high-end production at any scale. We maintain state-of-the-art facilities in key media capitals."
+                className="mt-8 max-w-[420px] text-[18px] leading-[1.85] text-white/70"
+                textAlign="left"
+                splitType="words"
+                delay={12}
+                duration={0.55}
+                from={{ opacity: 0, y: 10 }}
+                to={{ opacity: 1, y: 0 }}
+              />
             </div>
 
             <div className="grid gap-8 md:grid-cols-2">
@@ -154,12 +195,28 @@ export default function ContactPage() {
                   className="min-h-[320px] border-t border-white/10 px-5 py-6 sm:px-6"
                 >
                   <div className="mb-8">{location.icon}</div>
-                  <p className="text-[11px] font-medium uppercase tracking-[0.34em] text-white/72">
-                    {location.city}
-                  </p>
-                  <p className="mt-6 max-w-[260px] text-[17px] leading-[1.8] text-white/72">
-                    {location.description}
-                  </p>
+                  <SplitText
+                    tag="p"
+                    text={location.city}
+                    className="text-[11px] font-medium uppercase tracking-[0.34em] text-white/72"
+                    textAlign="left"
+                    splitType="chars"
+                    delay={10}
+                    duration={0.5}
+                    from={{ opacity: 0, y: 8 }}
+                    to={{ opacity: 1, y: 0 }}
+                  />
+                  <SplitText
+                    tag="p"
+                    text={location.description}
+                    className="mt-6 max-w-[260px] text-[17px] leading-[1.8] text-white/72"
+                    textAlign="left"
+                    splitType="words"
+                    delay={10}
+                    duration={0.5}
+                    from={{ opacity: 0, y: 8 }}
+                    to={{ opacity: 1, y: 0 }}
+                  />
                 </article>
               ))}
             </div>
