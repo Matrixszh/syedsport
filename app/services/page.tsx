@@ -119,7 +119,7 @@ export default function AboutPage() {
           speed={0.5}
           squareSize={80}
           direction="diagonal"
-          borderColor="#293a36"
+          borderColor="#10d7d1"
           hoverFillColor="#222222"
           shape="square"
           hoverTrailAmount={0}

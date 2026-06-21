@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Ferrofluid from "@/components/Ferrofluid";
 import SiteFooter from "@/components/SiteFooter";
 import SiteNavbar from "@/components/SiteNavbar";
 import SplitText from "@/components/SplitText";
@@ -26,7 +27,7 @@ const archiveCards = [
     subtitle: "3D / System",
     imageSrc: "/img2.jpg",
     className: "md:col-span-5",
-    heightClassName: "min-h-[250px]",
+    heightClassName: "min-h-[420px] md:min-h-[520px]",
     imagePosition: "center",
   },
   {
@@ -49,11 +50,31 @@ const metrics = [
 export default function AboutPage() {
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-[#040404] text-white">
+      <div className="pointer-events-none fixed inset-0  opacity-100">
+        <Ferrofluid
+          colors={["#7C3AED", "#7C3AED", "#7C3AED"]}
+          speed={0.1}
+          scale={1.6}
+          turbulence={1}
+          fluidity={0.1}
+          rimWidth={0.2}
+          sharpness={2.5}
+          shimmer={1.5}
+          glow={2}
+          flowDirection="down"
+          opacity={1}
+          mouseInteraction
+          mouseStrength={1}
+          mouseRadius={0.35}
+          mixBlendMode="screen"
+          className="h-full w-full"
+        />
+      </div>
       <div
-        className="pointer-events-none fixed inset-0 -z-10 opacity-90"
+        className="pointer-events-none fixed inset-0 -z-10 opacity-55"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px), radial-gradient(circle at 50% 16%, rgba(80,40,255,0.12), transparent 26%), linear-gradient(180deg, rgba(255,255,255,0.015), rgba(0,0,0,0) 24%), linear-gradient(180deg, #040404, #020202)",
+            "linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px), radial-gradient(circle at 50% 16%, rgba(124,58,237,0.1), transparent 30%), linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0) 24%), linear-gradient(180deg, rgba(4,4,4,0.76), rgba(2,2,2,0.88))",
           backgroundSize: "72px 72px, 72px 72px, 100% 100%, 100% 100%, 100% 100%",
         }}
       />
@@ -66,7 +87,7 @@ export default function AboutPage() {
             <SplitText
               tag="p"
               text="REBELLION / 01"
-              className="block text-[10px] font-medium uppercase tracking-[0.34em] text-white/55"
+              className="block text-[10px] font-medium uppercase tracking-[0.34em] text-[#7C3AED]"
               textAlign="left"
               splitType="chars"
               delay={12}
@@ -90,7 +111,7 @@ export default function AboutPage() {
               <SplitText
                 tag="h1"
                 text="REBELLION"
-                className="block bg-[linear-gradient(90deg,#d61fff_0%,#7b2cff_42%,#1877ff_100%)] bg-clip-text text-[56px] font-black uppercase leading-[0.82] tracking-[-0.075em] text-transparent sm:text-[94px] md:text-[126px]"
+                className="block text-[54px] font-black uppercase leading-[0.84] tracking-[-0.07em] text-[#e8e8e8] sm:text-[88px] md:text-[118px]"
                 textAlign="left"
                 splitType="chars"
                 delay={12}
@@ -149,7 +170,7 @@ export default function AboutPage() {
 
             <div className="relative mt-12 overflow-hidden border border-white/10 bg-white/[0.03]">
               <div
-                className="absolute inset-0 bg-cover bg-center opacity-70"
+                className="absolute inset-0 bg-cover bg-center opacity-100"
                 style={{ backgroundImage: "url('/img3.jpg')" }}
               />
               <div className="absolute inset-0 bg-gradient-to-br from-black/55 via-black/35 to-black/80" />
@@ -198,7 +219,7 @@ export default function AboutPage() {
               <SplitText
                 tag="p"
                 text="Selected works from the future we made."
-                className="block max-w-[260px] text-[11px] leading-5 text-white/55"
+                className="block max-w-[260px] text-[11px] leading-5 text-[#7C3AED]"
                 textAlign="left"
                 splitType="words"
                 delay={10}
@@ -227,7 +248,7 @@ export default function AboutPage() {
                     <SplitText
                       tag="p"
                       text={`${card.id} / ${card.subtitle}`}
-                      className="block text-[9px] font-medium uppercase tracking-[0.28em] text-white/38"
+                      className="block text-[9px] font-medium uppercase tracking-[0.28em] text-[#7C3AED]"
                       textAlign="left"
                       splitType="chars"
                       delay={8}
@@ -253,7 +274,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className=" pb-0 ">
+        <section className="px-5 sm:px-8 pb-10 ">
           <div className="mx-auto overflow-hidden border border-white/8 bg-white/[0.03]">
             <div className="relative grid gap-10 px-6 py-10 sm:grid-cols-3 sm:px-8 sm:py-12">
               <div
@@ -271,7 +292,7 @@ export default function AboutPage() {
                     text={metric.value}
                     className={`block text-[44px] font-black tracking-[-0.05em] sm:text-[58px] ${
                       metric.accent
-                        ? "bg-[linear-gradient(90deg,#cf1bff_0%,#2b7fff_100%)] bg-clip-text text-transparent"
+                        ? "bg-[#7C3AED] bg-clip-text text-transparent"
                         : "text-white/90"
                     }`}
                     textAlign="center"

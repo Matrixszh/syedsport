@@ -26,22 +26,22 @@ const socialItems = [
 
 const navbarThemes = {
   "/about": {
-    colors: ["#18181b", "#10d7d1"],
-    accentColor: "#10d7d1",
+    colors: ["#18181b", "#7C3AED"],
+    accentColor: "#7C3AED",
     menuButtonColor: "#ffffff",
-    openMenuButtonColor: "#10d7d1",
+    openMenuButtonColor: "#7C3AED",
   },
   "/services": {
-    colors: ["#1d2724", "#8db8a9"],
-    accentColor: "#8db8a9",
+    colors: ["#1d2724", "#10d7d1"],
+    accentColor: "#10d7d1",
     menuButtonColor: "#f5f5f5",
-    openMenuButtonColor: "#8db8a9",
+    openMenuButtonColor: "#10d7d1",
   },
   "/contact": {
-    colors: ["#261117", "#ff1f6f"],
-    accentColor: "#ff1f6f",
+    colors: ["#261117", "#EF4444"],
+    accentColor: "#EF4444",
     menuButtonColor: "#ffffff",
-    openMenuButtonColor: "#ff1f6f",
+    openMenuButtonColor: "#EF4444",
   },
   "/": {
     colors: ["#3f3f40", "#FFD700"],

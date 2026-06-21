@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import SplitText from "@/components/SplitText";
 
 type SiteFooterProps = {
@@ -24,18 +25,31 @@ const contactLinks = [
   { label: "Start a Project", href: "/contact" },
 ];
 
+const footerBrandThemes = {
+  "/": "text-[#ffd700]",
+  "/about": "text-[#7C3AED]",
+  "/services": "text-[#10d7d1]",
+  "/contact": "text-[#EF4444]",
+} as const;
+
 export default function SiteFooter({
-  brandClassName = "text-white/80",
+  brandClassName,
 }: SiteFooterProps) {
+  const pathname = usePathname();
+  const resolvedBrandClassName =
+    brandClassName ??
+    footerBrandThemes[pathname as keyof typeof footerBrandThemes] ??
+    "text-white/80";
+
   return (
-    <footer className="relative z-10 border-t border-white/10 bg-black/30">
+    <footer className="relative z-10 border-t border-white/10 bg-black">
       <div className="mx-auto w-full max-w-full px-5 py-14 sm:px-8 sm:py-16">
         <div className="grid gap-10 md:grid-cols-12 md:gap-8">
           <div className="md:col-span-6">
             <SplitText
               tag="p"
               text="AURA MEDIA"
-              className={`block text-[12px] font-semibold tracking-[0.35em] ${brandClassName}`}
+              className={`block text-[12px] font-semibold tracking-[0.35em] ${resolvedBrandClassName}`}
               textAlign="left"
               splitType="chars"
               delay={18}

@@ -22,7 +22,7 @@ const studioLocations = [
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="text-[#ff1f6f]"
+        className="text-[#EF4444]"
         aria-hidden="true"
       >
         <path
@@ -50,7 +50,7 @@ const studioLocations = [
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="text-[#ff1f6f]"
+        className="text-[#EF4444]"
         aria-hidden="true"
       >
         <path
@@ -103,7 +103,7 @@ export default function ContactPage() {
             />
           </div>
           <div className="mx-auto flex min-h-[700px] max-w-[1600px] flex-col items-center justify-center text-center">
-            <p className="text-[11px] font-medium uppercase tracking-[0.42em] text-[#ff1f6f]">
+            <p className="text-[11px] font-medium uppercase tracking-[0.42em] text-[#EF4444]">
               Global Production House
             </p>
 
