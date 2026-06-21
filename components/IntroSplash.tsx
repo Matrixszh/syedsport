@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const DISPLAY_DURATION_MS = 5000;
-const FADE_DURATION_MS = 900;
+const DISPLAY_DURATION_MS = 1000;
+const FADE_DURATION_MS = 300;
 
 export default function IntroSplash() {
   const [isFading, setIsFading] = useState(false);
