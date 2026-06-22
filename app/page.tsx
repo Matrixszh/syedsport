@@ -7,6 +7,7 @@ import Beams from "@/components/Beams";
 import DotGrid from "@/components/DotGrid";
 import SplitText from "@/components/SplitText";
 import StaggeredMenu from "@/components/StaggeredMenu";
+import Globe from "@/components/lightswind/globe";
 
 type SpotlightSectionProps = {
   eyebrow: string;
@@ -269,6 +270,63 @@ export default function ServicesPage() {
                   duration={0.55}
                   from={{ opacity: 0, y: 12 }}
                   to={{ opacity: 1, y: 0 }}
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-y border-white/10 bg-white/[0.03] px-6 py-16 sm:px-10 sm:py-20 md:px-14">
+          <div className="mx-auto grid max-w-[1400px] items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+            <div className="max-w-[640px]">
+              <SplitText
+                tag="p"
+                text="// GLOBAL SIGNAL"
+                className="text-[10px] font-semibold tracking-[0.3em] text-[#FFD700]/70"
+                textAlign="left"
+                splitType="chars"
+                delay={10}
+                duration={0.45}
+                from={{ opacity: 0, y: 10 }}
+                to={{ opacity: 1, y: 0 }}
+              />
+              <SplitText
+                tag="h2"
+                text="A WORLDWIDE VIEW OF MODERN BRAND IMPACT."
+                className="mt-6 text-[34px] font-black uppercase leading-[0.92] tracking-[-0.05em] text-white sm:text-[50px] md:text-[64px]"
+                textAlign="left"
+                splitType="words, chars"
+                delay={12}
+                duration={0.65}
+                from={{ opacity: 0, y: 18 }}
+                to={{ opacity: 1, y: 0 }}
+              />
+              <SplitText
+                tag="p"
+                text="Aura Media builds campaigns engineered to travel across markets, platforms, and cultures. This global lens keeps every launch precise, cinematic, and impossible to ignore."
+                className="mt-6 max-w-[560px] text-[15px] leading-8 text-white/68 sm:text-[16px]"
+                textAlign="left"
+                splitType="words"
+                delay={10}
+                duration={0.55}
+                from={{ opacity: 0, y: 12 }}
+                to={{ opacity: 1, y: 0 }}
+              />
+            </div>
+
+            <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-black/50 p-6 shadow-[0_0_80px_rgba(255,215,0,0.08)] sm:p-8">
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,215,0,0.12),transparent_46%)]" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/[0.03] via-transparent to-black/50" />
+              <div className="relative flex min-h-[420px] items-center justify-center">
+                <Globe
+                  theta={0.2}
+                  dark={1}
+                  scale={1.2}
+                  diffuse={1.5}
+                  baseColor="#1a1a1a"
+                  markerColor="#ff0000"
+                  glowColor="#444444"
+                  className="w-full"
                 />
               </div>
             </div>
