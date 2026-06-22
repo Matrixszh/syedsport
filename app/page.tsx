@@ -320,8 +320,8 @@ export default function ServicesPage() {
               <div className="relative mx-auto flex h-full h-[20vh] w-full items-center justify-center sm:min-h-[40vh] ">
                 <Globe
                   locations={globeLocations}
-                  autoRotate={false}
-                  rotationSpeed={0.5}
+                  autoRotate={true}
+                  rotationSpeed={0.7}
                   showAtmosphere={false}
                   showStars={true}
                   enableZoom={false}
