@@ -278,7 +278,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section className="border-y border-white/10 bg-white/[0.03] px-6 py-16 sm:px-10 sm:py-20 md:px-14">
+        <section className="border-y border-white/10 bg-white/[0.03] px-6 py-16 sm:px-10 sm:py-20 md:px-14 ">
           <div className="mx-auto grid max-w-[1400px] items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             <div className="max-w-[640px]">
               <SplitText
@@ -295,7 +295,7 @@ export default function ServicesPage() {
               <SplitText
                 tag="h2"
                 text="A WORLDWIDE NETWORK BUILT FOR CINEMATIC SCALE."
-                className="mt-6 text-[34px] font-black uppercase leading-[0.92] tracking-[-0.05em] text-white sm:text-[50px] md:text-[64px]"
+                className="mt-6 max-w-[320px] text-[26px] font-black uppercase leading-[0.94] tracking-[-0.05em] text-white sm:max-w-[520px] sm:text-[42px] md:max-w-none md:text-[64px]"
                 textAlign="left"
                 splitType="words, chars"
                 delay={12}
@@ -306,7 +306,7 @@ export default function ServicesPage() {
               <SplitText
                 tag="p"
                 text="Every launch is mapped for reach, impact, and cultural precision. The globe visualizes how Aura Media turns distributed teams, markets, and audiences into one synchronized brand experience."
-                className="mt-6 max-w-[560px] text-[15px] leading-8 text-white/68 sm:text-[16px]"
+                className="mt-6 max-w-[330px] text-[14px] leading-7 text-white/68 sm:max-w-[560px] sm:text-[16px] sm:leading-8"
                 textAlign="left"
                 splitType="words"
                 delay={10}
@@ -316,16 +316,16 @@ export default function ServicesPage() {
               />
             </div>
 
-            <div className="relative flex min-h-[620px] items-center justify-center overflow-visible">
-              <div className="relative flex h-full min-h-[620px] w-full items-center justify-center">
+            <div className="pb-15 relative mt-10 flex h-[20vh] w-full items-center justify-center overflow-visible px-4 sm:h-[40vh] sm:px-0 lg:mt-0 ">
+              <div className="relative mx-auto flex h-full h-[20vh] w-full items-center justify-center sm:min-h-[40vh] ">
                 <Globe
                   locations={globeLocations}
                   autoRotate={false}
                   rotationSpeed={0.5}
                   showAtmosphere={false}
-                  showStars={false}
+                  showStars={true}
                   enableZoom={false}
-                  className="h-full min-h-[620px] w-full"
+                  className="mx-auto h-full h-[320px] px-4  lg:px-10"
                 />
               </div>
             </div>

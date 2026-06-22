@@ -18,10 +18,10 @@ export default function Earth({ radius = 1 }: EarthProps) {
   const baseMaterial = useMemo(
     () =>
       new THREE.MeshStandardMaterial({
-        color: "#f4f4f2",
+        color: "#FFD700",
         roughness: 0.96,
         metalness: 0,
-        emissive: new THREE.Color("#f7f7f5"),
+        emissive: new THREE.Color("#FFD700"),
         emissiveIntensity: 0.12,
       }),
     [],
@@ -106,7 +106,7 @@ export default function Earth({ radius = 1 }: EarthProps) {
             map={dotTexture}
             transparent
             alphaTest={0.08}
-            color="#101010"
+            color="#FFD700"
             depthWrite={false}
           />
         </mesh>

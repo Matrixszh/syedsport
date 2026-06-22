@@ -14,30 +14,7 @@ import Stars from "./Stars";
 import type { GlobeLocation, GlobeProps } from "./types";
 
 const fallbackLocations: GlobeLocation[] = [
-  {
-    id: "new-york",
-    name: "New York",
-    latitude: 40.7128,
-    longitude: -74.006,
-    color: "#60a5fa",
-    description: "Strategy and launch campaigns across North America.",
-  },
-  {
-    id: "london",
-    name: "London",
-    latitude: 51.5072,
-    longitude: -0.1276,
-    color: "#a78bfa",
-    description: "Editorial systems and digital experiences for Europe.",
-  },
-  {
-    id: "dubai",
-    name: "Dubai",
-    latitude: 25.2048,
-    longitude: 55.2708,
-    color: "#f59e0b",
-    description: "Luxury campaigns and premium brand positioning.",
-  },
+  
 ];
 
 type GlobeSceneProps = Required<
@@ -70,8 +47,8 @@ function GlobeScene({
   return (
     <>
       <ambientLight intensity={1.75} />
-      <directionalLight position={[4.2, 2.4, 5]} intensity={2.45} color="#ffffff" />
-      <directionalLight position={[-3, -1.6, 2]} intensity={0.45} color="#ffffff" />
+      <directionalLight position={[4.2, 2.4, 5]} intensity={2.45} color="#FFD700" />
+      <directionalLight position={[-3, -1.6, 2]} intensity={0.45} color="#FFD700" />
 
       {showStars ? <Stars /> : null}
 
@@ -128,7 +105,7 @@ function GlobeCanvasInner({
     <div
       ref={containerRef}
       className={cn(
-        "relative isolate flex h-full min-h-[460px] w-full items-center justify-center overflow-visible rounded-[32px]",
+        "relative isolate flex h-full min-h-[300px] w-full items-center justify-center overflow-visible rounded-[32px] sm:min-h-[420px] lg:min-h-[460px]",
         className,
       )}
     >
@@ -156,7 +133,7 @@ function GlobeCanvasInner({
 const GlobeNoSSR = dynamic(async () => Promise.resolve(GlobeCanvasInner), {
   ssr: false,
   loading: () => (
-    <div className="h-full min-h-[460px] w-full animate-pulse rounded-[32px] bg-transparent" />
+    <div className="h-full min-h-[300px] w-full animate-pulse rounded-[32px] bg-transparent sm:min-h-[420px] lg:min-h-[460px]" />
   ),
 });
 
