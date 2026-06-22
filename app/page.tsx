@@ -154,40 +154,7 @@ export default function ServicesPage() {
     },
   ];
 
-  const globeLocations: GlobeLocation[] = [
-    {
-      id: "new-york",
-      name: "New York",
-      latitude: 40.7128,
-      longitude: -74.006,
-      color: "#60a5fa",
-      description: "Launch strategy, campaign systems, and performance rollout.",
-    },
-    {
-      id: "london",
-      name: "London",
-      latitude: 51.5072,
-      longitude: -0.1276,
-      color: "#c084fc",
-      description: "Editorial direction and immersive digital storytelling.",
-    },
-    {
-      id: "singapore",
-      name: "Singapore",
-      latitude: 1.3521,
-      longitude: 103.8198,
-      color: "#34d399",
-      description: "Cross-market growth strategy and premium brand expansion.",
-    },
-    {
-      id: "dubai",
-      name: "Dubai",
-      latitude: 25.2048,
-      longitude: 55.2708,
-      color: "#f59e0b",
-      description: "Luxury-facing campaigns designed for global attention.",
-    },
-  ];
+  const globeLocations: GlobeLocation[] = [];
 
   return (
     <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden bg-black text-white">
@@ -349,16 +316,16 @@ export default function ServicesPage() {
               />
             </div>
 
-            <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[#020817]/60 p-2 shadow-[0_0_90px_rgba(56,189,248,0.08)]">
-              <div className="relative min-h-[460px]">
+            <div className="relative flex min-h-[620px] items-center justify-center overflow-visible">
+              <div className="relative flex h-full min-h-[620px] w-full items-center justify-center">
                 <Globe
                   locations={globeLocations}
-                  autoRotate={true}
+                  autoRotate={false}
                   rotationSpeed={0.5}
-                  showAtmosphere={true}
-                  showStars={true}
-                  enableZoom={true}
-                  className="min-h-[460px]"
+                  showAtmosphere={false}
+                  showStars={false}
+                  enableZoom={false}
+                  className="h-full min-h-[620px] w-full"
                 />
               </div>
             </div>

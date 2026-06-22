@@ -69,16 +69,16 @@ function GlobeScene({
 
   return (
     <>
-      <ambientLight intensity={0.8} />
-      <directionalLight position={[3.5, 1.8, 4.5]} intensity={2.2} color="#ffffff" />
-      <pointLight position={[-3, -1, -4]} intensity={1.2} color="#60a5fa" />
+      <ambientLight intensity={1.75} />
+      <directionalLight position={[4.2, 2.4, 5]} intensity={2.45} color="#ffffff" />
+      <directionalLight position={[-3, -1.6, 2]} intensity={0.45} color="#ffffff" />
 
       {showStars ? <Stars /> : null}
 
-      <group ref={worldRef}>
+      <group ref={worldRef} position={[0, -0.14, 0]} rotation={[0.08, -1.9, 0]}>
         <Earth />
         {showAtmosphere ? <Atmosphere /> : null}
-        <Markers locations={locations} />
+        {locations.length > 0 ? <Markers locations={locations} /> : null}
       </group>
 
       <OrbitControls
@@ -128,21 +128,17 @@ function GlobeCanvasInner({
     <div
       ref={containerRef}
       className={cn(
-        "relative isolate h-full min-h-[460px] w-full overflow-hidden rounded-[32px] border border-white/10 bg-[#020817]",
+        "relative isolate flex h-full min-h-[460px] w-full items-center justify-center overflow-visible rounded-[32px]",
         className,
       )}
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.16),transparent_34%),radial-gradient(circle_at_bottom,rgba(37,99,235,0.16),transparent_28%)]" />
-
       <Canvas
         dpr={[1, 2]}
         gl={{ antialias: true, alpha: true }}
         className="h-full w-full"
       >
-        <color attach="background" args={["#020817"]} />
-        <fog attach="fog" args={["#020817", 4.8, 12]} />
         <Suspense fallback={null}>
-          <PerspectiveCamera makeDefault position={[0, 0, 4.15]} fov={34} />
+          <PerspectiveCamera makeDefault position={[0, 0, 3.9]} fov={30} />
           <GlobeScene
             locations={resolvedLocations}
             autoRotate={autoRotate}
@@ -153,9 +149,6 @@ function GlobeCanvasInner({
           />
         </Suspense>
       </Canvas>
-
-      <div className="pointer-events-none absolute inset-0 rounded-[32px] bg-[radial-gradient(circle_at_center,transparent_46%,rgba(2,8,23,0.34)_100%)]" />
-      <div className="pointer-events-none absolute inset-0 rounded-[32px] ring-1 ring-white/10" />
     </div>
   );
 }
@@ -163,7 +156,7 @@ function GlobeCanvasInner({
 const GlobeNoSSR = dynamic(async () => Promise.resolve(GlobeCanvasInner), {
   ssr: false,
   loading: () => (
-    <div className="h-full min-h-[460px] w-full animate-pulse rounded-[32px] border border-white/10 bg-[#020817]" />
+    <div className="h-full min-h-[460px] w-full animate-pulse rounded-[32px] bg-transparent" />
   ),
 });
 
