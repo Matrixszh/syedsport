@@ -291,7 +291,7 @@ const AnimatedWave: React.FC<AnimatedWaveProps> = ({
         // Create a new Three.js Group to hold the plane, allowing easier positioning/rotation
         this.group = new THREE.Object3D();
         this.group.position.copy(this.move);
-        this.group.rotation.copy(this.look);
+        this.group.rotation.set(this.look.x, this.look.y, this.look.z);
 
         // Define the plane geometry (width, height, segmentsX, segmentsY)
         this.geometry = new THREE.PlaneGeometry(
