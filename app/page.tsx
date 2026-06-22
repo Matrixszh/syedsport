@@ -5,9 +5,9 @@ import Link from "next/link";
 import { motion, useScroll, useTransform } from "motion/react";
 import Beams from "@/components/Beams";
 import DotGrid from "@/components/DotGrid";
+import Globe, { type GlobeLocation } from "@/components/Globe/Globe";
 import SplitText from "@/components/SplitText";
 import StaggeredMenu from "@/components/StaggeredMenu";
-import Globe from "@/components/lightswind/globe";
 
 type SpotlightSectionProps = {
   eyebrow: string;
@@ -154,6 +154,41 @@ export default function ServicesPage() {
     },
   ];
 
+  const globeLocations: GlobeLocation[] = [
+    {
+      id: "new-york",
+      name: "New York",
+      latitude: 40.7128,
+      longitude: -74.006,
+      color: "#60a5fa",
+      description: "Launch strategy, campaign systems, and performance rollout.",
+    },
+    {
+      id: "london",
+      name: "London",
+      latitude: 51.5072,
+      longitude: -0.1276,
+      color: "#c084fc",
+      description: "Editorial direction and immersive digital storytelling.",
+    },
+    {
+      id: "singapore",
+      name: "Singapore",
+      latitude: 1.3521,
+      longitude: 103.8198,
+      color: "#34d399",
+      description: "Cross-market growth strategy and premium brand expansion.",
+    },
+    {
+      id: "dubai",
+      name: "Dubai",
+      latitude: 25.2048,
+      longitude: 55.2708,
+      color: "#f59e0b",
+      description: "Luxury-facing campaigns designed for global attention.",
+    },
+  ];
+
   return (
     <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden bg-black text-white">
       <div
@@ -292,7 +327,7 @@ export default function ServicesPage() {
               />
               <SplitText
                 tag="h2"
-                text="A WORLDWIDE VIEW OF MODERN BRAND IMPACT."
+                text="A WORLDWIDE NETWORK BUILT FOR CINEMATIC SCALE."
                 className="mt-6 text-[34px] font-black uppercase leading-[0.92] tracking-[-0.05em] text-white sm:text-[50px] md:text-[64px]"
                 textAlign="left"
                 splitType="words, chars"
@@ -303,7 +338,7 @@ export default function ServicesPage() {
               />
               <SplitText
                 tag="p"
-                text="Aura Media builds campaigns engineered to travel across markets, platforms, and cultures. This global lens keeps every launch precise, cinematic, and impossible to ignore."
+                text="Every launch is mapped for reach, impact, and cultural precision. The globe visualizes how Aura Media turns distributed teams, markets, and audiences into one synchronized brand experience."
                 className="mt-6 max-w-[560px] text-[15px] leading-8 text-white/68 sm:text-[16px]"
                 textAlign="left"
                 splitType="words"
@@ -314,19 +349,16 @@ export default function ServicesPage() {
               />
             </div>
 
-            <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-black/50 p-6 shadow-[0_0_80px_rgba(255,215,0,0.08)] sm:p-8">
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,215,0,0.12),transparent_46%)]" />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/[0.03] via-transparent to-black/50" />
-              <div className="relative flex min-h-[420px] items-center justify-center">
+            <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[#020817]/60 p-2 shadow-[0_0_90px_rgba(56,189,248,0.08)]">
+              <div className="relative min-h-[460px]">
                 <Globe
-                  theta={0.2}
-                  dark={1}
-                  scale={1.2}
-                  diffuse={1.5}
-                  baseColor="#1a1a1a"
-                  markerColor="#ff0000"
-                  glowColor="#444444"
-                  className="w-full"
+                  locations={globeLocations}
+                  autoRotate={true}
+                  rotationSpeed={0.5}
+                  showAtmosphere={true}
+                  showStars={true}
+                  enableZoom={true}
+                  className="min-h-[460px]"
                 />
               </div>
             </div>
