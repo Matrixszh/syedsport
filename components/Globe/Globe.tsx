@@ -47,8 +47,8 @@ function GlobeScene({
   return (
     <>
       <ambientLight intensity={1.75} />
-      <directionalLight position={[4.2, 2.4, 5]} intensity={2.45} color="#FFD700" />
-      <directionalLight position={[-3, -1.6, 2]} intensity={0.45} color="#FFD700" />
+      <directionalLight position={[4.2, 2.4, 5]} intensity={2.45} color="#ffffff" />
+      <directionalLight position={[-3, -1.6, 2]} intensity={0.45} color="#ffffff" />
 
       {showStars ? <Stars /> : null}
 

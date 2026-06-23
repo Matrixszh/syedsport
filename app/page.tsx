@@ -278,7 +278,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section className="border-y border-white/10 bg-white/[0.03] px-6 py-16 sm:px-10 sm:py-20 md:px-14 ">
+        <section className="h-[100vh] border-y border-white/10 bg-white/[0.03] px-6 py-16 sm:px-10 sm:py-20 md:px-14 ">
           <div className="mx-auto grid max-w-[1400px] items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             <div className="max-w-[640px]">
               <SplitText
@@ -317,7 +317,7 @@ export default function ServicesPage() {
             </div>
 
             <div className="pb-15 relative mt-10 flex h-[20vh] w-full items-center justify-center overflow-visible px-4 sm:h-[45vh] sm:px-0 lg:mt-0 ">
-              <div className="pt-10 relative mx-auto flex h-full h-[20vh] w-full items-center justify-center sm:min-h-[45vh] ">
+              <div className="pt-25 relative mx-auto flex h-full h-[20vh] w-full items-center justify-center sm:min-h-[45vh] ">
                 <Globe
                   locations={globeLocations}
                   autoRotate={true}
