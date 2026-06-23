@@ -283,7 +283,7 @@ export default function ServicesPage() {
             <div className="max-w-[640px]">
               <SplitText
                 tag="p"
-                text="// GLOBAL SIGNAL"
+                text="// GLOBAL PROVIDERS"
                 className="text-[10px] font-semibold tracking-[0.3em] text-[#FFD700]/70"
                 textAlign="left"
                 splitType="chars"
@@ -294,7 +294,7 @@ export default function ServicesPage() {
               />
               <SplitText
                 tag="h2"
-                text="A WORLDWIDE NETWORK BUILT FOR CINEMATIC SCALE."
+                text="SKYWORLD A NETWORK BUILT FOR CINEMATIC SCALE."
                 className="mt-6 max-w-[320px] text-[26px] font-black uppercase leading-[0.94] tracking-[-0.05em] text-white sm:max-w-[520px] sm:text-[42px] md:max-w-none md:text-[64px]"
                 textAlign="left"
                 splitType="words, chars"
