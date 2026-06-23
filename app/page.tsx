@@ -316,16 +316,16 @@ export default function ServicesPage() {
               />
             </div>
 
-            <div className="pb-15 relative mt-10 flex h-[20vh] w-full items-center justify-center overflow-visible px-4 sm:h-[40vh] sm:px-0 lg:mt-0 ">
-              <div className="pt-10 relative mx-auto flex h-full h-[20vh] w-full items-center justify-center sm:min-h-[40vh] ">
+            <div className="pb-15 relative mt-10 flex h-[20vh] w-full items-center justify-center overflow-visible px-4 sm:h-[45vh] sm:px-0 lg:mt-0 ">
+              <div className="pt-10 relative mx-auto flex h-full h-[20vh] w-full items-center justify-center sm:min-h-[45vh] ">
                 <Globe
                   locations={globeLocations}
                   autoRotate={true}
-                  rotationSpeed={0.7}
+                  rotationSpeed={1.7}
                   showAtmosphere={false}
                   showStars={true}
                   enableZoom={false}
-                  className="mx-auto sm:w-[40vw] w-[90vw] h-full h-[320px] px-4  lg:px-10"
+                  className="mx-auto justify-center sm:w-[40vw] w-[90vw] h-full h-[320px] px-4  lg:px-10"
                   />
               </div>
       </div>

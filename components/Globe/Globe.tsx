@@ -52,7 +52,7 @@ function GlobeScene({
 
       {showStars ? <Stars /> : null}
 
-      <group ref={worldRef} position={[0, -0.14, 0]} rotation={[0.08, -1.9, 0]}>
+      <group ref={worldRef} position={[0, 0.01, 0]} rotation={[0.08, -1.9, 0]}>
         <Earth />
         {showAtmosphere ? <Atmosphere /> : null}
         {locations.length > 0 ? <Markers locations={locations} /> : null}
