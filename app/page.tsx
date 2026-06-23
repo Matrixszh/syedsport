@@ -325,14 +325,14 @@ export default function ServicesPage() {
                   showAtmosphere={false}
                   showStars={true}
                   enableZoom={false}
-                  className="mx-auto sm:w-[] w-[70vw] h-full h-[320px] px-4  lg:px-10"
-                />
+                  className="mx-auto sm:w-[40vw] w-[90vw] h-full h-[320px] px-4  lg:px-10"
+                  />
               </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="pb-20 bg-white/[0.03]">
+      </div>
+        </div>
+    </section>
+    
+      <section className="pb-20 bg-white/[0.03]">
           <SplitText
             tag="h2"
             text="Expertise"
@@ -342,7 +342,7 @@ export default function ServicesPage() {
             delay={12}
             duration={0.6}
             from={{ opacity: 0, y: 14 }}
-            to={{ opacity: 1, y: 0 }}vw
+            to={{ opacity: 1, y: 0 }}
           />
 
           <div className="mt-10 px-5 grid gap-6 md:grid-cols-3 md:gap-6">
