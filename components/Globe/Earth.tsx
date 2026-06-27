@@ -40,11 +40,11 @@ export default function Earth({ radius = 1 }: EarthProps) {
   return (
     <group>
       <mesh castShadow receiveShadow>
-        <sphereGeometry args={[radius, 72, 72]} />
+        <sphereGeometry args={[radius, 29, 29]} />
         <primitive object={fillMaterial} attach="material" />
       </mesh>
       <mesh scale={1.001}>
-        <sphereGeometry args={[radius, 36, 36]} />
+        <sphereGeometry args={[radius, 19, 19]} />
         <primitive object={wireframeMaterial} attach="material" />
       </mesh>
     </group>

@@ -154,7 +154,35 @@ export default function ServicesPage() {
     },
   ];
 
-  const globeLocations: GlobeLocation[] = [];
+  const globeLocations: GlobeLocation[] = [
+    {
+      id: "about-tag",
+      name: "About Us",
+      latitude: 40.7128,
+      longitude: -74.006,
+      color: "#FFD700",
+      href: "/about",
+      description: "Meet the studio behind the campaigns.",
+    },
+    {
+      id: "services-tag",
+      name: "Services",
+      latitude: 19.076,
+      longitude: 72.8777,
+      color: "#FFD700",
+      href: "/services",
+      description: "Explore strategy, visuals, and launch systems.",
+    },
+    {
+      id: "contact-tag",
+      name: "Contact",
+      latitude: 51.5072,
+      longitude: -0.1276,
+      color: "#FFD700",
+      href: "/contact",
+      description: "Start a project or ask about availability.",
+    },
+  ];
 
   return (
     <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden bg-black text-white">
@@ -321,7 +349,7 @@ export default function ServicesPage() {
                 <Globe
                   locations={globeLocations}
                   autoRotate={true}
-                  rotationSpeed={1.7}
+                  rotationSpeed={0.5}
                   showAtmosphere={false}
                   showStars={true}
                   enableZoom={false}

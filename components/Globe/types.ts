@@ -5,6 +5,8 @@ export interface GlobeLocation {
   longitude: number;
   color?: string;
   description?: string;
+  href?: string;
+  newTab?: boolean;
 }
 
 export interface GlobeProps {

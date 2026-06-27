@@ -3,6 +3,7 @@
 import { Html } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import gsap from "gsap";
+import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 import type { GlobeLocation } from "./types";
@@ -30,10 +31,13 @@ function MarkerItem({
   const auraRef = useRef<THREE.Mesh>(null);
   const [isHovered, setIsHovered] = useState(false);
   const color = location.color ?? "#7dd3fc";
-  const tooltipPosition = useMemo(
-    () => position.clone().normalize().multiplyScalar(0.12),
+  const tagPosition = useMemo(
+    () => position.clone().normalize().multiplyScalar(0.36),
     [position],
   );
+  const isExternalHref = Boolean(location.href?.startsWith("http"));
+  const tagClassName =
+    "group inline-flex min-w-[20px] items-center justify-center px-0.5 py-1 text-center text-[3px] font-semibold uppercase tracking-[0.18em] text-[#ffffff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FFD700]/70";
 
   useFrame(({ clock }) => {
     const pulse = 1 + Math.sin(clock.elapsedTime * 2.4) * 0.18;
@@ -71,25 +75,34 @@ function MarkerItem({
         <meshBasicMaterial color={color} toneMapped={false} />
       </mesh>
 
-      {(isHovered || isActive) && (
-        <Html
-          position={tooltipPosition}
-          center
-          distanceFactor={9}
-          className="pointer-events-none"
+      <Html position={tagPosition} center distanceFactor={8.2} className="pointer-events-auto">
+        <div
+          className="flex flex-col items-center gap-2"
+          onMouseEnter={() => onActivate(location.id)}
+          onMouseLeave={() => onActivate(null)}
         >
-          <div className="min-w-[180px] rounded-2xl border border-white/15 bg-slate-950/90 px-4 py-3 text-left text-white shadow-[0_12px_40px_rgba(0,0,0,0.45)] backdrop-blur-md">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-cyan-200">
-              {location.name}
-            </p>
-            {location.description ? (
-              <p className="mt-2 text-[12px] leading-5 text-white/70">
-                {location.description}
-              </p>
-            ) : null}
-          </div>
-        </Html>
-      )}
+          <span className="h-5 w-px bg-gradient-to-b from-[#FFD700]/0 via-[#FFD700]/55 to-[#FFD700]/10" />
+
+          {location.href ? (
+            isExternalHref ? (
+              <a
+                href={location.href}
+                target={location.newTab ? "_blank" : undefined}
+                rel={location.newTab ? "noreferrer" : undefined}
+                className={tagClassName}
+              >
+                {location.name}
+              </a>
+            ) : (
+              <Link href={location.href} className={tagClassName}>
+                {location.name}
+              </Link>
+            )
+          ) : (
+            <div className={tagClassName}>{location.name}</div>
+          )}
+        </div>
+      </Html>
     </group>
   );
 }
