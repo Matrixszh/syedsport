@@ -6,104 +6,261 @@ import SiteNavbar from "@/components/SiteNavbar";
 import SplitText from "@/components/SplitText";
 
 export const metadata: Metadata = {
-  title: "About Us | Aura Media",
+  title: "Services | Aura Media",
   description:
-    "About Aura Media, a digital agency shaping the future of media through advanced AI integration and immersive design.",
+    "Full-stack engineering, performance marketing, automation, interactive media, and cloud infrastructure built to unlock scalable growth.",
 };
 
-const solutionCards = [
+type ServiceItem = {
+  title: string;
+  description: string;
+  resourceLabel?: string;
+};
+
+type Pillar = {
+  number: string;
+  title: string;
+  tagline: string;
+  items: ServiceItem[];
+};
+
+const pillars: Pillar[] = [
   {
     number: "01",
-    title: "Predictive\nAnalytics",
-    description:
-      "Harness machine learning algorithms to anticipate market trends and consumer behavior with unprecedented accuracy.",
-    icon: (
-      <svg
-        width="18"
-        height="18"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="text-[#10d7d1]"
-        aria-hidden="true"
-      >
-        <path
-          d="M12 3a7 7 0 1 0 7 7"
-          stroke="currentColor"
-          strokeWidth="1.4"
-          strokeLinecap="round"
-        />
-        <path
-          d="M12 7v5l3 2"
-          stroke="currentColor"
-          strokeWidth="1.4"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <circle cx="19" cy="5" r="2" stroke="currentColor" strokeWidth="1.4" />
-      </svg>
-    ),
+    title: "Software Engineering & Digital Products",
+    tagline: "High-performance code meets conversion psychology.",
+    items: [
+      {
+        title: "Custom Web & Software",
+        description:
+          "Full-stack engineering of secure, high-performance websites, web applications, enterprise portals, and proprietary SaaS platforms built to scale without performance bottlenecks.",
+        resourceLabel: "NEW",
+      },
+      {
+        title: "UI/UX Design",
+        description:
+          "High-fidelity user interface and experience design combining premium aesthetics with conversion psychology to eliminate user friction.",
+        resourceLabel: "NEW",
+      },
+      {
+        title: "App Development",
+        description:
+          "iOS and Android mobile applications engineered for speed, intuitive navigation, and secure payment integrations.",
+      },
+    ],
   },
   {
     number: "02",
-    title: "Generative\nCampaigns",
-    description:
-      "Automated, hyper-personalized creative generation scaling across all platforms simultaneously.",
-    icon: (
-      <svg
-        width="18"
-        height="18"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="text-[#10d7d1]"
-        aria-hidden="true"
-      >
-        <path
-          d="M12 3l1.25 4.75L18 9l-4.75 1.25L12 15l-1.25-4.75L6 9l4.75-1.25L12 3Z"
-          stroke="currentColor"
-          strokeWidth="1.4"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M19 15l.75 2.25L22 18l-2.25.75L19 21l-.75-2.25L16 18l2.25-.75L19 15Z"
-          stroke="currentColor"
-          strokeWidth="1.2"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
+    title: "Advanced Automation & AI",
+    tagline: "Streamline your operations and scale your touchpoints.",
+    items: [
+      {
+        title: "Chatbot & AI Integrations",
+        description:
+          "Intelligent, natural-language AI layers deployed across WhatsApp, Web, and CRM, trained on your data for 24/7 automated lead qualification and support.",
+        resourceLabel: "NEW",
+      },
+      {
+        title: "Custom Workflows",
+        description:
+          "Bespoke automation workflows engineered to solve unique operational inefficiencies and save your team thousands of hours.",
+      },
+    ],
   },
   {
     number: "03",
-    title: "Neural Networks",
-    description:
-      "Deep learning models optimizing ad spend and audience targeting in real-time environments.",
-    icon: (
-      <svg
-        width="18"
-        height="18"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="text-[#10d7d1]"
-        aria-hidden="true"
-      >
-        <circle cx="7" cy="7" r="2.1" stroke="currentColor" strokeWidth="1.4" />
-        <circle cx="17" cy="7" r="2.1" stroke="currentColor" strokeWidth="1.4" />
-        <circle cx="12" cy="17" r="2.1" stroke="currentColor" strokeWidth="1.4" />
-        <path
-          d="M8.8 8.2 10.7 15M15.2 8.2 13.3 15M9.1 7h5.8"
-          stroke="currentColor"
-          strokeWidth="1.4"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
+    title: "Immersive Interactive Media",
+    tagline: "Gamify your engagement to drive serious monetization.",
+    items: [
+      {
+        title: "Game Development",
+        description:
+          "Cross-platform games and interactive 3D simulations built on Unity or Unreal Engine, optimized for high engagement and structured monetization.",
+      },
+    ],
+  },
+  {
+    number: "04",
+    title: "High-End Cinematography & Commercial Photography",
+    tagline: "Immersive visual storytelling engineered to convert.",
+    items: [
+      {
+        title: "Commercial & Brand Cinematography",
+        description:
+          "Premium, cinematic video production tailored for television, digital campaigns, and high-impact brand storytelling.",
+          resourceLabel: "NEW",
+      },
+      {
+        title: "High-Fidelity Photography",
+        description:
+          "Professional commercial, product, and asset photography designed to elevate brand authority and luxury positioning.",
+      },
+      {
+        title: "Direct-Response Ad Creative",
+        description:
+          "High-velocity video and static creative assets engineered specifically for paid media, optimized with scroll-stopping hooks to capture immediate consumer demand.",
+      },
+    ],
+  },
+  {
+    number: "05",
+    title: "Elite Performance Marketing Engines",
+    tagline: "Data-backed customer acquisition designed to scale revenue.",
+    items: [
+      {
+        title: "Google Ads",
+        description:
+          "Search ecosystem management utilizing Creative Gap Analysis and Performance Max campaigns to capture high-intent traffic and maximize ROAS.",
+        resourceLabel: "NEW",
+      },
+      {
+        title: "Meta Ads",
+        description:
+          "Full-funnel paid social campaigns driven by aggressive creative testing and scroll-stopping hooks to capture immediate demand.",
+        resourceLabel: "NEW",
+      },
+      {
+        title: "Amazon Advertising",
+        description:
+          "Strategic management of Sponsored Ads and keyword harvesting to dominate the digital shelf and maximize marketplace revenue.",
+        resourceLabel: "NEW",
+      },
+      {
+        title: "Advanced Data Analytics",
+        description:
+          "Precision implementation of Google Analytics 4, custom tracking frameworks, and server-side tracking to ensure accurate data attribution and transparent ROI mapping.",
+        resourceLabel: "NEW",
+      },
+    ],
+  },
+  {
+    number: "06",
+    title: "Cloud Engineering & Infrastructure",
+    tagline: "Zero downtime. Infinite scale.",
+    items: [
+      {
+        title: "Cloud Migration & Management",
+        description:
+          "Seamless transition of legacy systems to AWS, GCP, or Azure with automated backups, ensuring 99.9% global uptime even under heavy traffic spikes.",
+      },
+    ],
+  },
+  {
+    number: "07",
+    title: "Support & Long-Term Maintenance",
+    tagline: "Continuous optimization to keep you flawless.",
+    items: [
+      {
+        title: "Post-Launch Maintenance",
+        description:
+          "Ongoing software updates, security patching, bug fixes, and performance optimization to ensure your digital assets remain secure and flawless long after launch.",
+      },
+    ],
   },
 ];
 
-export default function AboutPage() {
+function PillarCard({ pillar }: { pillar: Pillar }) {
+  return (
+    <article className="border border-white/10 bg-black/95 p-6 text-center backdrop-blur-[2px] sm:p-8">
+      <div className="flex items-center justify-center gap-6">
+        <span className="h-px w-full max-w-[180px] bg-white/10" />
+        <SplitText
+          tag="p"
+          text={pillar.number}
+          className="text-[15px] font-semibold tracking-[0.18em] text-[#10d7d1]/85"
+          textAlign="center"
+          splitType="chars"
+          delay={8}
+          duration={0.42}
+          from={{ opacity: 0, y: 8 }}
+          to={{ opacity: 1, y: 0 }}
+        />
+        <span className="h-px w-full max-w-[180px] bg-white/10" />
+      </div>
+
+      <SplitText
+        tag="h3"
+        text={pillar.title}
+        className="mx-auto mt-6 max-w-[760px] text-[28px] font-black uppercase leading-[0.95] tracking-[-0.05em] text-white sm:text-[38px]"
+        textAlign="center"
+        splitType="words, chars"
+        delay={10}
+        duration={0.58}
+        from={{ opacity: 0, y: 14 }}
+        to={{ opacity: 1, y: 0 }}
+      />
+      <SplitText
+        tag="p"
+        text={pillar.tagline}
+        className="mx-auto mt-4 max-w-[720px] text-[14px] font-medium uppercase tracking-[0.18em] text-white/55"
+        textAlign="center"
+        splitType="words"
+        delay={8}
+        duration={0.5}
+        from={{ opacity: 0, y: 10 }}
+        to={{ opacity: 1, y: 0 }}
+      />
+
+      <div className="mt-8 grid justify-items-center gap-4 md:grid-cols-2">
+        {pillar.items.map((item, index) => (
+          <div
+            key={item.title}
+            className={[
+              "w-full border border-white/8 bg-white/[0.03] p-5 transition-colors duration-300 hover:border-[#10d7d1]/35",
+              pillar.items.length === 1
+                ? "md:col-span-2 md:max-w-[560px]"
+                : pillar.items.length % 2 === 1 && index === pillar.items.length - 1
+                  ? "md:col-span-2 md:max-w-[560px]"
+                  : "max-w-none",
+            ].join(" ")}
+          >
+            <div className="flex flex-col items-center justify-center gap-3">
+              <SplitText
+                tag="h4"
+                text={item.title}
+                className="text-center text-[20px] font-semibold tracking-[-0.03em] text-white"
+                textAlign="center"
+                splitType="words, chars"
+                delay={8}
+                duration={0.48}
+                from={{ opacity: 0, y: 10 }}
+                to={{ opacity: 1, y: 0 }}
+              />
+              {item.resourceLabel ? (
+                <span className="inline-flex h-7 items-center justify-center border border-[#10d7d1]/30 px-3 text-[10px] font-semibold uppercase tracking-[0.25em] text-[#10d7d1]">
+                  <SplitText
+                    tag="span"
+                    text={item.resourceLabel}
+                    className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#10d7d1]"
+                    textAlign="center"
+                    splitType="chars"
+                    delay={6}
+                    duration={0.4}
+                    from={{ opacity: 0, y: 6 }}
+                    to={{ opacity: 1, y: 0 }}
+                  />
+                </span>
+              ) : null}
+            </div>
+            <SplitText
+              tag="p"
+              text={item.description}
+              className="mt-4 text-center text-[16px] leading-7 text-white/62"
+              textAlign="center"
+              splitType="words"
+              delay={6}
+              duration={0.46}
+              from={{ opacity: 0, y: 8 }}
+              to={{ opacity: 1, y: 0 }}
+            />
+          </div>
+        ))}
+      </div>
+    </article>
+  );
+}
+
+export default function ServicesPage() {
   return (
     <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden bg-none text-white">
       <div
@@ -130,11 +287,40 @@ export default function AboutPage() {
       <SiteNavbar />
 
       <main className="relative z-10">
-        <section className="px-5 pb-24 pt-24 sm:px-8 sm:pb-32 sm:pt-32">
-          <div className="mx-auto flex min-h-[760px] max-w-[1600px] flex-col items-center justify-center text-center">
+        <section className="px-5 pb-20 pt-28 sm:px-8 sm:pb-24 sm:pt-32">
+          <div className="mx-auto flex min-h-[78vh] max-w-[1600px] items-center justify-center text-center">
+            <div className="flex flex-col items-center">
+              <SplitText
+                tag="p"
+                text="FULL-STACK GROWTH ENGINEERING"
+                className="block text-[11px] font-medium uppercase tracking-[0.38em] text-[#10d7d1]"
+                textAlign="center"
+                splitType="chars"
+                delay={14}
+                duration={0.55}
+                from={{ opacity: 0, y: 10 }}
+                to={{ opacity: 1, y: 0 }}
+              />
+              <SplitText
+                tag="h1"
+                text={"WE ENGINEER\nYOUR ENTIRE\nGROWTH."}
+                className="mt-8 block max-w-[980px] text-[54px] font-black uppercase leading-[0.84] tracking-[-0.07em] text-[#ededed] sm:text-[86px] md:text-[112px] lg:text-[138px]"
+                textAlign="center"
+                splitType="lines"
+                delay={16}
+                duration={0.8}
+                from={{ opacity: 0, y: 28 }}
+                to={{ opacity: 1, y: 0 }}
+              />
+            </div>
+          </div>
+        </section>
+
+        <section className="px-5 pb-10 sm:px-8">
+          <div className="mx-auto flex max-w-[1600px] flex-col items-center border-t border-white/10 pt-10 text-center">
             <SplitText
               tag="p"
-              text="DIGITAL EXPERIENCE"
+              text="OUR PILLARS"
               className="block text-[11px] font-medium uppercase tracking-[0.38em] text-[#10d7d1]"
               textAlign="center"
               splitType="chars"
@@ -143,23 +329,21 @@ export default function AboutPage() {
               from={{ opacity: 0, y: 10 }}
               to={{ opacity: 1, y: 0 }}
             />
-
             <SplitText
-              tag="h1"
-              text={"THE\nFUTURE\nOF MEDIA"}
-              className="mt-8 block max-w-[1280px] text-[70px] font-black uppercase leading-[0.84] tracking-[-0.07em] text-[#ededed] sm:text-[108px] md:text-[152px] lg:text-[186px]"
+              tag="h2"
+              text="Integrated systems for engineering, acquisition, media, and scale."
+              className="mt-5 block max-w-[900px] text-[38px] font-black uppercase leading-[0.92] tracking-[-0.05em] text-white sm:text-[62px]"
               textAlign="center"
-              splitType="lines"
-              delay={16}
-              duration={0.8}
-              from={{ opacity: 0, y: 28 }}
+              splitType="words, chars"
+              delay={14}
+              duration={0.7}
+              from={{ opacity: 0, y: 18 }}
               to={{ opacity: 1, y: 0 }}
             />
-
             <SplitText
               tag="p"
-              text="Pioneering next-generation digital experiences through advanced AI integration, immersive data visualization, and visionary aesthetic precision."
-              className="block mt-8 max-w-[700px] text-[14px] leading-7 text-white/65 sm:text-[15px]"
+              text="Each pillar is designed to connect technology, performance, and storytelling into one growth system instead of fragmented vendor work."
+              className="mt-6 block max-w-[760px] text-[14px] leading-8 text-white/62 sm:text-[15px]"
               textAlign="center"
               splitType="words"
               delay={14}
@@ -167,86 +351,90 @@ export default function AboutPage() {
               from={{ opacity: 0, y: 16 }}
               to={{ opacity: 1, y: 0 }}
             />
+          </div>
+        </section>
 
-            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
-              <Link
-                href="/services"
-                className="inline-flex h-11 min-w-[170px] items-center justify-center border border-white bg-white px-6 text-[10px] font-medium uppercase tracking-[0.26em] text-black transition-colors hover:bg-white/90"
-              >
-                Explore Solutions
-              </Link>
-              <Link
-                href="https://vimeo.com"
-                className="inline-flex h-11 min-w-[170px] items-center justify-center border border-white/25 bg-transparent px-6 text-[10px] font-medium uppercase tracking-[0.26em] text-white transition-colors hover:bg-white/8"
-              >
-                Watch Reel
-              </Link>
+        <section className="px-5 pb-24 sm:px-8 sm:pb-28">
+          <div className="mx-auto max-w-[1600px]">
+            <div className="grid gap-6">
+              {pillars.map((pillar) => (
+                <PillarCard key={pillar.number} pillar={pillar} />
+              ))}
             </div>
           </div>
         </section>
 
-        <section className="px-5 pb-28 sm:px-8 sm:pb-32">
-          <div className="mx-auto max-w-[1600px]">
+        <section className="px-5 pb-24 sm:px-8 sm:pb-32">
+          <div className="mx-auto flex max-w-[1600px] flex-col items-center border border-white/10 bg-gradient-to-br from-[#10d7d1]/20 via-black/60 to-black p-6 text-center sm:p-10">
             <SplitText
-              tag="h2"
-              text="AI SOLUTIONS"
-              className="block text-[36px] font-black uppercase tracking-[-0.05em] text-white sm:text-[56px]"
-              textAlign="left"
+              tag="p"
+              text="CONTACT & FOOTER"
+              className="block text-[11px] font-medium uppercase tracking-[0.38em] text-[#10d7d1]"
+              textAlign="center"
               splitType="chars"
               delay={12}
-              duration={0.65}
-              from={{ opacity: 0, y: 14 }}
+              duration={0.55}
+              from={{ opacity: 0, y: 10 }}
+              to={{ opacity: 1, y: 0 }}
+            />
+            <SplitText
+              tag="h2"
+              text="READY TO ENGINEER YOUR GROWTH?"
+              className="mt-5 block max-w-[840px] text-[38px] font-black uppercase leading-[0.92] tracking-[-0.05em] text-white sm:text-[62px]"
+              textAlign="center"
+              splitType="words, chars"
+              delay={14}
+              duration={0.7}
+              from={{ opacity: 0, y: 18 }}
+              to={{ opacity: 1, y: 0 }}
+            />
+            <SplitText
+              tag="p"
+              text="Let's discuss your current tech and marketing goals."
+              className="mt-6 block max-w-[620px] text-[14px] leading-8 text-white/68 sm:text-[15px]"
+              textAlign="center"
+              splitType="words"
+              delay={12}
+              duration={0.55}
+              from={{ opacity: 0, y: 12 }}
               to={{ opacity: 1, y: 0 }}
             />
 
-            <div className="mt-6 h-px w-full bg-white/8" />
-
-            <div className="mt-10 grid gap-5 md:grid-cols-3">
-              {solutionCards.map((card) => (
-                <article
-                  key={card.number}
-                  className="relative min-h-[270px] border border-white/8 bg-[#0a0a0d] p-6 sm:p-7"
+            <div className="mt-10 flex w-full justify-center">
+              <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+                <Link
+                  href="/contact"
+                  className="inline-flex h-11 min-w-[220px] items-center justify-center border border-[#10d7d1] bg-[#10d7d1] px-6 text-[10px] font-medium uppercase tracking-[0.26em] text-black transition-colors hover:bg-[#10d7d1]/90"
                 >
-                  <div className="flex items-start justify-between">
-                    <SplitText
-                      tag="p"
-                      text={card.number}
-                      className="block text-[18px] font-semibold tracking-[-0.04em] text-white/18 sm:text-[20px]"
-                      textAlign="left"
-                      splitType="chars"
-                      delay={10}
-                      duration={0.45}
-                      from={{ opacity: 0, y: 8 }}
-                      to={{ opacity: 1, y: 0 }}
-                    />
-                    <div className="text-[#10d7d1]">{card.icon}</div>
-                  </div>
-
                   <SplitText
-                    tag="h3"
-                    text={card.title}
-                    className="mt-10 block text-[31px] font-semibold leading-[0.95] tracking-[-0.05em] text-white"
-                    textAlign="left"
-                    splitType="lines"
-                    delay={12}
-                    duration={0.6}
-                    from={{ opacity: 0, y: 16 }}
+                    tag="span"
+                    text="Schedule A Consultation"
+                    className="text-[10px] font-medium uppercase tracking-[0.26em] text-black"
+                    textAlign="center"
+                    splitType="chars"
+                    delay={5}
+                    duration={0.38}
+                    from={{ opacity: 0, y: 6 }}
                     to={{ opacity: 1, y: 0 }}
                   />
-
+                </Link>
+                <Link
+                  href="mailto:syednouman@skyworldpartners.com"
+                  className="inline-flex h-11 min-w-[220px] items-center justify-center border border-white/20 bg-transparent px-6 text-[10px] font-medium uppercase tracking-[0.26em] text-white transition-colors hover:bg-white/8"
+                >
                   <SplitText
-                    tag="p"
-                    text={card.description}
-                    className="mt-6 block max-w-[290px] text-[13px] leading-7 text-white/55"
-                    textAlign="left"
-                    splitType="words"
-                    delay={10}
-                    duration={0.5}
-                    from={{ opacity: 0, y: 10 }}
+                    tag="span"
+                    text="Get In Touch"
+                    className="text-[10px] font-medium uppercase tracking-[0.26em] text-white"
+                    textAlign="center"
+                    splitType="chars"
+                    delay={5}
+                    duration={0.38}
+                    from={{ opacity: 0, y: 6 }}
                     to={{ opacity: 1, y: 0 }}
                   />
-                </article>
-              ))}
+                </Link>
+              </div>
             </div>
           </div>
         </section>
