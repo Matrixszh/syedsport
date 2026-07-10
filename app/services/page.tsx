@@ -6,7 +6,7 @@ import SiteNavbar from "@/components/SiteNavbar";
 import SplitText from "@/components/SplitText";
 
 export const metadata: Metadata = {
-  title: "Services | Aura Media",
+  title: "Services | SKYWORLD",
   description:
     "Full-stack engineering, performance marketing, automation, interactive media, and cloud infrastructure built to unlock scalable growth.",
 };

@@ -292,7 +292,7 @@ export default function ServicesPage() {
 
                 <SplitText
                   tag="p"
-                  text="At Aura Media, we believe that in a saturated digital landscape, subtle does not survive. We engineer visual dominance through brutalist minimalism, glassmorphism, and editorial precision. Every pixel is calculated; every campaign is designed to be an event."
+                  text="At SKYWORLD, we believe that in a saturated digital landscape, subtle does not survive. We engineer visual dominance through brutalist minimalism, glassmorphism, and editorial precision. Every pixel is calculated; every campaign is designed to be an event."
                   className="mt-8 max-w-[720px] text-[14px] leading-[1.85] tracking-[-0.01em] text-white/70 md:text-[15px]"
                   textAlign="left"
                   splitType="words"
@@ -333,7 +333,7 @@ export default function ServicesPage() {
               />
               <SplitText
                 tag="p"
-                text="Every launch is mapped for reach, impact, and cultural precision. The globe visualizes how Aura Media turns distributed teams, markets, and audiences into one synchronized brand experience."
+                text="Every launch is mapped for reach, impact, and cultural precision. The globe visualizes how SKYWORLD turns distributed teams, markets, and audiences into one synchronized brand experience."
                 className="mt-6 max-w-[330px] text-[14px] leading-7 text-white/68 sm:max-w-[560px] sm:text-[16px] sm:leading-8"
                 textAlign="left"
                 splitType="words"
@@ -601,7 +601,7 @@ export default function ServicesPage() {
             <div className="md:col-span-6">
               <SplitText
                 tag="p"
-                text="AURA MEDIA"
+                text="SKYWORLD"
                 className="block text-[12px] font-semibold tracking-[0.35em] text-[#FFD700]/80"
                 textAlign="left"
                 splitType="chars"
@@ -777,7 +777,7 @@ export default function ServicesPage() {
           </div>
 
           <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-[11px] text-white/45 sm:flex-row sm:items-center sm:justify-between">
-            <div className="right-justify">© 2026 Aura Media. All rights reserved.
+            <div className="right-justify">© 2026 SKYWORLD. All rights reserved.
              </div>
             Designed in the dark.
           

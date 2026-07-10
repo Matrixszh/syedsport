@@ -39,14 +39,14 @@ export default function IntroSplash() {
       <div className="flex flex-col items-center gap-5 px-6 text-center">
         <Image
           src="/tulip.png"
-          alt="Aura Media logo"
+          alt="SKYWORLD logo"
           width={84}
           height={84}
           priority
           className="h-16 w-16 object-contain sm:h-20 sm:w-20"
         />
         <p className="text-[16px] font-semibold uppercase tracking-[0.45em] text-white sm:text-[18px]">
-          AURA MEDIA
+          SKYWORLD
         </p>
       </div>
     </div>

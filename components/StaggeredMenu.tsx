@@ -456,8 +456,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             />
           </div>
 
-          <Link href="/" className="sm-brand-desktop pointer-events-auto" aria-label="Aura Media home">
-            AURA MEDIA
+          <Link href="/" className="sm-brand-desktop pointer-events-auto" aria-label="SKYWORLD home">
+            SKYWORLD
           </Link>
 
           <button

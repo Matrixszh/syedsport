@@ -6,9 +6,9 @@ import SiteNavbar from "@/components/SiteNavbar";
 import SplitText from "@/components/SplitText";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Aura Media",
+  title: "Contact Us | SKYWORLD",
   description:
-    "Contact Aura Media, a global production house engineering cinematic narratives for brands at scale.",
+    "Contact SKYWORLD, a global production house engineering cinematic narratives for brands at scale.",
 };
 
 const studioLocations = [

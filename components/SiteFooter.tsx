@@ -21,7 +21,7 @@ const socialLinks = [
 ];
 
 const contactLinks = [
-  { label: "Email", href: "mailto:hello@auramedia.com" },
+  { label: "Email", href: "mailto:syednouman@skyworldpartners.com" },
   { label: "Start a Project", href: "/contact" },
 ];
 
@@ -48,7 +48,7 @@ export default function SiteFooter({
           <div className="md:col-span-6">
             <SplitText
               tag="p"
-              text="AURA MEDIA"
+              text="SKYWORLD"
               className={`block text-[12px] font-semibold tracking-[0.35em] ${resolvedBrandClassName}`}
               textAlign="left"
               splitType="chars"
@@ -167,7 +167,7 @@ export default function SiteFooter({
         </div>
 
         <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-[11px] text-white/45 sm:flex-row sm:items-center sm:justify-between">
-          <div className="right-justify">© 2026 Aura Media. All rights reserved.</div>
+          <div className="right-justify">© 2026 SKYWORLD. All rights reserved.</div>
           Designed in the dark.
         </div>
       </div>

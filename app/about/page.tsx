@@ -6,16 +6,16 @@ import SiteNavbar from "@/components/SiteNavbar";
 import SplitText from "@/components/SplitText";
 
 export const metadata: Metadata = {
-  title: "About Us | Aura Media",
+  title: "About Us | SKYWORLD",
   description:
-    "About Aura Media, a digital studio crafting cinematic digital experiences with bold visual systems and immersive storytelling.",
+    "SKYWORLD is a full-stack engineering and marketing agency. We build digital products, AI automation, and performance marketing engines that translate into revenue growth.",
 };
 
 const archiveCards = [
   {
     id: "01",
-    title: "VOID WALKER",
-    subtitle: "AI / Fashion",
+    title: "SOFTWARE & PRODUCT",
+    subtitle: "Web / SaaS / Apps",
     imageSrc: "/img4.jpg",
     className: "md:col-span-7 md:row-span-2",
     heightClassName: "min-h-[420px] md:min-h-[520px]",
@@ -23,8 +23,8 @@ const archiveCards = [
   },
   {
     id: "02",
-    title: "NEURAL NET",
-    subtitle: "3D / System",
+    title: "AUTOMATION & AI",
+    subtitle: "Chatbots / Workflows",
     imageSrc: "/img2.jpg",
     className: "md:col-span-5",
     heightClassName: "min-h-[420px] md:min-h-[520px]",
@@ -32,8 +32,8 @@ const archiveCards = [
   },
   {
     id: "03",
-    title: "DEEP STATE",
-    subtitle: "UI / Immersion",
+    title: "PERFORMANCE MARKETING",
+    subtitle: "Google / Meta / Amazon",
     imageSrc: "/img3.jpg",
     className: "md:col-span-12",
     heightClassName: "min-h-[240px] md:min-h-[300px]",
@@ -42,9 +42,9 @@ const archiveCards = [
 ];
 
 const metrics = [
-  { value: "4.2M", label: "REACH / SATURATION", accent: true },
-  { value: "120+", label: "PROJECTS / 360" },
-  { value: "90%", label: "RETENTION" },
+  { value: "7", label: "CORE PILLARS / FULL-STACK", accent: true },
+  { value: "24/7", label: "AI-POWERED SUPPORT" },
+  { value: "99.9%", label: "UPTIME GUARANTEED" },
 ];
 
 export default function AboutPage() {
@@ -86,7 +86,7 @@ export default function AboutPage() {
           <div className="mx-auto ">
             <SplitText
               tag="p"
-              text="REBELLION / 01"
+              text="ABOUT SKYWORLD / 01"
               className="block text-[10px] font-medium uppercase tracking-[0.34em] text-[#7C3AED]"
               textAlign="left"
               splitType="chars"
@@ -99,7 +99,7 @@ export default function AboutPage() {
             <div className="mt-8 max-w-[980px]">
               <SplitText
                 tag="h1"
-                text="CREATIVE"
+                text="ENGINEER"
                 className="block text-[54px] font-black uppercase leading-[0.84] tracking-[-0.07em] text-[#e8e8e8] sm:text-[88px] md:text-[118px]"
                 textAlign="left"
                 splitType="chars"
@@ -110,7 +110,7 @@ export default function AboutPage() {
               />
               <SplitText
                 tag="h1"
-                text="REBELLION"
+                text="YOUR GROWTH"
                 className="block text-[54px] font-black uppercase leading-[0.84] tracking-[-0.07em] text-[#e8e8e8] sm:text-[88px] md:text-[118px]"
                 textAlign="left"
                 splitType="chars"
@@ -123,7 +123,7 @@ export default function AboutPage() {
 
             <SplitText
               tag="p"
-              text="Pushing the boundaries of visual storytelling. We do not just build for trends, we tear the rules down and build them back in noise and signal."
+              text="We engineer your entire growth. SKYWORLD is a full-stack engineering and marketing agency, we build digital products that translate directly into revenue growth streams."
               className="mt-5 block max-w-[520px] text-[13px] leading-6 text-white/62 sm:text-[14px]"
               textAlign="left"
               splitType="words"
@@ -151,12 +151,12 @@ export default function AboutPage() {
                 />
               </Link>
               <Link
-                href="https://vimeo.com"
+                href="/contact"
                 className="inline-flex h-11 min-w-[170px] items-center justify-center border border-white/20 bg-transparent px-6 text-[10px] font-medium uppercase tracking-[0.26em] text-white transition-colors hover:bg-white/8"
               >
                 <SplitText
                   tag="span"
-                  text="Watch Reel"
+                  text="Schedule a Consultation"
                   className="block"
                   textAlign="center"
                   splitType="chars"
@@ -194,7 +194,7 @@ export default function AboutPage() {
               <h2 className="text-[38px] font-black uppercase leading-[0.88] tracking-[-0.05em] text-white sm:text-[58px]">
                 <SplitText
                   tag="span"
-                  text="THE"
+                  text="OUR"
                   className="block"
                   textAlign="left"
                   splitType="chars"
@@ -205,7 +205,7 @@ export default function AboutPage() {
                 />
                 <SplitText
                   tag="span"
-                  text="ARCHIVE"
+                  text="PILLARS"
                   className="block"
                   textAlign="left"
                   splitType="chars"
@@ -218,7 +218,7 @@ export default function AboutPage() {
 
               <SplitText
                 tag="p"
-                text="Selected works from the future we made."
+                text="High-performance code meets conversion psychology, across every stack we touch."
                 className="block max-w-[260px] text-[11px] leading-5 text-[#7C3AED]"
                 textAlign="left"
                 splitType="words"
@@ -292,7 +292,7 @@ export default function AboutPage() {
                     text={metric.value}
                     className={`block text-[44px] font-black tracking-[-0.05em] sm:text-[58px] ${
                       metric.accent
-                        ? "bg-[#7C3AED] bg-clip-text text-transparent"
+                        ? "text-[#7C3AED]"
                         : "text-white/90"
                     }`}
                     textAlign="center"
@@ -315,6 +315,75 @@ export default function AboutPage() {
                   />
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="px-5 pb-24 sm:px-8 sm:pb-28">
+          <div className="mx-auto overflow-hidden border border-white/8 bg-white/[0.03]">
+            <div className="relative flex flex-col items-start gap-6 px-6 py-10 sm:px-8 sm:py-12">
+              <div
+                className="absolute inset-0"
+                style={{
+                  backgroundImage:
+                    "radial-gradient(460px 180px at 15% 55%, rgba(126,44,255,0.26), rgba(0,0,0,0) 60%), radial-gradient(320px 160px at 76% 52%, rgba(255,255,255,0.05), rgba(0,0,0,0) 65%), linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0) 55%), linear-gradient(180deg, rgba(8,8,14,1), rgba(6,6,10,1))",
+                }}
+              />
+
+              <SplitText
+                tag="h2"
+                text="READY TO ENGINEER YOUR GROWTH?"
+                className="relative block max-w-[720px] text-[28px] font-black uppercase leading-[0.95] tracking-[-0.04em] text-white sm:text-[42px]"
+                textAlign="left"
+                splitType="chars"
+                delay={10}
+                duration={0.55}
+                from={{ opacity: 0, y: 12 }}
+                to={{ opacity: 1, y: 0 }}
+              />
+
+              <SplitText
+                tag="p"
+                text="Let's discuss your current tech and marketing goals."
+                className="relative block max-w-[480px] text-[13px] leading-6 text-white/62 sm:text-[14px]"
+                textAlign="left"
+                splitType="words"
+                delay={10}
+                duration={0.5}
+                from={{ opacity: 0, y: 10 }}
+                to={{ opacity: 1, y: 0 }}
+              />
+
+              <div className="relative flex flex-col gap-4 sm:flex-row sm:items-center">
+                <Link
+                  href="/contact"
+                  className="inline-flex h-11 min-w-[200px] items-center justify-center border border-white bg-white px-6 text-[10px] font-medium uppercase tracking-[0.26em] text-black transition-colors hover:bg-white/90"
+                >
+                  <SplitText
+                    tag="span"
+                    text="Schedule a Consultation"
+                    className="block"
+                    textAlign="center"
+                    splitType="chars"
+                    delay={8}
+                    duration={0.45}
+                    from={{ opacity: 0, y: 8 }}
+                    to={{ opacity: 1, y: 0 }}
+                  />
+                </Link>
+              </div>
+
+              <div className="relative mt-2 flex flex-col gap-1 text-[11px] uppercase tracking-[0.18em] text-white/45">
+                <span>
+                  Contact: <span className="text-white/75">Syed Nouman</span>
+                </span>
+                <a
+                  href="mailto:syednouman@skyworldpartners.com"
+                  className="text-[#7C3AED] normal-case tracking-normal hover:text-[#9b6ef0]"
+                >
+                  syednouman@skyworldpartners.com
+                </a>
+              </div>
             </div>
           </div>
         </section>
