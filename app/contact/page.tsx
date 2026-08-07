@@ -48,17 +48,17 @@ const contactChannels = [
       },
       {
         type: "phone" as const,
-        label: "+92 300 0000000",
-        href: "tel:+923000000000",
+        label: "+91 99637 58459",
+        href: "tel:+919963758459",
       },
     ],
   },
   {
-    title: "Office & Hours",
-    subtitle: "When we are available",
-    label: "Headquarters",
+    title: "Explore Wildlife & Nature",
+    subtitle: "Reach into the depth of wildlife and nature",
+    label: "Alternate Businesses",
     supporting:
-      "Monday - Friday: 9:00 AM - 7:00 PM (GMT+5) · Weekends by appointment only.",
+      "Join Syed for a transition from mere sightings to disciplined fieldcraft.",
     icon: (
       <svg
         width="22"
@@ -80,59 +80,17 @@ const contactChannels = [
     actions: [
       {
         type: "website" as const,
-        label: "www.skyworldpartners.com",
-        href: "https://www.skyworldpartners.com",
+        label: "www.syednouman.com",
+        href: "https://www.syednouman.com/",
       },
       {
         type: "book" as const,
         label: "Book a consultation",
-        href: "/contact",
+        href: "/contact/#form",
       },
     ],
   },
-  {
-    title: "Social & Media",
-    subtitle: "Stay connected",
-    label: "Follow the work",
-    supporting:
-      "For partnerships, press, and behind-the-scenes updates — message us directly on any platform.",
-    icon: (
-      <svg
-        width="22"
-        height="22"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="text-[#EF4444]"
-        aria-hidden="true"
-      >
-        <path
-          d="M3.5 6.5A1.5 1.5 0 0 1 5 5h14a1.5 1.5 0 0 1 1.5 1.5v11A1.5 1.5 0 0 1 19 19H5a1.5 1.5 0 0 1-1.5-1.5v-11Z"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        />
-        <path
-          d="m3.6 7.4 8.4 6.4 8.4-6.4"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-    actions: [
-      {
-        type: "social" as const,
-        label: "LinkedIn / Instagram / X",
-        href: "/contact",
-      },
-      {
-        type: "brief" as const,
-        label: "Send a creative brief",
-        href: "mailto:syednouman@skyworldpartners.com",
-      },
-    ],
-  },
+  
 ];
 
 const channelReasons = [
@@ -333,7 +291,7 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section className="border-b border-white/10 px-5 py-24 sm:px-8 sm:py-32">
+        <section className="border-b border-white/10 px-5 py-24 sm:px-8 sm:py-32" id="form">
           <div className="mx-auto grid max-w-[1480px] gap-12 lg:grid-cols-[0.95fr_1.15fr] lg:gap-16">
             <div className="max-w-[540px]">
               <SplitText
