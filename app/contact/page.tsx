@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import ContactEmailForm from "@/components/ContactEmailForm";
 import SideRays from "@/components/SideRays";
 import SiteFooter from "@/components/SiteFooter";
@@ -9,14 +8,15 @@ import SplitText from "@/components/SplitText";
 export const metadata: Metadata = {
   title: "Contact Us | SKYWORLD",
   description:
-    "Contact SKYWORLD, a global production house engineering cinematic narratives for brands at scale.",
+    "Get in touch with SKYWORLD. Book a consultation, send a brief, or reach out for full-stack engineering, AI automation, and performance marketing projects.",
 };
 
-const studioLocations = [
+const contactChannels = [
   {
-    city: "Los Angeles",
-    description:
-      "Soundstages, post-production suites, and executive production hub.",
+    title: "Direct Contact",
+    subtitle: "Primary point of contact",
+    label: "Syed Nouman",
+    supporting: "Managing Partner — Business & Strategy",
     icon: (
       <svg
         width="22"
@@ -28,47 +28,120 @@ const studioLocations = [
         aria-hidden="true"
       >
         <path
-          d="M4 7.5A1.5 1.5 0 0 1 5.5 6H14a1.5 1.5 0 0 1 1.5 1.5v9A1.5 1.5 0 0 1 14 18H5.5A1.5 1.5 0 0 1 4 16.5v-9Z"
+          d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"
           stroke="currentColor"
           strokeWidth="1.5"
         />
         <path
-          d="m15.5 10.5 4-2.5v8l-4-2.5v-3Z"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-  },
-  {
-    city: "London",
-    description:
-      "European distribution center and VFX specialized studios.",
-    icon: (
-      <svg
-        width="22"
-        height="22"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="text-[#EF4444]"
-        aria-hidden="true"
-      >
-        <path
-          d="M4 8.5A1.5 1.5 0 0 1 5.5 7h13A1.5 1.5 0 0 1 20 8.5v7a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 15.5v-7Z"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        />
-        <path
-          d="M7 7V4M12 7V4M17 7V4M7.5 11.5h9"
+          d="M4 20c0-4 3.6-6 8-6s8 2 8 6"
           stroke="currentColor"
           strokeWidth="1.5"
           strokeLinecap="round"
         />
       </svg>
     ),
+    actions: [
+      {
+        type: "email" as const,
+        label: "syednouman@skyworldpartners.com",
+        href: "mailto:syednouman@skyworldpartners.com",
+      },
+      {
+        type: "phone" as const,
+        label: "+92 300 0000000",
+        href: "tel:+923000000000",
+      },
+    ],
   },
+  {
+    title: "Office & Hours",
+    subtitle: "When we are available",
+    label: "Headquarters",
+    supporting:
+      "Monday - Friday: 9:00 AM - 7:00 PM (GMT+5) · Weekends by appointment only.",
+    icon: (
+      <svg
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="text-[#EF4444]"
+        aria-hidden="true"
+      >
+        <path
+          d="M4 10.5c0-1 3-6.2 8-6.2s8 5.2 8 6.2c0 .9-.5 2.4-2.5 4.4S12 21 12 21s-5.5-3.5-7.5-5.5S4 11.4 4 10.5Z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+        <circle cx="12" cy="10.5" r="2" stroke="currentColor" strokeWidth="1.5" />
+      </svg>
+    ),
+    actions: [
+      {
+        type: "website" as const,
+        label: "www.skyworldpartners.com",
+        href: "https://www.skyworldpartners.com",
+      },
+      {
+        type: "book" as const,
+        label: "Book a consultation",
+        href: "/contact",
+      },
+    ],
+  },
+  {
+    title: "Social & Media",
+    subtitle: "Stay connected",
+    label: "Follow the work",
+    supporting:
+      "For partnerships, press, and behind-the-scenes updates — message us directly on any platform.",
+    icon: (
+      <svg
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="text-[#EF4444]"
+        aria-hidden="true"
+      >
+        <path
+          d="M3.5 6.5A1.5 1.5 0 0 1 5 5h14a1.5 1.5 0 0 1 1.5 1.5v11A1.5 1.5 0 0 1 19 19H5a1.5 1.5 0 0 1-1.5-1.5v-11Z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+        <path
+          d="m3.6 7.4 8.4 6.4 8.4-6.4"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+    actions: [
+      {
+        type: "social" as const,
+        label: "LinkedIn / Instagram / X",
+        href: "/contact",
+      },
+      {
+        type: "brief" as const,
+        label: "Send a creative brief",
+        href: "mailto:syednouman@skyworldpartners.com",
+      },
+    ],
+  },
+];
+
+const channelReasons = [
+  "Full-stack engineering / product build",
+  "AI automation & chatbot integrations",
+  "Performance marketing engines",
+  "Cinematic production & photography",
+  "Cloud infrastructure & migration",
+  "General inquiry & partnership",
 ];
 
 export default function ContactPage() {
@@ -76,25 +149,23 @@ export default function ContactPage() {
     <div className="relative min-h-screen overflow-x-hidden bg-[#040404] text-[#f1f1f1]">
       <div
         className="pointer-events-none absolute inset-0 opacity-90"
-       
-      />
-
-      <div
-        className="pointer-events-none absolute right-0 top-0 h-[420px] w-[520px] opacity-90"
-
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 20% 10%, rgba(239,68,68,0.12), transparent 35%), linear-gradient(180deg, rgba(255,255,255,0.015), rgba(0,0,0,0))",
+        }}
       />
 
       <SiteNavbar />
 
       <main className="relative z-10">
-        <section className="relative border-b border-white/10 px-5 pb-28 pt-24 sm:px-8 sm:pb-36 sm:pt-32">
-          <div className="pointer-events-none absolute inset-0 opacity-80">
+        <section className="relative border-b border-white/10 px-5 pb-24 pt-24 sm:px-8 sm:pb-32 sm:pt-28">
+          <div className="pointer-events-none absolute inset-0 opacity-75">
             <SideRays
               speed={4.4}
               rayColor1="#EF4444"
-              rayColor2="#ff0000"
+              rayColor2="#ff3333"
               intensity={2.2}
-              spread={0.}
+              spread={0.6}
               origin="top-right"
               tilt={0}
               saturation={1.5}
@@ -104,26 +175,27 @@ export default function ContactPage() {
               className="h-full w-full"
             />
           </div>
-          <div className="mx-auto flex min-h-[700px] max-w-[1600px] flex-col items-center justify-center text-center">
+
+          <div className="mx-auto flex min-h-[540px] max-w-[1480px] flex-col items-center justify-center text-center">
             <SplitText
               tag="p"
-              text="Global Production House"
-              className="text-[11px] font-medium uppercase tracking-[0.42em] text-[#EF4444]"
+              text="Contact SKYWORLD / 04"
+              className="text-[10px] font-medium uppercase tracking-[0.38em] text-[#EF4444]"
               textAlign="center"
               splitType="chars"
-              delay={12}
-              duration={0.55}
+              delay={10}
+              duration={0.5}
               from={{ opacity: 0, y: 10 }}
               to={{ opacity: 1, y: 0 }}
             />
 
             <SplitText
               tag="h1"
-              text={"CINEMATIC\nAUTHORITY"}
-              className="mt-8 max-w-[1460px] text-[68px] font-bold uppercase leading-[0.84] tracking-[-0.075em] text-white sm:text-[108px] md:text-[148px] lg:text-[178px]"
+              text={"LET'S BUILD\nSOMETHING\nWORTH LAUNCHING."}
+              className="mt-8 max-w-[1300px] text-[58px] font-black uppercase leading-[0.86] tracking-[-0.07em] text-white sm:text-[88px] md:text-[118px] lg:text-[148px]"
               textAlign="center"
               splitType="lines"
-              delay={16}
+              delay={14}
               duration={0.7}
               from={{ opacity: 0, y: 18 }}
               to={{ opacity: 1, y: 0 }}
@@ -131,8 +203,8 @@ export default function ContactPage() {
 
             <SplitText
               tag="p"
-              text="We engineer high-impact visual narratives for global brands. From concept to global distribution, our production network operates at the intersection of art and scale."
-              className="mt-8 max-w-[840px] text-[18px] leading-[1.85] text-white/72 sm:text-[20px]"
+              text="Tell us about your project, your timelines, and the outcomes you are engineering for. We respond to every serious inquiry within one business day."
+              className="mt-8 max-w-[780px] text-[15px] leading-[1.85] text-white/72 sm:text-[17px]"
               textAlign="center"
               splitType="words"
               delay={12}
@@ -141,96 +213,133 @@ export default function ContactPage() {
               to={{ opacity: 1, y: 0 }}
             />
 
-            <Link
-              href="https://vimeo.com"
-              className="mt-12 inline-flex items-center justify-center gap-4 rounded-full border border-white/20 bg-[#ededed] px-8 py-4 text-[11px] font-medium uppercase tracking-[0.28em] text-black transition-colors hover:bg-white"
-            >
+            <div className="mt-10 grid w-full max-w-[920px] grid-cols-2 gap-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-white/60 sm:grid-cols-3 sm:text-[12px]">
+              <div className="border border-white/10 bg-white/[0.03] px-4 py-3">
+                Response within 24h
+              </div>
+              <div className="border border-white/10 bg-white/[0.03] px-4 py-3">
+                Confidential NDAs on request
+              </div>
+              <div className="col-span-2 border border-white/10 bg-white/[0.03] px-4 py-3 sm:col-span-1">
+                Global client roster
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-b border-white/10 px-5 py-24 sm:px-8 sm:py-32">
+          <div className="mx-auto grid max-w-[1480px] gap-10 lg:grid-cols-3 lg:gap-12">
+            <div className="lg:col-span-3">
               <SplitText
-                tag="span"
-                text="View the Reel"
-                className="block"
-                textAlign="center"
+                tag="p"
+                text="Get in touch"
+                className="text-[10px] font-medium uppercase tracking-[0.36em] text-[#EF4444]"
+                textAlign="left"
                 splitType="chars"
                 delay={10}
                 duration={0.5}
                 from={{ opacity: 0, y: 8 }}
                 to={{ opacity: 1, y: 0 }}
               />
-              <span className="text-base leading-none">→</span>
-            </Link>
-          </div>
-        </section>
-
-        <section className="border-b border-white/10 px-5 py-24 sm:px-8 sm:py-32">
-          <div className="mx-auto grid max-w-[1600px] gap-12 lg:grid-cols-[1.1fr_1.6fr] lg:gap-16">
-            <div className="max-w-[500px]">
               <SplitText
                 tag="h2"
-                text={"GLOBAL\nSTUDIO\nNETWORK"}
-                className="text-[54px] font-black uppercase leading-[0.95] tracking-[-0.065em] text-[#ededed] sm:text-[74px]"
+                text={"THREE WAYS TO\nSTART THE CONVERSATION."}
+                className="mt-6 max-w-[900px] text-[40px] font-black uppercase leading-[0.92] tracking-[-0.06em] text-[#ededed] sm:text-[58px]"
                 textAlign="left"
                 splitType="lines"
-                delay={16}
-                duration={0.65}
-                from={{ opacity: 0, y: 18 }}
-                to={{ opacity: 1, y: 0 }}
-              />
-
-              <SplitText
-                tag="p"
-                text="Operating across continents, our infrastructure is designed for high-end production at any scale. We maintain state-of-the-art facilities in key media capitals."
-                className="mt-8 max-w-[420px] text-[18px] leading-[1.85] text-white/70"
-                textAlign="left"
-                splitType="words"
                 delay={12}
-                duration={0.55}
-                from={{ opacity: 0, y: 10 }}
+                duration={0.65}
+                from={{ opacity: 0, y: 16 }}
                 to={{ opacity: 1, y: 0 }}
               />
             </div>
 
-            <div className="grid gap-8 md:grid-cols-2">
-              {studioLocations.map((location) => (
-                <article
-                  key={location.city}
-                  className="min-h-[320px] border-t border-white/10 px-5 py-6 sm:px-6"
-                >
-                  <div className="mb-8">{location.icon}</div>
-                  <SplitText
-                    tag="p"
-                    text={location.city}
-                    className="text-[11px] font-medium uppercase tracking-[0.34em] text-white/72"
-                    textAlign="left"
-                    splitType="chars"
-                    delay={10}
-                    duration={0.5}
-                    from={{ opacity: 0, y: 8 }}
-                    to={{ opacity: 1, y: 0 }}
-                  />
-                  <SplitText
-                    tag="p"
-                    text={location.description}
-                    className="mt-6 max-w-[260px] text-[17px] leading-[1.8] text-white/72"
-                    textAlign="left"
-                    splitType="words"
-                    delay={10}
-                    duration={0.5}
-                    from={{ opacity: 0, y: 8 }}
-                    to={{ opacity: 1, y: 0 }}
-                  />
-                </article>
-              ))}
-            </div>
+            {contactChannels.map((channel) => (
+              <article
+                key={channel.title}
+                className="flex flex-col border border-white/10 bg-white/[0.02] px-6 py-7"
+              >
+                <div className="mb-7">{channel.icon}</div>
+
+                <SplitText
+                  tag="p"
+                  text={channel.subtitle}
+                  className="text-[10px] font-medium uppercase tracking-[0.32em] text-[#EF4444]/85"
+                  textAlign="left"
+                  splitType="chars"
+                  delay={8}
+                  duration={0.45}
+                  from={{ opacity: 0, y: 8 }}
+                  to={{ opacity: 1, y: 0 }}
+                />
+                <SplitText
+                  tag="h3"
+                  text={channel.label}
+                  className="mt-3 text-[20px] font-semibold uppercase tracking-[-0.03em] text-white sm:text-[22px]"
+                  textAlign="left"
+                  splitType="chars"
+                  delay={10}
+                  duration={0.55}
+                  from={{ opacity: 0, y: 10 }}
+                  to={{ opacity: 1, y: 0 }}
+                />
+                <SplitText
+                  tag="p"
+                  text={channel.supporting}
+                  className="mt-4 text-[13px] leading-[1.75] text-white/68 sm:text-[14px]"
+                  textAlign="left"
+                  splitType="words"
+                  delay={10}
+                  duration={0.55}
+                  from={{ opacity: 0, y: 10 }}
+                  to={{ opacity: 1, y: 0 }}
+                />
+
+                <div className="mt-7 space-y-3">
+                  {channel.actions.map((action) => {
+                    const isExternal = /^https?:\/\//i.test(action.href);
+                    const classes =
+                      "flex items-center justify-between gap-3 border border-white/10 bg-black/40 px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/80 transition-colors hover:border-[#EF4444]/50 hover:text-white";
+
+                    if (isExternal) {
+                      return (
+                        <a
+                          key={action.label}
+                          href={action.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className={classes}
+                        >
+                          <span>{action.label}</span>
+                          <span aria-hidden="true">↗</span>
+                        </a>
+                      );
+                    }
+
+                    return (
+                      <a
+                        key={action.label}
+                        href={action.href}
+                        className={classes}
+                      >
+                        <span>{action.label}</span>
+                        <span aria-hidden="true">→</span>
+                      </a>
+                    );
+                  })}
+                </div>
+              </article>
+            ))}
           </div>
         </section>
 
         <section className="border-b border-white/10 px-5 py-24 sm:px-8 sm:py-32">
-          <div className="mx-auto grid max-w-[1600px] gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-            <div className="max-w-[520px]">
+          <div className="mx-auto grid max-w-[1480px] gap-12 lg:grid-cols-[0.95fr_1.15fr] lg:gap-16">
+            <div className="max-w-[540px]">
               <SplitText
                 tag="p"
-                text="Direct Inquiry"
-                className="text-[11px] font-medium uppercase tracking-[0.34em] text-[#EF4444]"
+                text="Send a message"
+                className="text-[10px] font-medium uppercase tracking-[0.36em] text-[#EF4444]"
                 textAlign="left"
                 splitType="chars"
                 delay={10}
@@ -240,19 +349,19 @@ export default function ContactPage() {
               />
               <SplitText
                 tag="h2"
-                text={"START THE\nCONVERSATION"}
-                className="mt-6 text-[48px] font-black uppercase leading-[0.93] tracking-[-0.06em] text-[#ededed] sm:text-[68px]"
+                text={"TELL US ABOUT\nTHE BUILD."}
+                className="mt-6 text-[42px] font-black uppercase leading-[0.92] tracking-[-0.06em] text-[#ededed] sm:text-[60px]"
                 textAlign="left"
                 splitType="lines"
-                delay={14}
+                delay={12}
                 duration={0.65}
                 from={{ opacity: 0, y: 16 }}
                 to={{ opacity: 1, y: 0 }}
               />
               <SplitText
                 tag="p"
-                text="Send your brief, campaign goals, or product requirements and we will route it to the right team. The form includes your name, number, email, and the reason you are reaching out."
-                className="mt-8 max-w-[460px] text-[18px] leading-[1.85] text-white/70"
+                text="Share a few details about your timeline, budget range, and what success looks like. Every submission lands directly in the inbox of the partner who will run your engagement."
+                className="mt-8 max-w-[460px] text-[15px] leading-[1.85] text-white/70 sm:text-[16px]"
                 textAlign="left"
                 splitType="words"
                 delay={12}
@@ -260,9 +369,35 @@ export default function ContactPage() {
                 from={{ opacity: 0, y: 10 }}
                 to={{ opacity: 1, y: 0 }}
               />
+
+              <div className="mt-10 border border-white/10 bg-white/[0.02] px-5 py-6 sm:px-6 sm:py-7">
+                <SplitText
+                  tag="p"
+                  text="Popular reasons to reach out"
+                  className="text-[10px] font-medium uppercase tracking-[0.32em] text-[#EF4444]/80"
+                  textAlign="left"
+                  splitType="chars"
+                  delay={8}
+                  duration={0.45}
+                  from={{ opacity: 0, y: 8 }}
+                  to={{ opacity: 1, y: 0 }}
+                />
+                <ul className="mt-5 space-y-3 text-[12px] leading-[1.85] text-white/72 sm:text-[13px]">
+                  {channelReasons.map((reason) => (
+                    <li
+                      key={reason}
+                      className="flex items-start gap-3 before:mt-[9px] before:block before:h-[5px] before:w-[5px] before:shrink-0 before:rounded-full before:bg-[#EF4444]"
+                    >
+                      <span>{reason}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
-            <ContactEmailForm />
+            <div className="border border-white/10 bg-white/[0.02] p-5 sm:p-8">
+              <ContactEmailForm />
+            </div>
           </div>
         </section>
       </main>
