@@ -108,41 +108,40 @@ function SpotlightSection({
 
 export default function HomePage() {
 
-  const spotlightSections: SpotlightSectionProps[] = [
-    {
-      eyebrow: "// IMMERSIVE STORYTELLING",
-      title: "Campaign visuals built to hold attention at first glance.",
-      description:
-        "We create art direction, motion, and launch assets that turn a brand moment into a visual event with lasting recall.",
-      imagePosition: "right",
-      imageSrc: "/img4.jpg",
-    },
-    {
-      eyebrow: "// BRAND PRESENCE",
-      title: "Digital experiences shaped with clarity, tension, and impact.",
-      description:
-        "From landing pages to identity systems, every touchpoint is composed to feel premium, direct, and unmistakably intentional.",
-      imagePosition: "left",
-      imageSrc: "/img2.jpg",
-    },
-    {
-      eyebrow: "// IMMERSIVE STORYTELLING",
-      title: "Campaign visuals to hold attention at first glance.",
-      description:
-        "We create art direction, motion, and launch assets that turn a brand moment into a visual event with lasting recall.",
-      imagePosition: "right",
-      imageSrc: "/img3.jpg",
-    },
-    {
-      eyebrow: "// BRAND PRESENCE",
-      title: "Digital experiences shaped with clarity and impact.",
-      description:
-        "From landing pages to identity systems, every touchpoint is composed to feel premium, direct, and unmistakably intentional.",
-      imagePosition: "left",
-      imageSrc: "/img4.jpg",
-    },
-  ];
-
+const spotlightSections: SpotlightSectionProps[] = [
+  {
+    eyebrow: "// CAMPAIGN DIRECTION",
+    title: "Ideas designed to make brands impossible to scroll past.",
+    description:
+      "We develop campaign concepts, visual direction, and creative assets that give brands a distinct presence across every platform and every launch.",
+    imagePosition: "right",
+    imageSrc: "/img4.jpg",
+  },
+  {
+    eyebrow: "// SOCIAL IMPACT",
+    title: "Social content built for attention, engagement, and culture.",
+    description:
+      "From scroll-stopping reels to platform-native content, we turn everyday brand communication into moments people want to watch, share, and remember.",
+    imagePosition: "left",
+    imageSrc: "/img2.jpg",
+  },
+  {
+    eyebrow: "// CONTENT STUDIO",
+    title: "Visual stories that give your brand something to say.",
+    description:
+      "We produce photography, video, motion, and branded content that translate your identity into a consistent visual language across campaigns and channels.",
+    imagePosition: "right",
+    imageSrc: "/img3.jpg",
+  },
+  {
+    eyebrow: "// DIGITAL GROWTH",
+    title: "Creative strategy that turns visibility into momentum.",
+    description:
+      "We connect creative with performance through targeted digital campaigns, audience insights, and strategic execution built to move people from discovery to action.",
+    imagePosition: "left",
+    imageSrc: "/img6.png",
+  },
+];
   const globeLocations: GlobeLocation[] = [];
 
   return (
