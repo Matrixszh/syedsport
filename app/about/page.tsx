@@ -143,11 +143,11 @@ export default function AboutPage() {
               to={{ opacity: 1, y: 0 }}
             />
 
-            <div className="mt-8 mx-auto max-w-[1010px]">
+            <div className="mt-8 mx-auto max-w-[980px]">
               <SplitText
                 tag="h1"
                 text="ENGINEER"
-                className="block text-[54px] font-black uppercase leading-[0.84] tracking-[-0.07em] text-[#e8e8e8] sm:text-[88px] md:text-[118px]"
+                className="block text-[40px] font-black uppercase leading-[0.84] tracking-[-0.07em] text-[#e8e8e8] sm:text-[88px] md:text-[118px]"
                 textAlign="center"
                 splitType="chars"
                 delay={12}
@@ -158,7 +158,7 @@ export default function AboutPage() {
               <SplitText
                 tag="h1"
                 text="YOUR GROWTH"
-                className="block text-[54px] font-black uppercase leading-[0.84] tracking-[-0.07em] text-[#e8e8e8] sm:text-[88px] md:text-[118px]"
+                className="block text-[40px] font-black uppercase leading-[0.84] tracking-[-0.07em] text-[#e8e8e8] sm:text-[88px] md:text-[118px]"
                 textAlign="center"
                 splitType="chars"
                 delay={12}
