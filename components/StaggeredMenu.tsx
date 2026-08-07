@@ -449,7 +449,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             <Image
               src={logoUrl || '/LogoN.png'}
               alt="Logo"
-              className="sm-logo-img block h-16 w-auto object-contain sm:h-[72px]"
+              className="sm-logo-img block h-8 w-auto object-contain sm:h-[72px]"
               draggable={false}
               width={240}
               height={68}
