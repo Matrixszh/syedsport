@@ -26,7 +26,7 @@ type Pillar = {
 
 const pillars: Pillar[] = [
   {
-    number: "1",
+    number: "01",
     title: "Software Engineering & Digital Products",
     tagline: "High-performance code meets conversion psychology.",
     items: [
@@ -50,7 +50,7 @@ const pillars: Pillar[] = [
     ],
   },
   {
-    number: "2",
+    number: "02",
     title: "Advanced Automation & AI",
     tagline: "Streamline your operations and scale your touchpoints.",
     items: [
@@ -68,7 +68,7 @@ const pillars: Pillar[] = [
     ],
   },
   {
-    number: "3",
+    number: "03",
     title: "Immersive Interactive Media",
     tagline: "Gamify your engagement to drive serious monetization.",
     items: [
@@ -80,7 +80,7 @@ const pillars: Pillar[] = [
     ],
   },
   {
-    number: "4",
+    number: "04",
     title: "High-End Cinematography & Commercial Photography",
     tagline: "Immersive visual storytelling engineered to convert.",
     items: [
@@ -103,7 +103,7 @@ const pillars: Pillar[] = [
     ],
   },
   {
-    number: "5",
+    number: "05",
     title: "Elite Performance Marketing Engines",
     tagline: "Data-backed customer acquisition designed to scale revenue.",
     items: [
@@ -134,7 +134,7 @@ const pillars: Pillar[] = [
     ],
   },
   {
-    number: "6",
+    number: "06",
     title: "Cloud Engineering & Infrastructure",
     tagline: "Zero downtime. Infinite scale.",
     items: [
@@ -146,7 +146,7 @@ const pillars: Pillar[] = [
     ],
   },
   {
-    number: "7",
+    number: "07",
     title: "Support & Long-Term Maintenance",
     tagline: "Continuous optimization to keep you flawless.",
     items: [

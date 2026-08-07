@@ -78,58 +78,61 @@ export default function ContactEmailForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full border border-white/10 bg-black/35 p-6 backdrop-blur-[2px] sm:p-8"
+      className="w-full border border-white/10 bg-black/35 p-4 backdrop-blur-[2px] sm:p-6 lg:p-8"
     >
-      <div className="grid gap-5">
-        <label className="grid gap-2 text-[10px] font-medium uppercase tracking-[0.28em] text-white/52">
+      <div className="grid gap-4 sm:gap-5">
+        <label className="grid gap-2 text-[9px] font-medium uppercase tracking-[0.26em] text-white/52 sm:text-[10px] sm:tracking-[0.28em]">
           Name
           <input
             type="text"
             name="name"
             required
             autoComplete="name"
+            inputMode="text"
             value={values.name}
             onChange={(event) =>
               setValues((current) => ({ ...current, name: event.target.value }))
             }
-            className="h-12 border border-white/12 bg-white/[0.03] px-4 text-[14px] normal-case tracking-normal text-white outline-none transition-colors placeholder:text-white/28 focus:border-[#EF4444]"
+            className="h-11 rounded-[10px] border border-white/12 bg-white/[0.03] px-3.5 text-[14px] normal-case tracking-normal text-white outline-none transition-colors placeholder:text-white/28 focus:border-[#EF4444] sm:h-12 sm:px-4 sm:rounded-none"
             placeholder="Your name"
           />
         </label>
 
-        <label className="grid gap-2 text-[10px] font-medium uppercase tracking-[0.28em] text-white/52">
+        <label className="grid gap-2 text-[9px] font-medium uppercase tracking-[0.26em] text-white/52 sm:text-[10px] sm:tracking-[0.28em]">
           Number
           <input
             type="tel"
             name="number"
             required
             autoComplete="tel"
+            inputMode="tel"
             value={values.number}
             onChange={(event) =>
               setValues((current) => ({ ...current, number: event.target.value }))
             }
-            className="h-12 border border-white/12 bg-white/[0.03] px-4 text-[14px] normal-case tracking-normal text-white outline-none transition-colors placeholder:text-white/28 focus:border-[#EF4444]"
+            className="h-11 rounded-[10px] border border-white/12 bg-white/[0.03] px-3.5 text-[14px] normal-case tracking-normal text-white outline-none transition-colors placeholder:text-white/28 focus:border-[#EF4444] sm:h-12 sm:px-4 sm:rounded-none"
             placeholder="Your phone number"
           />
         </label>
 
-        <label className="grid gap-2 text-[10px] font-medium uppercase tracking-[0.28em] text-white/52">
+        <label className="grid gap-2 text-[9px] font-medium uppercase tracking-[0.26em] text-white/52 sm:text-[10px] sm:tracking-[0.28em]">
           Email
           <input
             type="email"
             name="email"
             required
             autoComplete="email"
+            inputMode="email"
             value={values.email}
             onChange={(event) =>
               setValues((current) => ({ ...current, email: event.target.value }))
             }
-            className="h-12 border border-white/12 bg-white/[0.03] px-4 text-[14px] normal-case tracking-normal text-white outline-none transition-colors placeholder:text-white/28 focus:border-[#EF4444]"
+            className="h-11 rounded-[10px] border border-white/12 bg-white/[0.03] px-3.5 text-[14px] normal-case tracking-normal text-white outline-none transition-colors placeholder:text-white/28 focus:border-[#EF4444] sm:h-12 sm:px-4 sm:rounded-none"
             placeholder="Your email"
           />
         </label>
 
-        <label className="grid gap-2 text-[10px] font-medium uppercase tracking-[0.28em] text-white/52">
+        <label className="grid gap-2 text-[9px] font-medium uppercase tracking-[0.26em] text-white/52 sm:text-[10px] sm:tracking-[0.28em]">
           Reason To Contact
           <textarea
             name="reason"
@@ -139,24 +142,24 @@ export default function ContactEmailForm() {
             onChange={(event) =>
               setValues((current) => ({ ...current, reason: event.target.value }))
             }
-            className="min-h-[160px] resize-none border border-white/12 bg-white/[0.03] px-4 py-4 text-[14px] normal-case tracking-normal text-white outline-none transition-colors placeholder:text-white/28 focus:border-[#EF4444]"
+            className="min-h-[150px] resize-vertical rounded-[10px] border border-white/12 bg-white/[0.03] px-3.5 py-3.5 text-[14px] normal-case tracking-normal text-white outline-none transition-colors placeholder:text-white/28 focus:border-[#EF4444] sm:min-h-[160px] sm:px-4 sm:py-4 sm:rounded-none"
             placeholder="Tell us what you need."
           />
         </label>
       </div>
 
-      <div className="mt-6 flex flex-col gap-4">
+      <div className="mt-6 flex flex-col items-center gap-4 sm:mt-6 sm:items-start">
         <button
           type="submit"
           disabled={isSubmitting}
-          className="inline-flex h-12 items-center justify-center border border-[#EF4444] bg-[#EF4444] px-6 text-[10px] font-medium uppercase tracking-[0.28em] text-white transition-colors hover:bg-[#ef4444]/90 disabled:cursor-not-allowed disabled:opacity-70"
+          className="inline-flex min-w-[220px] h-11 items-center justify-center border border-[#EF4444] bg-[#EF4444] px-5 text-[10px] font-semibold uppercase tracking-[0.26em] text-white transition-colors hover:bg-[#ef4444]/90 active:scale-[0.995] disabled:cursor-not-allowed disabled:opacity-70 sm:min-w-[240px] sm:h-12 sm:px-6 sm:tracking-[0.28em]"
         >
           {isSubmitting ? "Sending..." : "Submit Inquiry"}
         </button>
 
         {statusMessage ? (
           <p
-            className={`text-[12px] leading-6 ${
+            className={`w-full text-center text-[12px] leading-6 sm:text-left ${
               statusTone === "success" ? "text-[#f1f1f1]/72" : "text-[#ff8c8c]"
             }`}
           >

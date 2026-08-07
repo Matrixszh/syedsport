@@ -171,28 +171,28 @@ export default function ContactPage() {
               to={{ opacity: 1, y: 0 }}
             />
 
-            <div className="mt-10 grid w-full max-w-[920px] grid-cols-2 gap-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-white/60 sm:grid-cols-3 sm:text-[12px]">
-              <div className="border border-white/10 bg-white/[0.03] px-4 py-3">
+            <div className="mt-10 grid w-full max-w-[920px] grid-cols-1 gap-3 text-[10px] font-semibold uppercase tracking-[0.24em] text-white/60 sm:grid-cols-2 sm:text-[11px] lg:grid-cols-3 lg:text-[12px]">
+              <div className="flex items-center justify-center border border-white/10 bg-white/[0.03] px-4 py-3 text-center">
                 Response within 24h
               </div>
-              <div className="border border-white/10 bg-white/[0.03] px-4 py-3">
+              <div className="flex items-center justify-center border border-white/10 bg-white/[0.03] px-4 py-3 text-center">
                 Confidential NDAs on request
               </div>
-              <div className="col-span-2 border border-white/10 bg-white/[0.03] px-4 py-3 sm:col-span-1">
+              <div className="flex items-center justify-center border border-white/10 bg-white/[0.03] px-4 py-3 text-center sm:col-span-2 lg:col-span-1">
                 Global client roster
               </div>
             </div>
           </div>
         </section>
 
-        <section className="border-b border-white/10 px-5 py-24 sm:px-8 sm:py-32">
-          <div className="mx-auto grid max-w-[1480px] gap-10 lg:grid-cols-3 lg:gap-12">
+        <section className="border-b border-white/10 px-5 py-20 sm:px-8 sm:py-28 lg:py-32">
+          <div className="mx-auto grid max-w-[1280px] gap-10 lg:grid-cols-3 lg:gap-12">
             <div className="lg:col-span-3">
               <SplitText
                 tag="p"
                 text="Get in touch"
-                className="text-[10px] font-medium uppercase tracking-[0.36em] text-[#EF4444]"
-                textAlign="left"
+                className="text-[10px] font-medium uppercase tracking-[0.34em] text-[#EF4444]"
+                textAlign="center"
                 splitType="chars"
                 delay={10}
                 duration={0.5}
@@ -202,8 +202,8 @@ export default function ContactPage() {
               <SplitText
                 tag="h2"
                 text={"THREE WAYS TO\nSTART THE CONVERSATION."}
-                className="mt-6 max-w-[900px] text-[40px] font-black uppercase leading-[0.92] tracking-[-0.06em] text-[#ededed] sm:text-[58px]"
-                textAlign="left"
+                className="mt-6 mx-auto max-w-[900px] text-[34px] font-black uppercase leading-[0.92] tracking-[-0.055em] text-[#ededed] sm:text-[46px] lg:text-center lg:text-[58px]"
+                textAlign="center"
                 splitType="lines"
                 delay={12}
                 duration={0.65}
@@ -215,14 +215,14 @@ export default function ContactPage() {
             {contactChannels.map((channel) => (
               <article
                 key={channel.title}
-                className="flex flex-col border border-white/10 bg-white/[0.02] px-6 py-7"
+                className="flex flex-col border border-white/10 bg-white/[0.02] px-5 py-6 sm:px-6 sm:py-7"
               >
-                <div className="mb-7">{channel.icon}</div>
+                <div className="mb-6 sm:mb-7">{channel.icon}</div>
 
                 <SplitText
                   tag="p"
                   text={channel.subtitle}
-                  className="text-[10px] font-medium uppercase tracking-[0.32em] text-[#EF4444]/85"
+                  className="text-[9px] font-medium uppercase tracking-[0.32em] text-[#EF4444]/85 sm:text-[10px]"
                   textAlign="left"
                   splitType="chars"
                   delay={8}
@@ -233,7 +233,7 @@ export default function ContactPage() {
                 <SplitText
                   tag="h3"
                   text={channel.label}
-                  className="mt-3 text-[20px] font-semibold uppercase tracking-[-0.03em] text-white sm:text-[22px]"
+                  className="mt-3 text-[18px] font-semibold uppercase tracking-[-0.025em] text-white sm:text-[20px] lg:text-[22px]"
                   textAlign="left"
                   splitType="chars"
                   delay={10}
@@ -244,7 +244,7 @@ export default function ContactPage() {
                 <SplitText
                   tag="p"
                   text={channel.supporting}
-                  className="mt-4 text-[13px] leading-[1.75] text-white/68 sm:text-[14px]"
+                  className="mt-4 text-[12px] leading-[1.75] text-white/68 sm:text-[13px] lg:text-[14px]"
                   textAlign="left"
                   splitType="words"
                   delay={10}
@@ -253,11 +253,11 @@ export default function ContactPage() {
                   to={{ opacity: 1, y: 0 }}
                 />
 
-                <div className="mt-7 space-y-3">
+                <div className="mt-6 space-y-3 sm:mt-7">
                   {channel.actions.map((action) => {
                     const isExternal = /^https?:\/\//i.test(action.href);
                     const classes =
-                      "flex items-center justify-between gap-3 border border-white/10 bg-black/40 px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/80 transition-colors hover:border-[#EF4444]/50 hover:text-white";
+                      "flex items-center justify-between gap-3 border border-white/10 bg-black/40 px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/80 transition-colors hover:border-[#EF4444]/50 hover:text-white sm:text-[11px] sm:tracking-[0.22em]";
 
                     if (isExternal) {
                       return (
@@ -268,7 +268,7 @@ export default function ContactPage() {
                           rel="noreferrer"
                           className={classes}
                         >
-                          <span>{action.label}</span>
+                          <span className="truncate">{action.label}</span>
                           <span aria-hidden="true">↗</span>
                         </a>
                       );
@@ -280,7 +280,7 @@ export default function ContactPage() {
                         href={action.href}
                         className={classes}
                       >
-                        <span>{action.label}</span>
+                        <span className="truncate">{action.label}</span>
                         <span aria-hidden="true">→</span>
                       </a>
                     );
@@ -291,13 +291,13 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section className="border-b border-white/10 px-5 py-24 sm:px-8 sm:py-32" id="form">
-          <div className="mx-auto grid max-w-[1480px] gap-12 lg:grid-cols-[0.95fr_1.15fr] lg:gap-16">
-            <div className="max-w-[540px]">
+        <section className="border-b border-white/10 px-5 py-20 sm:px-8 sm:py-28 lg:py-32" id="form">
+          <div className="mx-auto grid max-w-[1280px] gap-10 lg:grid-cols-[0.95fr_1.15fr] lg:items-start lg:gap-16">
+            <div className="mx-auto w-full max-w-[540px] lg:mx-0">
               <SplitText
                 tag="p"
                 text="Send a message"
-                className="text-[10px] font-medium uppercase tracking-[0.36em] text-[#EF4444]"
+                className="text-[10px] font-medium uppercase tracking-[0.34em] text-[#EF4444]"
                 textAlign="left"
                 splitType="chars"
                 delay={10}
@@ -308,7 +308,7 @@ export default function ContactPage() {
               <SplitText
                 tag="h2"
                 text={"TELL US ABOUT\nTHE BUILD."}
-                className="mt-6 text-[42px] font-black uppercase leading-[0.92] tracking-[-0.06em] text-[#ededed] sm:text-[60px]"
+                className="mt-6 text-[36px] font-black uppercase leading-[0.92] tracking-[-0.055em] text-[#ededed] sm:text-[48px] lg:text-[60px]"
                 textAlign="left"
                 splitType="lines"
                 delay={12}
@@ -319,7 +319,7 @@ export default function ContactPage() {
               <SplitText
                 tag="p"
                 text="Share a few details about your timeline, budget range, and what success looks like. Every submission lands directly in the inbox of the partner who will run your engagement."
-                className="mt-8 max-w-[460px] text-[15px] leading-[1.85] text-white/70 sm:text-[16px]"
+                className="mt-8 max-w-[480px] text-[14px] leading-[1.85] text-white/70 sm:text-[15px] lg:text-[16px]"
                 textAlign="left"
                 splitType="words"
                 delay={12}
@@ -332,7 +332,7 @@ export default function ContactPage() {
                 <SplitText
                   tag="p"
                   text="Popular reasons to reach out"
-                  className="text-[10px] font-medium uppercase tracking-[0.32em] text-[#EF4444]/80"
+                  className="text-[10px] font-medium uppercase tracking-[0.3em] text-[#EF4444]/80 sm:tracking-[0.32em]"
                   textAlign="left"
                   splitType="chars"
                   delay={8}
@@ -340,11 +340,11 @@ export default function ContactPage() {
                   from={{ opacity: 0, y: 8 }}
                   to={{ opacity: 1, y: 0 }}
                 />
-                <ul className="mt-5 space-y-3 text-[12px] leading-[1.85] text-white/72 sm:text-[13px]">
+                <ul className="mt-5 space-y-3 text-[11px] leading-[1.8] text-white/72 sm:text-[12px] lg:text-[13px]">
                   {channelReasons.map((reason) => (
                     <li
                       key={reason}
-                      className="flex items-start gap-3 before:mt-[9px] before:block before:h-[5px] before:w-[5px] before:shrink-0 before:rounded-full before:bg-[#EF4444]"
+                      className="flex items-start gap-3 before:mt-[8px] before:block before:h-[5px] before:w-[5px] before:shrink-0 before:rounded-full before:bg-[#EF4444]"
                     >
                       <span>{reason}</span>
                     </li>
@@ -353,7 +353,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="border border-white/10 bg-white/[0.02] p-5 sm:p-8">
+            <div className="w-full border border-white/10 bg-white/[0.02] px-4 py-5 sm:px-6 sm:py-7 lg:p-8">
               <ContactEmailForm />
             </div>
           </div>
