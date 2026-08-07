@@ -200,7 +200,7 @@ const spotlightSections: SpotlightSectionProps[] = [
                   className="inline-flex h-[42px] min-w-[142px] items-center justify-center border border-white bg-transparent px-5 text-sm font-semibold tracking-[0.35em] text-white transition-colors hover:bg-white/30"
                 >
                   
-                  DISCOVER AURA
+                  DISCOVER 
                 </Link>
               </div>
             </div>
