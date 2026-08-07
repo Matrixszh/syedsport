@@ -143,7 +143,7 @@ export default function AboutPage() {
               to={{ opacity: 1, y: 0 }}
             />
 
-            <div className="mt-8 mx-auto max-w-[980px]">
+            <div className="mt-8 mx-auto max-w-[1010px]">
               <SplitText
                 tag="h1"
                 text="ENGINEER"
