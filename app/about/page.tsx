@@ -147,7 +147,7 @@ export default function AboutPage() {
               <SplitText
                 tag="h1"
                 text="ENGINEER"
-                className="block text-[40px] font-black uppercase leading-[0.84] tracking-[-0.07em] text-[#e8e8e8] sm:text-[88px] md:text-[118px]"
+                className="block text-[45px] font-black uppercase leading-[0.84] tracking-[-0.07em] text-[#e8e8e8] sm:text-[88px] md:text-[118px]"
                 textAlign="center"
                 splitType="chars"
                 delay={12}
@@ -158,7 +158,7 @@ export default function AboutPage() {
               <SplitText
                 tag="h1"
                 text="YOUR GROWTH"
-                className="block text-[40px] font-black uppercase leading-[0.84] tracking-[-0.07em] text-[#e8e8e8] sm:text-[88px] md:text-[118px]"
+                className="block text-[45px] font-black uppercase leading-[0.84] tracking-[-0.07em] text-[#e8e8e8] sm:text-[88px] md:text-[118px]"
                 textAlign="center"
                 splitType="chars"
                 delay={12}
