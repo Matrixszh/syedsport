@@ -215,23 +215,7 @@ export default function AboutPage() {
               </Link>
             </div>
 
-            <div className="relative mt-12 w-full max-w-[900px] overflow-hidden border border-white/10 bg-white/[0.03]">
-              <div
-                className="absolute inset-0 bg-cover bg-center opacity-100"
-                style={{ backgroundImage: "url('/img3.jpg')" }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-br from-black/55 via-black/35 to-black/80" />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1),transparent_38%)]" />
-              <div className="relative flex h-[260px] items-center justify-center sm:h-[340px]">
-                <button
-                  type="button"
-                  aria-label="Play showreel"
-                  className="grid h-14 w-14 place-items-center rounded-full border border-white/20 bg-white/10 backdrop-blur-sm transition-colors hover:bg-white/15"
-                >
-                  <span className="ml-0.5 block h-0 w-0 border-y-[9px] border-l-[14px] border-y-transparent border-l-white/85" />
-                </button>
-              </div>
-            </div>
+            
           </div>
         </section>
 
@@ -331,9 +315,9 @@ export default function AboutPage() {
                     />
 
                     <div
-                      className={`relative flex flex-col justify-end p-5 sm:p-6 ${card.heightClassName}`}
+                      className={`relative flex h-full flex-col justify-end p-5 pb-12 sm:p-6 sm:pb-16 md:pb-6 ${card.heightClassName}`}
                     >
-                      <div className="flex items-start justify-between gap-4">
+                      <div className="flex items-start justify-between gap-1">
                         <div>
                           <SplitText
                             tag="p"
@@ -362,9 +346,6 @@ export default function AboutPage() {
                         <span className="hidden select-none text-[9px] font-semibold uppercase tracking-[0.28em] text-white/55 md:block">
                           {isActive ? "Release to close" : "Hover to reveal"}
                         </span>
-                        <span className="block select-none text-[9px] font-semibold uppercase tracking-[0.28em] text-white/55 md:hidden">
-                          Tap to reveal
-                        </span>
                       </div>
 
                       <motion.div
@@ -390,6 +371,12 @@ export default function AboutPage() {
                           {card.description}
                         </p>
                       </motion.div>
+
+                      <div className="pointer-events-none absolute inset-x-5 bottom-4 flex items-center justify-between gap-3 md:hidden sm:inset-x-6 sm:bottom-6">
+                        <span className="select-none text-[9px] font-semibold uppercase tracking-[0.28em] text-white/55">
+                          {isActive ? "Tap to close" : "Tap to reveal"}
+                        </span>
+                      </div>
                     </div>
                   </article>
                 );
