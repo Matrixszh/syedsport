@@ -442,14 +442,14 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         </div>
 
         <header
-          className="staggered-menu-header absolute top-0 left-0 w-full flex items-center justify-between p-[2em] bg-transparent pointer-events-none z-20"
+          className="staggered-menu-header absolute top-0 left-0 w-full flex items-center justify-between px-[0.9rem] py-[0.7rem] sm:px-[2em] sm:py-[1.6rem] bg-transparent pointer-events-none z-20"
           aria-label="Main navigation header"
         >
           <div className="sm-logo flex items-center select-none pointer-events-auto" aria-label="Logo">
             <Image
               src={logoUrl || '/LogoN.png'}
               alt="Logo"
-              className="sm-logo-img block h-8 w-auto object-contain sm:h-[72px]"
+              className="sm-logo-img block h-12 w-auto object-contain sm:h-[72px]"
               draggable={false}
               width={240}
               height={68}
@@ -590,13 +590,14 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
       <style>{`
 .sm-scope .staggered-menu-wrapper { position: relative; width: 100%; height: 100%; z-index: 40; pointer-events: none; }
-.sm-scope .staggered-menu-header { position: absolute; top: 0; left: 0; width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 2em; background: transparent; pointer-events: none; z-index: 20; }
+.sm-scope .staggered-menu-header { position: absolute; top: 0; left: 0; width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 0.9rem; background: transparent; pointer-events: none; z-index: 20; }
 .sm-scope[data-fixed] .staggered-menu-header { position: fixed; }
 .sm-scope[data-fixed][data-scrolled] .staggered-menu-wrapper:not([data-open]) .staggered-menu-header { background: rgba(0,0,0,0.35); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,0.08); }
 .sm-scope .staggered-menu-header > * { pointer-events: auto; }
 .sm-scope .sm-logo { display: flex; align-items: center; user-select: none; }
-.sm-scope .sm-logo-img { display: block; height: 64px; width: auto; max-width: none; object-fit: contain; aspect-ratio: auto; }
-@media (min-width: 640px) { .sm-scope .sm-logo-img { height: 72px; width: auto; max-width: none; } }
+.sm-scope .sm-logo-img { display: block; height: 48px; width: auto; max-width: none; object-fit: contain; aspect-ratio: auto; }
+@media (max-width: 420px) { .sm-scope .sm-logo-img { height: 42px; } .sm-scope .staggered-menu-header { padding: 0.7rem 0.8rem; } }
+@media (min-width: 640px) { .sm-scope .staggered-menu-header { padding: 1.6rem 2em; } .sm-scope .sm-logo-img { height: 72px; width: auto; max-width: none; } }
 .sm-scope .sm-brand-desktop { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: #fff; text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.35em; white-space: nowrap; display: none; }
 .sm-scope .sm-toggle { position: relative; display: inline-flex; align-items: center; gap: 0.3rem; background: transparent; border: none; cursor: pointer; color: #e9e9ef; font-weight: 500; line-height: 1; overflow: visible; }
 .sm-scope .sm-toggle:focus-visible { outline: 2px solid #ffffffaa; outline-offset: 4px; border-radius: 4px; }
