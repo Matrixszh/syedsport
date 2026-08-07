@@ -6,8 +6,9 @@ import { motion, useScroll, useTransform } from "motion/react";
 import Beams from "@/components/Beams";
 import DotGrid from "@/components/DotGrid";
 import Globe, { type GlobeLocation } from "@/components/Globe/Globe";
+import SiteFooter from "@/components/SiteFooter";
+import SiteNavbar from "@/components/SiteNavbar";
 import SplitText from "@/components/SplitText";
-import StaggeredMenu from "@/components/StaggeredMenu";
 
 type SpotlightSectionProps = {
   eyebrow: string;
@@ -105,19 +106,7 @@ function SpotlightSection({
   );
 }
 
-export default function ServicesPage() {
-  const menuItems = [
-    { label: "Home", ariaLabel: "Go to home page", link: "/" },
-    { label: "About", ariaLabel: "Learn about us", link: "/about" },
-    { label: "Services", ariaLabel: "View our services", link: "/services" },
-    { label: "Contact", ariaLabel: "Get in touch", link: "/contact" },
-  ];
-
-  const socialItems = [
-    { label: "Twitter", link: "https://twitter.com" },
-    { label: "GitHub", link: "https://github.com" },
-    { label: "LinkedIn", link: "https://linkedin.com" },
-  ];
+export default function HomePage() {
 
   const spotlightSections: SpotlightSectionProps[] = [
     {
@@ -154,35 +143,7 @@ export default function ServicesPage() {
     },
   ];
 
-  const globeLocations: GlobeLocation[] = [
-    {
-      id: "about-tag",
-      name: "About Us",
-      latitude: 40.7128,
-      longitude: -74.006,
-      color: "#FFD700",
-      href: "/about",
-      description: "Meet the studio behind the campaigns.",
-    },
-    {
-      id: "services-tag",
-      name: "Services",
-      latitude: 19.076,
-      longitude: 72.8777,
-      color: "#FFD700",
-      href: "/services",
-      description: "Explore strategy, visuals, and launch systems.",
-    },
-    {
-      id: "contact-tag",
-      name: "Contact",
-      latitude: 51.5072,
-      longitude: -0.1276,
-      color: "#FFD700",
-      href: "/contact",
-      description: "Start a project or ask about availability.",
-    },
-  ];
+  const globeLocations: GlobeLocation[] = [];
 
   return (
     <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden bg-black text-white">
@@ -194,20 +155,7 @@ export default function ServicesPage() {
         }}
       />
 
-      <StaggeredMenu
-        position="right"
-        items={menuItems}
-        socialItems={socialItems}
-        displaySocials
-        displayItemNumbering={true}
-        menuButtonColor="#ffffff"
-        openMenuButtonColor="#ffffff"
-        changeMenuColorOnOpen={true}
-        colors={["#3f3f40", "#FFD700"]}
-        logoUrl="/tulip.png"
-        accentColor="#FFD700"
-        isFixed={true}
-      />
+      <SiteNavbar />
 
       <main className="relative z-10 mx-auto w-full flex-1">
         <section >
@@ -595,195 +543,7 @@ export default function ServicesPage() {
         </section>
       </main>
 
-      <footer className="relative z-10 border-t border-white/10 bg-black/30">
-        <div className="mx-auto w-full max-w-full px-5 py-14 sm:px-8 sm:py-16">
-          <div className="grid gap-10 md:grid-cols-12 md:gap-8">
-            <div className="md:col-span-6">
-              <SplitText
-                tag="p"
-                text="SKYWORLD"
-                className="block text-[12px] font-semibold tracking-[0.35em] text-[#FFD700]/80"
-                textAlign="left"
-                splitType="chars"
-                delay={18}
-                duration={0.7}
-                from={{ opacity: 0, y: 10 }}
-                to={{ opacity: 1, y: 0 }}
-              />
-              <SplitText
-                tag="p"
-                text="Designing the future of visual experiences. Where technology and emotion collide — art becomes industry."
-                className="block mt-4 max-w-[420px] text-[12px] leading-5 text-[white]/55"
-                textAlign="left"
-                splitType="words"
-                delay={14}
-                duration={0.6}
-                from={{ opacity: 0, y: 10 }}
-                to={{ opacity: 1, y: 0 }}
-              />
-            </div>
-
-            <div className="grid gap-8 text-[12px] text-white/60 sm:grid-cols-3 md:col-span-6">
-              <div>
-                <SplitText
-                  tag="p"
-                  text="Sitemap"
-                  className="block text-[10px] font-medium tracking-[0.32em] text-white/55"
-                  textAlign="left"
-                  splitType="chars"
-                  delay={14}
-                  duration={0.6}
-                  from={{ opacity: 0, y: 10 }}
-                  to={{ opacity: 1, y: 0 }}
-                />
-                <div className="mt-4 space-y-3">
-                  <a href="#" className="block hover:text-white">
-                    <SplitText
-                      tag="span"
-                      text="Work"
-                      className="block"
-                      textAlign="left"
-                      splitType="chars"
-                      delay={12}
-                      duration={0.55}
-                      from={{ opacity: 0, y: 8 }}
-                      to={{ opacity: 1, y: 0 }}
-                    />
-                  </a>
-                  <a href="#" className="block hover:text-white">
-                    <SplitText
-                      tag="span"
-                      text="Services"
-                      className="block"
-                      textAlign="left"
-                      splitType="chars"
-                      delay={12}
-                      duration={0.55}
-                      from={{ opacity: 0, y: 8 }}
-                      to={{ opacity: 1, y: 0 }}
-                    />
-                  </a>
-                  <a href="#" className="block hover:text-white">
-                    <SplitText
-                      tag="span"
-                      text="About"
-                      className="block"
-                      textAlign="left"
-                      splitType="chars"
-                      delay={12}
-                      duration={0.55}
-                      from={{ opacity: 0, y: 8 }}
-                      to={{ opacity: 1, y: 0 }}
-                    />
-                  </a>
-                </div>
-              </div>
-              <div>
-                <SplitText
-                  tag="p"
-                  text="Social"
-                  className="block text-[10px] font-medium tracking-[0.32em] text-white/55"
-                  textAlign="left"
-                  splitType="chars"
-                  delay={14}
-                  duration={0.6}
-                  from={{ opacity: 0, y: 10 }}
-                  to={{ opacity: 1, y: 0 }}
-                />
-                <div className="mt-4 space-y-3">
-                  <a href="#" className="block hover:text-white">
-                    <SplitText
-                      tag="span"
-                      text="Instagram"
-                      className="block"
-                      textAlign="left"
-                      splitType="chars"
-                      delay={12}
-                      duration={0.55}
-                      from={{ opacity: 0, y: 8 }}
-                      to={{ opacity: 1, y: 0 }}
-                    />
-                  </a>
-                  <a href="#" className="block hover:text-white">
-                    <SplitText
-                      tag="span"
-                      text="X"
-                      className="block"
-                      textAlign="left"
-                      splitType="chars"
-                      delay={12}
-                      duration={0.55}
-                      from={{ opacity: 0, y: 8 }}
-                      to={{ opacity: 1, y: 0 }}
-                    />
-                  </a>
-                  <a href="#" className="block hover:text-white">
-                    <SplitText
-                      tag="span"
-                      text="Behance"
-                      className="block"
-                      textAlign="left"
-                      splitType="chars"
-                      delay={12}
-                      duration={0.55}
-                      from={{ opacity: 0, y: 8 }}
-                      to={{ opacity: 1, y: 0 }}
-                    />
-                  </a>
-                </div>
-              </div>
-              <div>
-                <SplitText
-                  tag="p"
-                  text="Contact"
-                  className="block text-[10px] font-medium tracking-[0.32em] text-white/55"
-                  textAlign="left"
-                  splitType="chars"
-                  delay={14}
-                  duration={0.6}
-                  from={{ opacity: 0, y: 10 }}
-                  to={{ opacity: 1, y: 0 }}
-                />
-                <div className="mt-4 space-y-3">
-                  <a href="#" className="block hover:text-white">
-                    <SplitText
-                      tag="span"
-                      text="Email"
-                      className="block"
-                      textAlign="left"
-                      splitType="chars"
-                      delay={12}
-                      duration={0.55}
-                      from={{ opacity: 0, y: 8 }}
-                      to={{ opacity: 1, y: 0 }}
-                    />
-                  </a>
-                  <a href="#" className="block hover:text-white">
-                    <SplitText
-                      tag="span"
-                      text="Start a Project"
-                      className="block"
-                      textAlign="left"
-                      splitType="chars"
-                      delay={12}
-                      duration={0.55}
-                      from={{ opacity: 0, y: 8 }}
-                      to={{ opacity: 1, y: 0 }}
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-[11px] text-white/45 sm:flex-row sm:items-center sm:justify-between">
-            <div className="right-justify">© 2026 SKYWORLD. All rights reserved.
-             </div>
-            Designed in the dark.
-          
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

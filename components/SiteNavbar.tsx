@@ -56,7 +56,7 @@ export default function SiteNavbar({
   accentColor,
   menuButtonColor,
   openMenuButtonColor,
-  logoUrl = "/tulip.png",
+  logoUrl = "/LogoN.png",
 }: SiteNavbarProps) {
   const pathname = usePathname();
   const theme = navbarThemes[pathname as keyof typeof navbarThemes] ?? navbarThemes["/"];

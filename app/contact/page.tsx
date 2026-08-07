@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ContactEmailForm from "@/components/ContactEmailForm";
 import SideRays from "@/components/SideRays";
 import SiteFooter from "@/components/SiteFooter";
 import SiteNavbar from "@/components/SiteNavbar";
@@ -220,6 +221,48 @@ export default function ContactPage() {
                 </article>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="border-b border-white/10 px-5 py-24 sm:px-8 sm:py-32">
+          <div className="mx-auto grid max-w-[1600px] gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+            <div className="max-w-[520px]">
+              <SplitText
+                tag="p"
+                text="Direct Inquiry"
+                className="text-[11px] font-medium uppercase tracking-[0.34em] text-[#EF4444]"
+                textAlign="left"
+                splitType="chars"
+                delay={10}
+                duration={0.5}
+                from={{ opacity: 0, y: 8 }}
+                to={{ opacity: 1, y: 0 }}
+              />
+              <SplitText
+                tag="h2"
+                text={"START THE\nCONVERSATION"}
+                className="mt-6 text-[48px] font-black uppercase leading-[0.93] tracking-[-0.06em] text-[#ededed] sm:text-[68px]"
+                textAlign="left"
+                splitType="lines"
+                delay={14}
+                duration={0.65}
+                from={{ opacity: 0, y: 16 }}
+                to={{ opacity: 1, y: 0 }}
+              />
+              <SplitText
+                tag="p"
+                text="Send your brief, campaign goals, or product requirements and we will route it to the right team. The form includes your name, number, email, and the reason you are reaching out."
+                className="mt-8 max-w-[460px] text-[18px] leading-[1.85] text-white/70"
+                textAlign="left"
+                splitType="words"
+                delay={12}
+                duration={0.55}
+                from={{ opacity: 0, y: 10 }}
+                to={{ opacity: 1, y: 0 }}
+              />
+            </div>
+
+            <ContactEmailForm />
           </div>
         </section>
       </main>

@@ -38,7 +38,7 @@ export default function IntroSplash() {
     >
       <div className="flex flex-col items-center gap-5 px-6 text-center">
         <Image
-          src="/tulip.png"
+          src="/Logo.png"
           alt="SKYWORLD logo"
           width={84}
           height={84}

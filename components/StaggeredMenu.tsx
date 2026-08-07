@@ -41,7 +41,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   displaySocials = true,
   displayItemNumbering = true,
   className,
-  logoUrl = '/tulip.png',
+  logoUrl = '/Logo.png',
   menuButtonColor = '#ffffff',
   openMenuButtonColor = '#000000',
   changeMenuColorOnOpen = true,
@@ -447,12 +447,12 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         >
           <div className="sm-logo flex items-center select-none pointer-events-auto" aria-label="Logo">
             <Image
-              src={logoUrl || '/tulip.png'}
+              src={logoUrl || '/LogoN.png'}
               alt="Logo"
-              className="sm-logo-img block h-8 w-auto object-contain"
+              className="sm-logo-img block h-16 w-auto object-contain sm:h-[72px]"
               draggable={false}
-              width={160}
-              height={44}
+              width={240}
+              height={68}
             />
           </div>
 
@@ -514,20 +514,43 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
               data-numbering={displayItemNumbering || undefined}
             >
               {items && items.length ? (
-                items.map((it, idx) => (
-                  <li className="sm-panel-itemWrap relative overflow-hidden leading-none" key={it.label + idx}>
-                    <a
-                      className="sm-panel-item relative font-semibold text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em]"
-                      href={it.link}
-                      aria-label={it.ariaLabel}
-                      data-index={idx + 1}
-                    >
-                      <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">
-                        {it.label}
-                      </span>
-                    </a>
-                  </li>
-                ))
+                items.map((it, idx) => {
+                  const isExternal = /^https?:\/\//i.test(it.link);
+                  const linkClass =
+                    "sm-panel-item relative font-semibold text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em]";
+                  const label = (
+                    <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">
+                      {it.label}
+                    </span>
+                  );
+                  return (
+                    <li className="sm-panel-itemWrap relative overflow-hidden leading-none" key={it.label + idx}>
+                      {isExternal ? (
+                        <a
+                          className={linkClass}
+                          href={it.link}
+                          aria-label={it.ariaLabel}
+                          data-index={idx + 1}
+                          target="_blank"
+                          rel="noreferrer"
+                          onClick={closeMenu}
+                        >
+                          {label}
+                        </a>
+                      ) : (
+                        <Link
+                          className={linkClass}
+                          href={it.link}
+                          aria-label={it.ariaLabel}
+                          data-index={idx + 1}
+                          onClick={closeMenu}
+                        >
+                          {label}
+                        </Link>
+                      )}
+                    </li>
+                  );
+                })
               ) : (
                 <li className="sm-panel-itemWrap relative overflow-hidden leading-none" aria-hidden="true">
                   <span className="sm-panel-item relative font-semibold text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em]">
@@ -572,7 +595,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 .sm-scope[data-fixed][data-scrolled] .staggered-menu-wrapper:not([data-open]) .staggered-menu-header { background: rgba(0,0,0,0.35); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,0.08); }
 .sm-scope .staggered-menu-header > * { pointer-events: auto; }
 .sm-scope .sm-logo { display: flex; align-items: center; user-select: none; }
-.sm-scope .sm-logo-img { display: block; height: 44px; width: auto; object-fit: contain; }
+.sm-scope .sm-logo-img { display: block; height: 64px; width: auto; max-width: none; object-fit: contain; aspect-ratio: auto; }
+@media (min-width: 640px) { .sm-scope .sm-logo-img { height: 72px; width: auto; max-width: none; } }
 .sm-scope .sm-brand-desktop { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: #fff; text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.35em; white-space: nowrap; display: none; }
 .sm-scope .sm-toggle { position: relative; display: inline-flex; align-items: center; gap: 0.3rem; background: transparent; border: none; cursor: pointer; color: #e9e9ef; font-weight: 500; line-height: 1; overflow: visible; }
 .sm-scope .sm-toggle:focus-visible { outline: 2px solid #ffffffaa; outline-offset: 4px; border-radius: 4px; }
